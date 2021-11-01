@@ -146,7 +146,6 @@ export class AppComponent implements OnInit {
         ruta: '../assets/img/ecommerce/cart/03.png',
       },
 
-      ,
       {
         id: 'px13',
         name: 'producto 13',

@@ -36,16 +36,22 @@ export class IndexProductoComponent implements OnInit {
 
     this._route.params.subscribe((params) => {
       this.route_category = params['categoria'];
+      console.log(' this.route_category', this.route_category);
+      console.log(' pxxssss', JSON.parse(localStorage.getItem('productos')));
+
+      this.productos = JSON.parse(localStorage.getItem('productos'));
+
       if (this.route_category) {
+        console.log('wwwww');
         // si estoy enviando ruta
         this.productos = JSON.parse(localStorage.getItem('productos')).filter(
           (px) => px.categoria == this.route_category
         );
       } else {
+        console.log('hhhhh');
+
         this.productos = JSON.parse(localStorage.getItem('productos'));
       }
-
-      console.log(' this.route_category', this.route_category);
     });
 
     setTimeout(() => {
