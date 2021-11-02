@@ -1,3 +1,4 @@
+import { ShowProductoComponent } from './components/productos/show-producto/show-producto.component';
 import { PerfilComponent } from './components/usuario/perfil/perfil.component';
 import { IndexProductoComponent } from './components/productos/index-producto/index-producto.component';
 import { AuthGuard } from './guards/auth.guard';
@@ -16,6 +17,7 @@ const appRoute: Routes = [
   },
   { path: 'productos', component: IndexProductoComponent },
   { path: 'productos/categoria/:categoria', component: IndexProductoComponent },
+  { path: 'productos/:id', component: ShowProductoComponent },
 ];
 
 export const appRoutingProviders: any[] = [];

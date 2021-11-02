@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { FormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
+
 import { routing } from './app.routing';
 
 // componentes
@@ -15,6 +17,7 @@ import { NavComponent } from './components/nav/nav.component';
 import { IndexProductoComponent } from './components/productos/index-producto/index-producto.component';
 import { PerfilComponent } from './components/usuario/perfil/perfil.component';
 import { SidebarComponent } from './components/usuario/sidebar/sidebar.component';
+import { ShowProductoComponent } from './components/productos/show-producto/show-producto.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +29,7 @@ import { SidebarComponent } from './components/usuario/sidebar/sidebar.component
     PerfilComponent,
     SidebarComponent,
     IndexProductoComponent,
+    ShowProductoComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,6 +37,7 @@ import { SidebarComponent } from './components/usuario/sidebar/sidebar.component
     FormsModule,
     HttpClientModule,
     routing,
+    NgbPaginationModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

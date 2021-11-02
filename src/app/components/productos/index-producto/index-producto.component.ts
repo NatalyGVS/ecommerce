@@ -25,6 +25,8 @@ export class IndexProductoComponent implements OnInit {
   public page = 1;
   public pageSize = 12; // productos por pagina
 
+  public sort_by = 'Defecto';
+
   constructor(private _route: ActivatedRoute) {
     this.configuracion_categorias = JSON.parse(
       localStorage.getItem('categorias')
@@ -36,20 +38,14 @@ export class IndexProductoComponent implements OnInit {
 
     this._route.params.subscribe((params) => {
       this.route_category = params['categoria'];
-      console.log(' this.route_category', this.route_category);
-      console.log(' pxxssss', JSON.parse(localStorage.getItem('productos')));
-
       this.productos = JSON.parse(localStorage.getItem('productos'));
 
       if (this.route_category) {
-        console.log('wwwww');
         // si estoy enviando ruta
         this.productos = JSON.parse(localStorage.getItem('productos')).filter(
           (px) => px.categoria == this.route_category
         );
       } else {
-        console.log('hhhhh');
-
         this.productos = JSON.parse(localStorage.getItem('productos'));
       }
     });
@@ -151,5 +147,37 @@ export class IndexProductoComponent implements OnInit {
 
   reset_productos() {
     this.productos = this.productos_original;
+  }
+
+  ordenar_por() {
+    if (this.sort_by == 'Defecto') {
+      this.productos = JSON.parse(localStorage.getItem('productos'));
+    } else if (this.sort_by == 'Popularidad') {
+      this.productos = this.productos.sort((a, b) => b.nVentas - a.nVentas);
+    } else if (this.sort_by == '+-Precio') {
+      this.productos = this.productos.sort((a, b) => b.precio - a.precio);
+    } else if (this.sort_by == '-+Precio') {
+      this.productos = this.productos.sort((a, b) => a.precio - b.precio);
+    } else if (this.sort_by == 'azNombre') {
+      this.productos = this.productos.sort((a, b) => {
+        if (a.name > b.name) {
+          return 1;
+        }
+        if (a.name < b.name) {
+          return -1;
+        }
+        return 0;
+      });
+    } else if (this.sort_by == 'zaNombre') {
+      this.productos = this.productos.sort((a, b) => {
+        if (a.name < b.name) {
+          return 1;
+        }
+        if (a.name > b.name) {
+          return -1;
+        }
+        return 0;
+      });
+    }
   }
 }
