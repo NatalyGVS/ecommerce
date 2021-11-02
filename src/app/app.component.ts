@@ -15,6 +15,7 @@ export class AppComponent implements OnInit {
         name: 'categoria-1',
         cantidad: 200,
         icono: 'ci-iphone',
+        
       },
       {
         id: 'cat2',
@@ -46,6 +47,20 @@ export class AppComponent implements OnInit {
         categoria: 'categoria-1',
         icono: 'ci-iphone',
         ruta: '../assets/img/ecommerce/cart/01.png',
+        variedades: [
+          {
+            titulo: '20 pulgadas',
+            id: 'p20',
+          },
+          {
+            titulo: '30 pulgadas',
+            id: 'p30',
+          },
+          {
+            titulo: '40 pulgadas',
+            id: 'p40',
+          },
+        ],
       },
       {
         id: 'px2',
@@ -56,6 +71,20 @@ export class AppComponent implements OnInit {
         categoria: 'categoria-1',
         icono: 'ci-iphone',
         ruta: '../assets/img/ecommerce/cart/02.png',
+        variedades: [
+          {
+            titulo: '20 pulgadas',
+            id: 'p20',
+          },
+          {
+            titulo: '30 pulgadas',
+            id: 'p30',
+          },
+          {
+            titulo: '40 pulgadas',
+            id: 'p40',
+          },
+        ],
       },
       {
         id: 'px3',
@@ -66,6 +95,20 @@ export class AppComponent implements OnInit {
         categoria: 'categoria-2',
         icono: 'ci-like',
         ruta: '../assets/img/ecommerce/cart/03.png',
+        variedades: [
+          {
+            titulo: '20 pulgadas',
+            id: 'p20',
+          },
+          {
+            titulo: '30 pulgadas',
+            id: 'p30',
+          },
+          {
+            titulo: '40 pulgadas',
+            id: 'p40',
+          },
+        ],
       },
       {
         id: 'px4',
@@ -76,6 +119,20 @@ export class AppComponent implements OnInit {
         categoria: 'categoria-3',
         icono: 'ci-lock',
         ruta: '../assets/img/ecommerce/cart/04.png',
+        variedades: [
+          {
+            titulo: '20 pulgadas',
+            id: 'p20',
+          },
+          {
+            titulo: '30 pulgadas',
+            id: 'p30',
+          },
+          {
+            titulo: '40 pulgadas',
+            id: 'p40',
+          },
+        ],
       },
       {
         id: 'px5',
@@ -86,6 +143,20 @@ export class AppComponent implements OnInit {
         categoria: 'categoria-1',
         icono: 'ci-iphone',
         ruta: '../assets/img/ecommerce/cart/01.png',
+        variedades: [
+          {
+            titulo: '20 pulgadas',
+            id: 'p20',
+          },
+          {
+            titulo: '30 pulgadas',
+            id: 'p30',
+          },
+          {
+            titulo: '40 pulgadas',
+            id: 'p40',
+          },
+        ],
       },
       {
         id: 'px6',
@@ -96,6 +167,20 @@ export class AppComponent implements OnInit {
         categoria: 'categoria-1',
         icono: 'ci-iphone',
         ruta: '../assets/img/ecommerce/cart/02.png',
+        variedades: [
+          {
+            titulo: '20 pulgadas',
+            id: 'p20',
+          },
+          {
+            titulo: '30 pulgadas',
+            id: 'p30',
+          },
+          {
+            titulo: '40 pulgadas',
+            id: 'p40',
+          },
+        ],
       },
       {
         id: 'px7',
@@ -106,6 +191,20 @@ export class AppComponent implements OnInit {
         categoria: 'categoria-2',
         icono: 'ci-like',
         ruta: '../assets/img/ecommerce/cart/03.png',
+        variedades: [
+          {
+            titulo: '20 pulgadas',
+            id: 'p20',
+          },
+          {
+            titulo: '30 pulgadas',
+            id: 'p30',
+          },
+          {
+            titulo: '40 pulgadas',
+            id: 'p40',
+          },
+        ],
       },
       {
         id: 'px8',
@@ -116,6 +215,20 @@ export class AppComponent implements OnInit {
         categoria: 'categoria-4',
         icono: 'ci-lock',
         ruta: '../assets/img/ecommerce/cart/04.png',
+        variedades: [
+          {
+            titulo: '20 pulgadas',
+            id: 'p20',
+          },
+          {
+            titulo: '30 pulgadas',
+            id: 'p30',
+          },
+          {
+            titulo: '40 pulgadas',
+            id: 'p40',
+          },
+        ],
       },
       {
         id: 'px9',
@@ -126,6 +239,20 @@ export class AppComponent implements OnInit {
         categoria: 'categoria-1',
         icono: 'ci-iphone',
         ruta: '../assets/img/ecommerce/cart/01.png',
+        variedades: [
+          {
+            titulo: '20 pulgadas',
+            id: 'p20',
+          },
+          {
+            titulo: '30 pulgadas',
+            id: 'p30',
+          },
+          {
+            titulo: '40 pulgadas',
+            id: 'p40',
+          },
+        ],
       },
       {
         id: 'px10',
@@ -136,6 +263,20 @@ export class AppComponent implements OnInit {
         categoria: 'categoria-1',
         icono: 'ci-iphone',
         ruta: '../assets/img/ecommerce/cart/02.png',
+        variedades: [
+          {
+            titulo: '20 pulgadas',
+            id: 'p20',
+          },
+          {
+            titulo: '30 pulgadas',
+            id: 'p30',
+          },
+          {
+            titulo: '40 pulgadas',
+            id: 'p40',
+          },
+        ],
       },
       {
         id: 'px11',
@@ -146,6 +287,20 @@ export class AppComponent implements OnInit {
         categoria: 'categoria-2',
         icono: 'ci-like',
         ruta: '../assets/img/ecommerce/cart/03.png',
+        variedades: [
+          {
+            titulo: '20 pulgadas',
+            id: 'p20',
+          },
+          {
+            titulo: '30 pulgadas',
+            id: 'p30',
+          },
+          {
+            titulo: '40 pulgadas',
+            id: 'p40',
+          },
+        ],
       },
       {
         id: 'px12',
@@ -156,6 +311,20 @@ export class AppComponent implements OnInit {
         categoria: 'categoria-2',
         icono: 'ci-like',
         ruta: '../assets/img/ecommerce/cart/03.png',
+        variedades: [
+          {
+            titulo: '20 pulgadas',
+            id: 'p20',
+          },
+          {
+            titulo: '30 pulgadas',
+            id: 'p30',
+          },
+          {
+            titulo: '40 pulgadas',
+            id: 'p40',
+          },
+        ],
       },
 
       {
@@ -167,6 +336,20 @@ export class AppComponent implements OnInit {
         categoria: 'categoria-2',
         icono: 'ci-like',
         ruta: '../assets/img/ecommerce/cart/03.png',
+        variedades: [
+          {
+            titulo: '20 pulgadas',
+            id: 'p20',
+          },
+          {
+            titulo: '30 pulgadas',
+            id: 'p30',
+          },
+          {
+            titulo: '40 pulgadas',
+            id: 'p40',
+          },
+        ],
       },
       {
         id: 'px14',
@@ -177,6 +360,20 @@ export class AppComponent implements OnInit {
         categoria: 'categoria-3',
         icono: 'ci-lock',
         ruta: '../assets/img/ecommerce/cart/04.png',
+        variedades: [
+          {
+            titulo: '20 pulgadas',
+            id: 'p20',
+          },
+          {
+            titulo: '30 pulgadas',
+            id: 'p30',
+          },
+          {
+            titulo: '40 pulgadas',
+            id: 'p40',
+          },
+        ],
       },
       {
         id: 'px15',
@@ -187,6 +384,20 @@ export class AppComponent implements OnInit {
         categoria: 'categoria-1',
         icono: 'ci-iphone',
         ruta: '../assets/img/ecommerce/cart/01.png',
+        variedades: [
+          {
+            titulo: '20 pulgadas',
+            id: 'p20',
+          },
+          {
+            titulo: '30 pulgadas',
+            id: 'p30',
+          },
+          {
+            titulo: '40 pulgadas',
+            id: 'p40',
+          },
+        ],
       },
       {
         id: 'px16',
@@ -197,6 +408,20 @@ export class AppComponent implements OnInit {
         categoria: 'categoria-1',
         icono: 'ci-iphone',
         ruta: '../assets/img/ecommerce/cart/02.png',
+        variedades: [
+          {
+            titulo: '20 pulgadas',
+            id: 'p20',
+          },
+          {
+            titulo: '30 pulgadas',
+            id: 'p30',
+          },
+          {
+            titulo: '40 pulgadas',
+            id: 'p40',
+          },
+        ],
       },
       {
         id: 'px17',
@@ -207,6 +432,20 @@ export class AppComponent implements OnInit {
         categoria: 'categoria-2',
         icono: 'ci-like',
         ruta: '../assets/img/ecommerce/cart/03.png',
+        variedades: [
+          {
+            titulo: '20 pulgadas',
+            id: 'p20',
+          },
+          {
+            titulo: '30 pulgadas',
+            id: 'p30',
+          },
+          {
+            titulo: '40 pulgadas',
+            id: 'p40',
+          },
+        ],
       },
       {
         id: 'px18',
@@ -217,6 +456,20 @@ export class AppComponent implements OnInit {
         categoria: 'categoria-4',
         icono: 'ci-lock',
         ruta: '../assets/img/ecommerce/cart/04.png',
+        variedades: [
+          {
+            titulo: '20 pulgadas',
+            id: 'p20',
+          },
+          {
+            titulo: '30 pulgadas',
+            id: 'p30',
+          },
+          {
+            titulo: '40 pulgadas',
+            id: 'p40',
+          },
+        ],
       },
     ];
 

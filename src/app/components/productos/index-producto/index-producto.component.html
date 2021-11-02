@@ -263,9 +263,15 @@
                       </div>
                     </div>
                   </div>
-                  <button type="button" class="btn btn-primary btn-block">
+                  <button *ngIf="!btn_cart" type="button" class="btn btn-primary btn-block"
+                    (click)="agregar_producto(producto)">
                     <i class="mr-2 align-middle cxi-cart mt-n1"></i>
-                    Add to cart
+                    Agregar al carrito
+                  </button>
+
+                  <button *ngIf="btn_cart" type="button" class="btn btn-primary btn-block" disabled>
+                    <span class="spinner-grow spinner-grow-sm me-2" role="status" aria-hidden="true"></span>
+                    Agregando...
                   </button>
                 </div>
               </div>

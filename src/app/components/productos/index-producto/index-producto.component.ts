@@ -27,6 +27,12 @@ export class IndexProductoComponent implements OnInit {
 
   public sort_by = 'Defecto';
 
+  //carrito de compras
+  public dataCarrito: any = {
+    variedad: '',
+    cantidad: 1,
+  };
+  public btn_cart = false;
   constructor(private _route: ActivatedRoute) {
     this.configuracion_categorias = JSON.parse(
       localStorage.getItem('categorias')
@@ -178,6 +184,47 @@ export class IndexProductoComponent implements OnInit {
         }
         return 0;
       });
+    }
+  }
+
+  agregar_producto(producto) {
+    if (this.dataCarrito.cantidad <= producto.stock) {
+      let data = {
+        id : 'C00'+ producto.id+ JSON.parse(localStorage.getItem('user_data')).dni,
+        producto: producto.id,
+        cliente: JSON.parse(localStorage.getItem('user_data')).dni,
+        cantidad: 1,
+        variedad: producto.variedades[0].titulo,
+        titulo_variedad: 'Pulgadas',
+        ruta: producto.ruta,
+        name: producto.name,
+        precio : producto.precio
+
+      };
+      this.btn_cart = true;
+
+      setTimeout(() => {
+        //Agregar al carrito actual
+        let carritoGeneral = JSON.parse(
+          localStorage.getItem('carrito_compras')
+        );
+        // if (carritoGeneral) carritoGeneral.split(',');
+        console.log('carritoGeneral', carritoGeneral);
+        let carritoTotal;
+        if (carritoGeneral) {
+          carritoTotal = [...carritoGeneral, ...[data]];
+          console.log('carritoTotal', carritoTotal);
+        } else {
+          carritoTotal = [data];
+        }
+        // localStorage.setItem('carrito_compras', carritoTotal.toString());
+        localStorage.setItem('carrito_compras', JSON.stringify(carritoTotal));
+        this.btn_cart = false;
+      }, 500);
+    } else {
+      //notificacion que no hay stock
+      //la maxima cantidad disponible es: this.producto.stock
+      console.log('la maxima cantidad disponible es ', producto.stock);
     }
   }
 }

@@ -12,6 +12,11 @@ export class ShowProductoComponent implements OnInit {
   public producto: any = {};
   public productosRecomendados: any[];
 
+  public dataCarrito: any = {
+    variedad: '',
+    cantidad: 1,
+  };
+  public btn_cart = false;
   constructor(private _route: ActivatedRoute) {
     this._route.params.subscribe((params) => {
       this.idProducto = params['id'];
@@ -27,7 +32,7 @@ export class ShowProductoComponent implements OnInit {
         JSON.parse(localStorage.getItem('detalleProducto')).categoria
       //limitar a 8 productos
     );
-    
+
     console.log('this.productosRecomendados', this.productosRecomendados);
   }
 
@@ -100,5 +105,49 @@ export class ShowProductoComponent implements OnInit {
         },
       });
     }, 500);
+  }
+  agregar_producto() {
+    if (this.dataCarrito.variedad) {
+      if (this.dataCarrito.cantidad <= this.producto.stock) {
+        let data = {
+          id : 'C00'+ this.producto.id+ JSON.parse(localStorage.getItem('user_data')).dni,
+          producto: this.producto.id,
+          cliente: JSON.parse(localStorage.getItem('user_data')).dni,
+          cantidad: this.dataCarrito.cantidad,
+          variedad: this.dataCarrito.variedad,
+          titulo_variedad: 'Pulgadas',
+          ruta: this.producto.ruta,
+          name: this.producto.name,
+          precio : this.producto.precio
+        };
+        this.btn_cart = true;
+
+        setTimeout(() => {
+          //Agregar al carrito actual
+          let carritoGeneral = JSON.parse(
+            localStorage.getItem('carrito_compras')
+          );
+          // if (carritoGeneral) carritoGeneral.split(',');
+          console.log('carritoGeneral', carritoGeneral);
+          let carritoTotal;
+          if (carritoGeneral) {
+            carritoTotal = [...carritoGeneral, ...[data]];
+            console.log('carritoTotal', carritoTotal);
+          } else {
+            carritoTotal = [data];
+          }
+          // localStorage.setItem('carrito_compras', carritoTotal.toString());
+          localStorage.setItem('carrito_compras', JSON.stringify(carritoTotal));
+          this.btn_cart = false;
+        }, 500);
+      } else {
+        //notificacion que no hay stock
+        //la maxima cantidad disponible es: this.producto.stock
+        console.log('la maxima cantidad disponible es ', this.producto.stock);
+      }
+    } else {
+      //notificacion de seleccione la variedad de producto (talla)
+      console.log('seleccione la variedad de producto');
+    }
   }
 }
