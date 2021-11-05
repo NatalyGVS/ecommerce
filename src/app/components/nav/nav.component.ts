@@ -11,8 +11,8 @@ export class NavComponent implements OnInit {
   public configuracion_categorias: any[];
 
   public carrito_compras_cart = false;
-  public data_carrito_compras : any[]= [];
-  public subtotal=0;
+  public data_carrito_compras: any[] = [];
+  public subtotal = 0;
 
   constructor(private _router: Router) {
     if (localStorage.getItem('user_data')) {
@@ -23,7 +23,15 @@ export class NavComponent implements OnInit {
     this.configuracion_categorias = JSON.parse(
       localStorage.getItem('categorias')
     );
-    this.data_carrito_compras = JSON.parse(localStorage.getItem('carrito_compras'));
+    console.log('configuracion_categorias', this.configuracion_categorias);
+    if (localStorage.getItem('carrito_compras')) {
+      this.data_carrito_compras = JSON.parse(
+        localStorage.getItem('carrito_compras')
+      );
+    } else {
+      this.data_carrito_compras = [];
+    }
+
     this.calcular_carrito();
   }
 
@@ -35,8 +43,10 @@ export class NavComponent implements OnInit {
   }
 
   open_modal_cart() {
-     this.data_carrito_compras = JSON.parse(localStorage.getItem('carrito_compras'));
-   
+    this.data_carrito_compras = JSON.parse(
+      localStorage.getItem('carrito_compras')
+    );
+
     if (!this.carrito_compras_cart) {
       //si es false, mostrar
       this.carrito_compras_cart = true;
@@ -47,27 +57,33 @@ export class NavComponent implements OnInit {
       $('#cart').removeClass('show');
     }
   }
-  calcular_carrito(){
-    if(JSON.parse(localStorage.getItem('carrito_compras'))){
-        this.subtotal = this.data_carrito_compras.reduce((acc,px)=>{
-          return px.precio + acc;
-        },0)
-        console.log("this.subtotal", this.subtotal);
+  calcular_carrito() {
+    this.subtotal = 0;
+
+    if (localStorage.getItem('carrito_compras')) {
+      this.subtotal = this.data_carrito_compras.reduce((acc, px) => {
+        return px.precio + acc;
+      }, 0);
+      console.log('this.subtotal', this.subtotal);
     }
-    
   }
 
-  eliminar_item(id){
-      this.data_carrito_compras = JSON.parse(localStorage.getItem('carrito_compras'));
+  eliminar_item(id) {
+    this.data_carrito_compras = JSON.parse(
+      localStorage.getItem('carrito_compras')
+    );
 
-      this.data_carrito_compras = this.data_carrito_compras.filter(function(item) {
-          return item.id !== id; 
-        });
+    this.data_carrito_compras = this.data_carrito_compras.filter(function (
+      item
+    ) {
+      return item.id !== id;
+    });
 
-        localStorage.setItem('carrito_compras', JSON.stringify(this.data_carrito_compras));
-        this.calcular_carrito();
-        console.log("neivo carrito", this.data_carrito_compras);
-
+    localStorage.setItem(
+      'carrito_compras',
+      JSON.stringify(this.data_carrito_compras)
+    );
+    this.calcular_carrito();
+    console.log('neivo carrito', this.data_carrito_compras);
   }
-
 }

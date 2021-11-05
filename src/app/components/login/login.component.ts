@@ -40,6 +40,21 @@ export class LoginComponent implements OnInit {
         email: 'nataly.vasquez9718@gmail.com',
         dni: '75715222',
         celular: '97999999',
+        direcciones:[{
+          id: 1,
+          cliente: '75715222',
+          destinatario:'Duvan Saenz',
+          dni: '7777777',
+          zip: '005',
+          direccion: 'Jr Argentina 201',
+          telefono: '97999999',
+          pais: 'Perú',
+          distrito: 'Comas',
+          provincia: "Lima ",
+          region: "Lima",
+          principal: true,
+
+        }]
       };
 
       //Pasarle nombre de usuario al nav

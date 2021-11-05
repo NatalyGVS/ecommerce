@@ -1,6 +1,5 @@
 import { GLOBAL } from './GLOBAL';
 import { Observable } from 'rxjs';
-
 import { HttpClient, HttpHandler, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
@@ -19,5 +18,9 @@ export class ClienteService {
     return this._http.post(this.url + 'login_cliente', data, {
       headers: headers,
     });
+  }
+
+  get_envios():Observable<any>{
+    return this._http.get('./assets/envios.json');
   }
 }

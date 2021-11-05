@@ -19,6 +19,10 @@ import { PerfilComponent } from './components/usuario/perfil/perfil.component';
 import { SidebarComponent } from './components/usuario/sidebar/sidebar.component';
 import { ShowProductoComponent } from './components/productos/show-producto/show-producto.component';
 import { CarritoComponent } from './components/carrito/carrito.component';
+import { DireccionesComponent } from './components/usuario/direcciones/direcciones.component';
+import { ContactoComponent } from './components/contacto/contacto.component';
+import { IndexPedidosComponent } from './components/usuario/pedidos/index-pedidos/index-pedidos.component';
+import { DetallePedidoComponent } from './components/usuario/pedidos/detalle-pedido/detalle-pedido.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +36,10 @@ import { CarritoComponent } from './components/carrito/carrito.component';
     IndexProductoComponent,
     ShowProductoComponent,
     CarritoComponent,
+    DireccionesComponent,
+    ContactoComponent,
+    IndexPedidosComponent,
+    DetallePedidoComponent,
   ],
   imports: [
     BrowserModule,

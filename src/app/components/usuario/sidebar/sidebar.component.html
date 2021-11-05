@@ -2,45 +2,47 @@
   "topSpacing": 120,
   "minWidth": 991
 }'>
-<div class="sidebar-sticky-inner">
-  <div class="card">
-    <div class="card-body" *ngIf="user_ls">
-      <h5 class="mb-1 card-title">{{user_ls.nombres}} {{user_ls.apellidos}} </h5>
-      <p class="card-text text-muted mb-lg-0">{{user_ls.email}}</p>
-      <a href="#account-menu" class="btn btn-primary btn-block d-lg-none" data-toggle="collapse">Account
-        Menu</a>
-    </div>
-    <div id="account-menu" class="collapse d-lg-block">
-      <div class="list-group list-group-flush border-top">
-        <a [routerLink]="['/cuenta/perfil']" routerLinkActive="active"
-          class="list-group-item list-group-item-action d-flex align-items-center">
-          <i class="mr-2 cxi-profile font-size-lg"></i>
-          <span>Mi Perfil</span>
-        </a>
-        <a href="account-orders.html" class="list-group-item list-group-item-action d-flex align-items-center">
-          <i class="mr-2 cxi-bag font-size-lg"></i>
-          <span>My orders</span>
-        </a>
-        <a href="account-wishlist.html" class="list-group-item list-group-item-action d-flex align-items-center">
-          <i class="mr-2 cxi-heart font-size-lg"></i>
-          <span>Wishlist</span>
-          <span class="ml-auto badge badge-warning">2</span>
-        </a>
-        <a href="account-recently-viewed.html"
-          class="list-group-item list-group-item-action d-flex align-items-center">
-          <i class="mr-2 cxi-eye font-size-lg"></i>
-          <span>Recently viewed</span>
-        </a>
-        <a href="account-reviews.html" class="list-group-item list-group-item-action d-flex align-items-center">
-          <i class="mr-2 cxi-star font-size-lg"></i>
-          <span>My reviews</span>
-        </a>
-        <a href="#" class="list-group-item list-group-item-action d-flex align-items-center">
-          <i class="mr-2 cxi-logout font-size-lg"></i>
-          <span>Sign out</span>
-        </a>
+  <div class="sidebar-sticky-inner">
+    <div class="card">
+      <div class="card-body" *ngIf="user_ls">
+        <h5 class="mb-1 card-title">{{user_ls.nombres}} {{user_ls.apellidos}} </h5>
+        <p class="card-text text-muted mb-lg-0">{{user_ls.email}}</p>
+        <a href="#account-menu" class="btn btn-primary btn-block d-lg-none" data-toggle="collapse">Account
+          Menu</a>
+      </div>
+      <div id="account-menu" class="collapse d-lg-block">
+        <div class="list-group list-group-flush border-top">
+          <a [routerLink]="['/cuenta/perfil']" routerLinkActive="active"
+            class="list-group-item list-group-item-action d-flex align-items-center">
+            <i class="mr-2 cxi-profile font-size-lg"></i>
+            <span>Mi Perfil</span>
+          </a>
+          <a [routerLink]="['/cuenta/direcciones']" routerLinkActive="active"
+            class="list-group-item list-group-item-action d-flex align-items-center">
+            <i class="mr-2 cxi-bag font-size-lg"></i>
+            <span>Mis direcciones</span>
+          </a>
+          <a [routerLink]="['/cuenta/pedidos']" routerLinkActive="active"
+            class="list-group-item list-group-item-action d-flex align-items-center">
+            <i class="mr-2 cxi-heart font-size-lg"></i>
+            <span>Mis pedidos</span>
+            <!-- <span class="ml-auto badge badge-warning">2</span> -->
+          </a>
+          <a href="account-recently-viewed.html"
+            class="list-group-item list-group-item-action d-flex align-items-center">
+            <i class="mr-2 cxi-eye font-size-lg"></i>
+            <span>Recently viewed</span>
+          </a>
+          <a href="account-reviews.html" class="list-group-item list-group-item-action d-flex align-items-center">
+            <i class="mr-2 cxi-star font-size-lg"></i>
+            <span>My reviews</span>
+          </a>
+          <a href="#" class="list-group-item list-group-item-action d-flex align-items-center">
+            <i class="mr-2 cxi-logout font-size-lg"></i>
+            <span>Sign out</span>
+          </a>
+        </div>
       </div>
     </div>
   </div>
-</div>
 </div>

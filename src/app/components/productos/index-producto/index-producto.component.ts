@@ -204,14 +204,17 @@ export class IndexProductoComponent implements OnInit {
       this.btn_cart = true;
 
       setTimeout(() => {
+
+
         //Agregar al carrito actual
-        let carritoGeneral = JSON.parse(
-          localStorage.getItem('carrito_compras')
-        );
+        let carritoGeneral = localStorage.getItem('carrito_compras');
         // if (carritoGeneral) carritoGeneral.split(',');
         console.log('carritoGeneral', carritoGeneral);
         let carritoTotal;
         if (carritoGeneral) {
+          carritoGeneral = JSON.parse(
+            localStorage.getItem('carrito_compras')
+          );
           carritoTotal = [...carritoGeneral, ...[data]];
           console.log('carritoTotal', carritoTotal);
         } else {

@@ -58,7 +58,8 @@
           <li class="mb-0 nav-item align-self-center" *ngIf="user_ls !=undefined">
             <a style="cursor:pointer;" class="nav-tool pr-lg-0" (click)="open_modal_cart()">
               <i class="cxi-cart nav-tool-icon"></i>
-              <span class="px-2 py-1 ml-2 align-middle badge badge-success mt-n1 font-size-xs">{{data_carrito_compras.length}}</span>
+              <span
+                class="px-2 py-1 ml-2 align-middle badge badge-success mt-n1 font-size-xs">{{data_carrito_compras.length}}</span>
             </a>
           </li>
           <li class="mb-0 nav-item align-self-center" *ngIf="user_ls ==undefined">
@@ -105,6 +106,10 @@
                 </a>
               </li>
             </ul>
+          </li>
+          <li class="nav-item">
+            <a [routerLink]="['/contacto']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+              class="nav-link">Contacto</a>
           </li>
           <li class="nav-item dropdown mega-dropdown">
             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Megamenu</a>
@@ -193,60 +198,62 @@
 
   <!-- Header -->
   <div class="cs-offcanvas-cap align-items-center border-bottom">
-    <h2 class="h5 mb-0">Mi carrito</h2>
+    <h2 class="mb-0 h5">Mi carrito</h2>
     <button class="close mr-n1" type="button" data-dismiss="offcanvas" aria-label="Close" (click)="open_modal_cart()">
-      <span class="h3 font-weight-normal mb-0" aria-hidden="true">×</span>
+      <span class="mb-0 h3 font-weight-normal" aria-hidden="true">×</span>
     </button>
   </div>
 
   <!-- Body -->
   <div class="cs-offcanvas-body">
     <!-- Item -->
-    <div class="media p-4 border-bottom mx-n4" *ngFor="let item of data_carrito_compras">
-      <a  [routerLink]="['/productos', item.producto]" target="_blank" style="min-width: 80px;">
+    <div class="p-4 media border-bottom mx-n4" *ngFor="let item of data_carrito_compras">
+      <a [routerLink]="['/productos', item.producto]" target="_blank" style="min-width: 80px;">
         <img src={{item.ruta}} width="80" alt="Product thumb">
       </a>
-      <div class="media-body pl-3">
+      <div class="pl-3 media-body">
         <div class="d-flex justify-content-between">
           <div class="pr-2">
-            <h3 class="font-size-sm mb-3">
-              <a  [routerLink]="['/productos', item.producto]" target="_blank" class="nav-link font-weight-bold">{{item.name}}</a>
+            <h3 class="mb-3 font-size-sm">
+              <a [routerLink]="['/productos', item.producto]" target="_blank"
+                class="nav-link font-weight-bold">{{item.name}}</a>
             </h3>
-            <ul class="list-unstyled font-size-xs mt-n2 mb-2">
+            <ul class="mb-2 list-unstyled font-size-xs mt-n2">
               <li class="mb-0"><span class="text-muted">{{item.titulo_variedad}}:</span> {{item.variedad}}</li>
             </ul>
             <div class="d-flex align-items-center">
-              <input type="number" class="form-control form-control-sm bg-light mr-3" style="width: 4.5rem;" value="{{item.cantidad}}" readonly>
+              <input type="number" class="mr-3 form-control form-control-sm bg-light" style="width: 4.5rem;"
+                value="{{item.cantidad}}" readonly>
               <!-- <div class="text-nowrap"><strong class="text-danger">S/.{{item.precio}}</strong>  -->
-                <span class="font-size-xs text-muted" style="font-size: 1.2rem !important;">S/.{{item.precio}}</span>
+              <span class="font-size-xs text-muted" style="font-size: 1.2rem !important;">S/.{{item.precio}}</span>
             </div>
-            <button class="btn btn-link btn-sm text-decoration-none px-0 pb-0">
+            <button class="px-0 pb-0 btn btn-link btn-sm text-decoration-none">
               Mover a
-              <i class="cxi-heart ml-1"></i>
+              <i class="ml-1 cxi-heart"></i>
             </button>
           </div>
           <div class="nav-muted mr-n2">
-            <a (click)="eliminar_item(item.id)" class="nav-link px-2 mt-n2" data-toggle="tooltip" title="Quitar"  style="cursor: pointer;"><i
-                class="cxi-delete"></i></a>
+            <a (click)="eliminar_item(item.id)" class="px-2 nav-link mt-n2" data-toggle="tooltip" title="Quitar"
+              style="cursor: pointer;"><i class="cxi-delete"></i></a>
           </div>
         </div>
       </div>
     </div>
 
     <!-- Item -->
-    <!-- <div class="media p-4 mx-n4">
-     
+    <!-- <div class="p-4 media mx-n4">
+
     </div> -->
   </div>
 
   <!-- Footer -->
   <div class="cs-offcanvas-cap flex-column border-top">
-    <div class="d-flex align-items-center justify-content-between mb-3 pb-1">
-      <span class="text-muted mr-2">Subtotal:</span>
-      <span class="h5 mb-0">S/.{{subtotal}}</span>
+    <div class="pb-1 mb-3 d-flex align-items-center justify-content-between">
+      <span class="mr-2 text-muted">Subtotal:</span>
+      <span class="mb-0 h5">S/.{{subtotal}}</span>
     </div>
     <a [routerLink]="['/carrito']" class="btn btn-primary btn-lg btn-block">
-      <i class="cxi-credit-card font-size-lg mt-n1 mr-1"></i>
+      <i class="mr-1 cxi-credit-card font-size-lg mt-n1"></i>
       Checkout
     </a>
   </div>
