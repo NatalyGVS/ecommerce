@@ -18,6 +18,9 @@ export class IndexPedidosComponent implements OnInit {
     //servicio obtener pedidos del cliente
     this.pedidos = JSON.parse(localStorage.getItem('user_data')).ventas;
     console.log('this.pedidos', this.pedidos);
-    this.load_data = false;
+
+    setTimeout(() => {
+      this.load_data = false;
+    }, 2000);
   }
 }
