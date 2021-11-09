@@ -1,0 +1,507 @@
+[
+  {
+    "id": "cat-1",
+    "name": "Máquinas y herramientas",
+    "cantidad": 200,
+    "icono": "ci-iphone",
+    "ruta": "../assets/img/categorias/maquinas.jpg",
+    "subcategorias": [
+      {
+        "id": "subcat-11",
+        "name" : "Herramientas Electricas e Inalambricas",
+        "ruta": "../assets/img/categorias/cat-1/herramientas-electricas.jpg",
+        "productos": [
+          { "id": "px1", "name": "Taladros"},
+          { "id": "px2", "name": "Atornilladores"},
+          { "id": "px3", "name": "Taladros"},
+          { "id": "px4", "name": "Sierra Circular y Caladora"},
+          { "id": "px5", "name": "Lijadoras"},
+          { "id": "px6", "name":"Fresadora y Ruteadoras"},
+          { "id": "px7", "name":"Cepillos para Madera"},
+          { "id": "px8", "name":"Amoladora y Esmeriles"},
+          { "id": "px9", "name":"Rotomartillos y Demoledores"},
+          { "id": "px10", "name":"Tronzadoras y Cortadoras"},
+          { "id": "px11", "name":"Multipropósito"},
+          { "id": "px12", "name":"Pistola de Calor"},
+          { "id": "px13", "name":"Sopladoras"},
+          { "id": "px14", "name":"Pulidoras"},
+          { "id": "px15", "name":"Baterías y Cargadores"},
+          { "id": "px16", "name":"Accesorios de Herramientas Eléctricas"}
+        ]
+
+      },
+      {
+        "id": "subcat-12",
+        "name" : "Herramientas para construcción",
+        "ruta": "../assets/img/categorias/cat-1/herramientas-construccion.jpg",
+        "productos": [
+          { "id": "px1", "name": "Rotomartillos y Demoledores"},
+          { "id": "px2", "name": "Grupo Electrógeno y Generador"},
+          { "id": "px3", "name": "Trompo Mezclador, Vibrador y Cortador de Concreto"},
+          { "id": "px4", "name": "Carretillas y Ruedas"},
+          { "id": "px5", "name": "Puntos, Cinceles y Combas"},
+          { "id": "px6", "name":"Palas y Llanas"},
+          { "id": "px7", "name":"Carretas de Cargas"}
+        ]
+      },
+
+    {
+      "id": "subcat-13",
+      "name" : "Herramientas manuales",
+      "ruta": "../assets/img/categorias/cat-1/herramientas-manuales.jpg",
+      "productos": [
+        { "id": "px1", "name": "Tijeras y Cuchillas"},
+        { "id": "px2", "name": "Engrapadoras y Grapas"},
+        { "id": "px3", "name": "Set de Herramientas"},
+        { "id": "px4", "name": "Serruchos, Cepillos y Formones"},
+        { "id": "px5", "name": "Cajas de Herramientas y Organizadores"},
+        { "id": "px6", "name":"Martillos y Mazos"},
+        { "id": "px7", "name":"Dados y Llaves"},
+        { "id": "px8", "name":"Cintas Métricas, Reglas y Escuadras"},
+        { "id": "px9", "name":"Desarmadores"},
+        { "id": "px10", "name":"Alicates, Prensas y Torquímetros"},
+        { "id": "px11", "name":"Sierras y Limas"},
+        { "id": "px12", "name":"Remachadoras"},
+        { "id": "px13", "name":"Pistolas y Fulminantes"}
+      ]
+
+    },
+
+    {
+      "id": "subcat-14",
+      "name" : "Herramientas por especialidad",
+      "ruta": "../assets/img/categorias/cat-1/herramientas-especialidad.jpg",
+      "productos": [
+        { "id": "px1", "name": "Tijeras y Cuchillas"},
+        { "id": "px2", "name": "Engrapadoras y Grapas"},
+        { "id": "px3", "name": "Set de Herramientas"},
+        { "id": "px4", "name": "Serruchos, Cepillos y Formones"},
+        { "id": "px5", "name": "Cajas de Herramientas y Organizadores"},
+        { "id": "px6", "name":"Martillos y Mazos"},
+        { "id": "px7", "name":"Dados y Llaves"},
+        { "id": "px8", "name":"Cintas Métricas, Reglas y Escuadras"},
+        { "id": "px9", "name":"Desarmadores"},
+        { "id": "px10", "name":"Alicates, Prensas y Torquímetros"},
+        { "id": "px11", "name":"Sierras y Limas"},
+        { "id": "px12", "name":"Remachadoras"},
+        { "id": "px13", "name":"Pistolas y Fulminantes"}
+      ]
+
+    },
+
+    {
+      "id": "subcat-15",
+      "name" : "Herramientas de Albañilería",
+      "ruta": "../assets/img/categorias/cat-1/herramientas-albanileria.jpg",
+      "productos": [
+        { "id": "px1", "name": "Tijeras y Cuchillas"},
+        { "id": "px2", "name": "Engrapadoras y Grapas"},
+        { "id": "px3", "name": "Set de Herramientas"},
+        { "id": "px4", "name": "Serruchos, Cepillos y Formones"},
+        { "id": "px5", "name": "Cajas de Herramientas y Organizadores"},
+        { "id": "px6", "name":"Martillos y Mazos"},
+        { "id": "px7", "name":"Dados y Llaves"},
+        { "id": "px8", "name":"Cintas Métricas, Reglas y Escuadras"},
+        { "id": "px9", "name":"Desarmadores"},
+        { "id": "px10", "name":"Alicates, Prensas y Torquímetros"},
+        { "id": "px11", "name":"Sierras y Limas"},
+        { "id": "px12", "name":"Remachadoras"},
+        { "id": "px13", "name":"Pistolas y Fulminantes"}
+      ]
+
+    },
+
+    {
+      "id": "subcat-16",
+      "name" : "Herramientas de Corte y Rebaje",
+      "ruta": "../assets/img/categorias/cat-1/herramientas-corte.jpg",
+      "productos": [
+        { "id": "px1", "name": "Tijeras y Cuchillas"},
+        { "id": "px2", "name": "Engrapadoras y Grapas"},
+        { "id": "px3", "name": "Set de Herramientas"},
+        { "id": "px4", "name": "Serruchos, Cepillos y Formones"},
+        { "id": "px5", "name": "Cajas de Herramientas y Organizadores"},
+        { "id": "px6", "name":"Martillos y Mazos"},
+        { "id": "px7", "name":"Dados y Llaves"},
+        { "id": "px8", "name":"Cintas Métricas, Reglas y Escuadras"},
+        { "id": "px9", "name":"Desarmadores"},
+        { "id": "px10", "name":"Alicates, Prensas y Torquímetros"},
+        { "id": "px11", "name":"Sierras y Limas"},
+        { "id": "px12", "name":"Remachadoras"},
+        { "id": "px13", "name":"Pistolas y Fulminantes"}
+      ]
+
+    },
+
+    {
+      "id": "subcat-17",
+      "name" : "Herramientas de Jardinería",
+      "ruta": "../assets/img/categorias/cat-1/herramientas-jardineria.jpg",
+      "productos": [
+        { "id": "px1", "name": "Tijeras y Cuchillas"},
+        { "id": "px2", "name": "Engrapadoras y Grapas"},
+        { "id": "px3", "name": "Set de Herramientas"},
+        { "id": "px4", "name": "Serruchos, Cepillos y Formones"},
+        { "id": "px5", "name": "Cajas de Herramientas y Organizadores"},
+        { "id": "px6", "name":"Martillos y Mazos"},
+        { "id": "px7", "name":"Dados y Llaves"},
+        { "id": "px8", "name":"Cintas Métricas, Reglas y Escuadras"},
+        { "id": "px9", "name":"Desarmadores"},
+        { "id": "px10", "name":"Alicates, Prensas y Torquímetros"},
+        { "id": "px11", "name":"Sierras y Limas"},
+        { "id": "px12", "name":"Remachadoras"},
+        { "id": "px13", "name":"Pistolas y Fulminantes"}
+      ]
+
+    },
+
+    {
+      "id": "subcat-18",
+      "name" : "Herramientas de Gasfitería",
+      "ruta": "../assets/img/categorias/cat-1/herramientas-electricas.jpg",
+      "productos": [
+        { "id": "px1", "name": "Tijeras y Cuchillas"},
+        { "id": "px2", "name": "Engrapadoras y Grapas"},
+        { "id": "px3", "name": "Set de Herramientas"},
+        { "id": "px4", "name": "Serruchos, Cepillos y Formones"},
+        { "id": "px5", "name": "Cajas de Herramientas y Organizadores"},
+        { "id": "px6", "name":"Martillos y Mazos"},
+        { "id": "px7", "name":"Dados y Llaves"},
+        { "id": "px8", "name":"Cintas Métricas, Reglas y Escuadras"},
+        { "id": "px9", "name":"Desarmadores"},
+        { "id": "px10", "name":"Alicates, Prensas y Torquímetros"},
+        { "id": "px11", "name":"Sierras y Limas"},
+        { "id": "px12", "name":"Remachadoras"},
+        { "id": "px13", "name":"Pistolas y Fulminantes"}
+      ]
+
+    }, {
+      "id": "subcat-19",
+      "name" : "Herramientas de Construcción",
+      "ruta": "../assets/img/categorias/cat-1/herramientas-electricas.jpg",
+      "productos": [
+        { "id": "px1", "name": "Tijeras y Cuchillas"},
+        { "id": "px2", "name": "Engrapadoras y Grapas"},
+        { "id": "px3", "name": "Set de Herramientas"},
+        { "id": "px4", "name": "Serruchos, Cepillos y Formones"},
+        { "id": "px5", "name": "Cajas de Herramientas y Organizadores"},
+        { "id": "px6", "name":"Martillos y Mazos"},
+        { "id": "px7", "name":"Dados y Llaves"},
+        { "id": "px8", "name":"Cintas Métricas, Reglas y Escuadras"},
+        { "id": "px9", "name":"Desarmadores"},
+        { "id": "px10", "name":"Alicates, Prensas y Torquímetros"},
+        { "id": "px11", "name":"Sierras y Limas"},
+        { "id": "px12", "name":"Remachadoras"},
+        { "id": "px13", "name":"Pistolas y Fulminantes"}
+      ]
+
+    }, {
+      "id": "subcat-110",
+      "name" : "Herramientas de Electricistas",
+      "ruta": "../assets/img/categorias/cat-1/herramientas-electricas.jpg",
+      "productos": [
+        { "id": "px1", "name": "Tijeras y Cuchillas"},
+        { "id": "px2", "name": "Engrapadoras y Grapas"},
+        { "id": "px3", "name": "Set de Herramientas"},
+        { "id": "px4", "name": "Serruchos, Cepillos y Formones"},
+        { "id": "px5", "name": "Cajas de Herramientas y Organizadores"},
+        { "id": "px6", "name":"Martillos y Mazos"},
+        { "id": "px7", "name":"Dados y Llaves"},
+        { "id": "px8", "name":"Cintas Métricas, Reglas y Escuadras"},
+        { "id": "px9", "name":"Desarmadores"},
+        { "id": "px10", "name":"Alicates, Prensas y Torquímetros"},
+        { "id": "px11", "name":"Sierras y Limas"},
+        { "id": "px12", "name":"Remachadoras"},
+        { "id": "px13", "name":"Pistolas y Fulminantes"}
+      ]
+
+    }, {
+      "id": "subcat-111",
+      "name" : "Herramientas para pintar",
+      "ruta": "../assets/img/categorias/cat-1/herramientas-electricas.jpg",
+      "productos": [
+        { "id": "px1", "name": "Tijeras y Cuchillas"},
+        { "id": "px2", "name": "Engrapadoras y Grapas"},
+        { "id": "px3", "name": "Set de Herramientas"},
+        { "id": "px4", "name": "Serruchos, Cepillos y Formones"},
+        { "id": "px5", "name": "Cajas de Herramientas y Organizadores"},
+        { "id": "px6", "name":"Martillos y Mazos"},
+        { "id": "px7", "name":"Dados y Llaves"},
+        { "id": "px8", "name":"Cintas Métricas, Reglas y Escuadras"},
+        { "id": "px9", "name":"Desarmadores"},
+        { "id": "px10", "name":"Alicates, Prensas y Torquímetros"},
+        { "id": "px11", "name":"Sierras y Limas"},
+        { "id": "px12", "name":"Remachadoras"},
+        { "id": "px13", "name":"Pistolas y Fulminantes"}
+      ]
+
+    }
+    ]
+
+  },
+  {
+    "id": "cat-2",
+    "name": "Gasfitería y Baño",
+    "cantidad": 200,
+    "icono": "ci-iphone",
+    "ruta": "../assets/img/categorias/gasfiteria.png",    
+    "subcategorias": [
+      {
+        "id": "subcat-21",
+        "name" : "Gasfitería",
+        "ruta": "../assets/img/productos/atornilladores.jpg",
+        "productos": [
+          { "id": "px1", "name": "Tijeras y Cuchillas"},
+          { "id": "px2", "name": "Engrapadoras y Grapas"},
+          { "id": "px3", "name": "Set de Herramientas"},
+          { "id": "px4", "name": "Serruchos, Cepillos y Formones"},
+          { "id": "px5", "name": "Cajas de Herramientas y Organizadores"},
+          { "id": "px6", "name":"Martillos y Mazos"},
+          { "id": "px7", "name":"Dados y Llaves"},
+          { "id": "px8", "name":"Cintas Métricas, Reglas y Escuadras"},
+          { "id": "px9", "name":"Desarmadores"},
+          { "id": "px10", "name":"Alicates, Prensas y Torquímetros"},
+          { "id": "px11", "name":"Sierras y Limas"},
+          { "id": "px12", "name":"Remachadoras"},
+          { "id": "px13", "name":"Pistolas y Fulminantes"}
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cat-3",
+    "name": "Electricidad",
+    "cantidad": 200,
+    "icono": "ci-iphone",
+    "ruta": "../assets/img/categorias/electricidad.jpg",    
+    "subcategorias": [
+      {
+        "id": "subcat-31",
+        "name" : "Electricidad",
+        "ruta": "../assets/img/productos/atornilladores.jpg",
+        "productos": [
+          { "id": "px1", "name": "Tijeras y Cuchillas"},
+          { "id": "px2", "name": "Engrapadoras y Grapas"},
+          { "id": "px3", "name": "Set de Herramientas"},
+          { "id": "px4", "name": "Serruchos, Cepillos y Formones"},
+          { "id": "px5", "name": "Cajas de Herramientas y Organizadores"},
+          { "id": "px6", "name":"Martillos y Mazos"},
+          { "id": "px7", "name":"Dados y Llaves"},
+          { "id": "px8", "name":"Cintas Métricas, Reglas y Escuadras"},
+          { "id": "px9", "name":"Desarmadores"},
+          { "id": "px10", "name":"Alicates, Prensas y Torquímetros"},
+          { "id": "px11", "name":"Sierras y Limas"},
+          { "id": "px12", "name":"Remachadoras"},
+          { "id": "px13", "name":"Pistolas y Fulminantes"}
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cat-4",
+    "name": "Materiales de Construcción",
+    "cantidad": 200,
+    "icono": "ci-iphone",
+    "ruta": "../assets/img/categorias/materiales-de-construccion.jpg",    
+    
+    "subcategorias": [
+      {
+        "id": "subcat-41",
+        "name" : "Materiales de Construcción",
+        "ruta": "../assets/img/productos/atornilladores.jpg",
+        "productos": [
+          { "id": "px1", "name": "Tijeras y Cuchillas"},
+          { "id": "px2", "name": "Engrapadoras y Grapas"},
+          { "id": "px3", "name": "Set de Herramientas"},
+          { "id": "px4", "name": "Serruchos, Cepillos y Formones"},
+          { "id": "px5", "name": "Cajas de Herramientas y Organizadores"},
+          { "id": "px6", "name":"Martillos y Mazos"},
+          { "id": "px7", "name":"Dados y Llaves"},
+          { "id": "px8", "name":"Cintas Métricas, Reglas y Escuadras"},
+          { "id": "px9", "name":"Desarmadores"},
+          { "id": "px10", "name":"Alicates, Prensas y Torquímetros"},
+          { "id": "px11", "name":"Sierras y Limas"},
+          { "id": "px12", "name":"Remachadoras"},
+          { "id": "px13", "name":"Pistolas y Fulminantes"}
+        ]
+      },
+      {
+        "id": "subcat-42",
+        "name" : "Techos",
+        "ruta": "../assets/img/productos/atornilladores.jpg",
+        "productos": [
+          { "id": "px1", "name": "Tijeras y Cuchillas"},
+          { "id": "px2", "name": "Engrapadoras y Grapas"},
+          { "id": "px3", "name": "Set de Herramientas"},
+          { "id": "px4", "name": "Serruchos, Cepillos y Formones"},
+          { "id": "px5", "name": "Cajas de Herramientas y Organizadores"},
+          { "id": "px6", "name":"Martillos y Mazos"},
+          { "id": "px7", "name":"Dados y Llaves"},
+          { "id": "px8", "name":"Cintas Métricas, Reglas y Escuadras"},
+          { "id": "px9", "name":"Desarmadores"},
+          { "id": "px10", "name":"Alicates, Prensas y Torquímetros"},
+          { "id": "px11", "name":"Sierras y Limas"},
+          { "id": "px12", "name":"Remachadoras"},
+          { "id": "px13", "name":"Pistolas y Fulminantes"}
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cat-5",
+    "name": "Productos de limpieza",
+    "cantidad": 200,
+    "icono": "ci-iphone",
+    "ruta": "../assets/img/categorias/limpieza.jpg",   
+    
+    "subcategorias": [
+      {
+        "id": "subcat-51",
+        "name": "Productos de limpieza",
+        "ruta": "../assets/img/productos/atornilladores.jpg",
+        "productos": [
+          { "id": "px1", "name": "Tijeras y Cuchillas"},
+          { "id": "px2", "name": "Engrapadoras y Grapas"},
+          { "id": "px3", "name": "Set de Herramientas"},
+          { "id": "px4", "name": "Serruchos, Cepillos y Formones"},
+          { "id": "px5", "name": "Cajas de Herramientas y Organizadores"},
+          { "id": "px6", "name":"Martillos y Mazos"},
+          { "id": "px7", "name":"Dados y Llaves"},
+          { "id": "px8", "name":"Cintas Métricas, Reglas y Escuadras"},
+          { "id": "px9", "name":"Desarmadores"},
+          { "id": "px10", "name":"Alicates, Prensas y Torquímetros"},
+          { "id": "px11", "name":"Sierras y Limas"},
+          { "id": "px12", "name":"Remachadoras"},
+          { "id": "px13", "name":"Pistolas y Fulminantes"}
+        ]
+      },
+      {
+        "id": "subcat-52",
+        "name" : "Limpieza de autos",
+        "ruta": "../assets/img/productos/atornilladores.jpg",
+        "productos": [
+          { "id": "px1", "name": "Tijeras y Cuchillas"},
+          { "id": "px2", "name": "Engrapadoras y Grapas"},
+          { "id": "px3", "name": "Set de Herramientas"},
+          { "id": "px4", "name": "Serruchos, Cepillos y Formones"},
+          { "id": "px5", "name": "Cajas de Herramientas y Organizadores"},
+          { "id": "px6", "name":"Martillos y Mazos"},
+          { "id": "px7", "name":"Dados y Llaves"},
+          { "id": "px8", "name":"Cintas Métricas, Reglas y Escuadras"},
+          { "id": "px9", "name":"Desarmadores"},
+          { "id": "px10", "name":"Alicates, Prensas y Torquímetros"},
+          { "id": "px11", "name":"Sierras y Limas"},
+          { "id": "px12", "name":"Remachadoras"},
+          { "id": "px13", "name":"Pistolas y Fulminantes"}
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cat-6",
+    "name": "Protección y vestuario",
+    "cantidad": 200,
+    "icono": "ci-iphone",
+    "ruta": "../assets/img/categorias/casco.jpg",   
+    "subcategorias": [
+      {
+        "id": "subcat-61",
+        "name" : "Seguridad y EPPS",
+        "ruta": "../assets/img/productos/atornilladores.jpg",
+        "productos": [
+          { "id": "px1", "name": "Tijeras y Cuchillas"},
+          { "id": "px2", "name": "Engrapadoras y Grapas"},
+          { "id": "px3", "name": "Set de Herramientas"},
+          { "id": "px4", "name": "Serruchos, Cepillos y Formones"},
+          { "id": "px5", "name": "Cajas de Herramientas y Organizadores"},
+          { "id": "px6", "name":"Martillos y Mazos"},
+          { "id": "px7", "name":"Dados y Llaves"},
+          { "id": "px8", "name":"Cintas Métricas, Reglas y Escuadras"},
+          { "id": "px9", "name":"Desarmadores"},
+          { "id": "px10", "name":"Alicates, Prensas y Torquímetros"},
+          { "id": "px11", "name":"Sierras y Limas"},
+          { "id": "px12", "name":"Remachadoras"},
+          { "id": "px13", "name":"Pistolas y Fulminantes"}
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cat-7",
+    "name": "Ferretería sencilla",
+    "cantidad": 200,
+    "icono": "ci-iphone",
+    "ruta": "../assets/img/categorias/ferreteria-sencilla.jpg",   
+    "subcategorias": [
+      {
+        "id": "subcat-71",
+        "name": "Clavos, Tornillos y Adhesivos",
+        "ruta": "../assets/img/productos/atornilladores.jpg",
+        "productos": [
+          { "id": "px1", "name": "Tijeras y Cuchillas"},
+          { "id": "px2", "name": "Engrapadoras y Grapas"},
+          { "id": "px3", "name": "Set de Herramientas"},
+          { "id": "px4", "name": "Serruchos, Cepillos y Formones"},
+          { "id": "px5", "name": "Cajas de Herramientas y Organizadores"},
+          { "id": "px6", "name":"Martillos y Mazos"},
+          { "id": "px7", "name":"Dados y Llaves"},
+          { "id": "px8", "name":"Cintas Métricas, Reglas y Escuadras"},
+          { "id": "px9", "name":"Desarmadores"},
+          { "id": "px10", "name":"Alicates, Prensas y Torquímetros"},
+          { "id": "px11", "name":"Sierras y Limas"},
+          { "id": "px12", "name":"Remachadoras"},
+          { "id": "px13", "name":"Pistolas y Fulminantes"}
+        ]
+      },
+      {
+        "id": "subcat-72",
+        "name": "Chapas para puertas y cerraduras",
+        "ruta": "../assets/img/productos/atornilladores.jpg",
+        "productos": [
+          { "id": "px1", "name": "Tijeras y Cuchillas"},
+          { "id": "px2", "name": "Engrapadoras y Grapas"},
+          { "id": "px3", "name": "Set de Herramientas"},
+          { "id": "px4", "name": "Serruchos, Cepillos y Formones"},
+          { "id": "px5", "name": "Cajas de Herramientas y Organizadores"},
+          { "id": "px6", "name":"Martillos y Mazos"},
+          { "id": "px7", "name":"Dados y Llaves"},
+          { "id": "px8", "name":"Cintas Métricas, Reglas y Escuadras"},
+          { "id": "px9", "name":"Desarmadores"},
+          { "id": "px10", "name":"Alicates, Prensas y Torquímetros"},
+          { "id": "px11", "name":"Sierras y Limas"},
+          { "id": "px12", "name":"Remachadoras"},
+          { "id": "px13", "name":"Pistolas y Fulminantes"}
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cat-8",
+    "name": "Pinturas y Complementos",
+    "cantidad": 200,
+    "icono": "ci-iphone",
+    "ruta": "../assets/img/categorias/pinturas.jpg",   
+    "subcategorias": [
+      {
+        "id": "subcat-81",
+        "name": "Pinturas y Complementos",
+        "ruta": "../assets/img/productos/atornilladores.jpg",
+        "productos": [
+          { "id": "px1", "name": "Tijeras y Cuchillas"},
+          { "id": "px2", "name": "Engrapadoras y Grapas"},
+          { "id": "px3", "name": "Set de Herramientas"},
+          { "id": "px4", "name": "Serruchos, Cepillos y Formones"},
+          { "id": "px5", "name": "Cajas de Herramientas y Organizadores"},
+          { "id": "px6", "name":"Martillos y Mazos"},
+          { "id": "px7", "name":"Dados y Llaves"},
+          { "id": "px8", "name":"Cintas Métricas, Reglas y Escuadras"},
+          { "id": "px9", "name":"Desarmadores"},
+          { "id": "px10", "name":"Alicates, Prensas y Torquímetros"},
+          { "id": "px11", "name":"Sierras y Limas"},
+          { "id": "px12", "name":"Remachadoras"},
+          { "id": "px13", "name":"Pistolas y Fulminantes"}
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,30 @@
+.nav.nav-category {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.nav.nav-category > .nav-item {
+  /* height: 80px !important; */
+  display: flex;
+  align-items: center;
+}
+.nav.nav-category > .nav-item > a {
+  color: rgb(216, 216, 216) !important;
+}
+.nav.nav-category > .nav-item:hover {
+  background-color: #17696a !important;
+}
+
+.nav.nav-category > .nav-item:hover > a {
+  color: #fff !important;
+}
+
+.nav.nav-category > .nav-item > .active {
+  color: #fff !important;
+}
+
+.active-parent {
+  background-color: #17696a !important;
+}

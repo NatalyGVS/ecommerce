@@ -1,0 +1,610 @@
+[
+  {
+    "id": "px1",
+    "name": "Taladros",
+    "stock": 200,
+    "precio": 40,
+    "nVentas": 40,
+    "categoria": {
+      "id": "cat-1",
+      "name": "Máquinas y herramientas"
+    },
+    "subcategoria": {
+      "id": "subcat-11",
+      "name": "Herramientas Electricas e Inalambricas"
+    },
+    "icono": "ci-iphone",
+    "ruta": "../assets/img/productos/taladros.jpg",
+    "variedades": [
+      {
+        "titulo": "20 pulgadas",
+        "id": "p20"
+      },
+      {
+        "titulo": "30 pulgadas",
+        "id": "p30"
+      },
+      {
+        "titulo": "40 pulgadas",
+        "id": "p40"
+      }
+    ]
+  },
+  {
+    "id": "px2",
+    "name": "Atornilladores",
+    "stock": 200,
+    "precio": 50,
+    "nVentas": 400,
+    "categoria": {
+      "id": "cat-1",
+      "name": "Máquinas y herramientas"
+    },
+    "subcategoria": {
+      "id": "subcat-11",
+      "name": "Herramientas Electricas e Inalambricas"
+    },
+    "icono": "ci-iphone",
+    "ruta": "../assets/img/productos/atornilladores.jpg",
+    "variedades": [
+      {
+        "titulo": "20 pulgadas",
+        "id": "p20"
+      },
+      {
+        "titulo": "30 pulgadas",
+        "id": "p30"
+      },
+      {
+        "titulo": "40 pulgadas",
+        "id": "p40"
+      }
+    ]
+  },
+  {
+    "id": "px3",
+    "name": "Lijadoras",
+    "stock": 200,
+    "precio": 50,
+    "nVentas": 400,
+    "categoria": {
+      "id": "cat-1",
+      "name": "Máquinas y herramientas"
+    },
+    "subcategoria": {
+      "id": "subcat-11",
+      "name": "Herramientas Electricas e Inalambricas"
+    },
+    "icono": "ci-iphone",
+    "ruta": "../assets/img/productos/lijadoras.png",
+    "variedades": [
+      {
+        "titulo": "20 pulgadas",
+        "id": "p20"
+      },
+      {
+        "titulo": "30 pulgadas",
+        "id": "p30"
+      },
+      {
+        "titulo": "40 pulgadas",
+        "id": "p40"
+      }
+    ]
+  },
+  {
+    "id": "px4",
+    "name": "Rotomartillos y Demoledores",
+    "stock": 200,
+    "precio": 50,
+    "nVentas": 400,
+    "categoria": {
+      "id": "cat-1",
+      "name": "Máquinas y herramientas"
+    },
+    "subcategoria": {
+      "id": "subcat-11",
+      "name": "Herramientas Electricas e Inalambricas"
+    },
+    "icono": "ci-iphone",
+    "ruta": "../assets/img/productos/rotomartillosyDemoledores.jpg",
+    "variedades": [
+      {
+        "titulo": "20 pulgadas",
+        "id": "p20"
+      },
+      {
+        "titulo": "30 pulgadas",
+        "id": "p30"
+      },
+      {
+        "titulo": "40 pulgadas",
+        "id": "p40"
+      }
+    ]
+  },
+  {
+    "id": "px5",
+    "name": "Grupo electrógeno y generador",
+    "stock": 200,
+    "precio": 50,
+    "nVentas": 400,
+    "categoria": {
+      "id": "cat-1",
+      "name": "Máquinas y herramientas"
+    },
+    "subcategoria": {
+      "id": "subcat-12",
+      "name" : "Herramientas para construcción"
+    },
+    "icono": "ci-iphone",
+    "ruta": "../assets/img/productos/rotomartillosyDemoledores.jpg",
+    "variedades": [
+      {
+        "titulo": "20 pulgadas",
+        "id": "p20"
+      },
+      {
+        "titulo": "30 pulgadas",
+        "id": "p30"
+      },
+      {
+        "titulo": "40 pulgadas",
+        "id": "p40"
+      }
+    ]
+  } ,
+  {
+    "id": "px6",
+    "name": "Carretillas y ruedas",
+    "stock": 200,
+    "precio": 50,
+    "nVentas": 400,
+    "categoria": {
+      "id": "cat-1",
+      "name": "Máquinas y herramientas"
+    },
+    "subcategoria": {
+      "id": "subcat-12",
+      "name" : "Herramientas para construcción"
+    },
+    "icono": "ci-iphone",
+    "ruta": "../assets/img/productos/rotomartillosyDemoledores.jpg",
+    "variedades": [
+      {
+        "titulo": "20 pulgadas",
+        "id": "p20"
+      },
+      {
+        "titulo": "30 pulgadas",
+        "id": "p30"
+      },
+      {
+        "titulo": "40 pulgadas",
+        "id": "p40"
+      }
+    ]
+  },
+  {
+    "id": "px6",
+    "name": "Palas y llanas",
+    "stock": 200,
+    "precio": 50,
+    "nVentas": 400,
+    "categoria": {
+      "id": "cat-1",
+      "name": "Máquinas y herramientas"
+    },
+    "subcategoria": {
+      "id": "subcat-12",
+      "name" : "Herramientas para construcción"
+    },
+    "icono": "ci-iphone",
+    "ruta": "../assets/img/productos/rotomartillosyDemoledores.jpg",
+    "variedades": [
+      {
+        "titulo": "20 pulgadas",
+        "id": "p20"
+      },
+      {
+        "titulo": "30 pulgadas",
+        "id": "p30"
+      },
+      {
+        "titulo": "40 pulgadas",
+        "id": "p40"
+      }
+    ]
+  },
+
+  {
+    "id": "px7",
+    "name": "Tijeras y cuchillas",
+    "stock": 200,
+    "precio": 50,
+    "nVentas": 400,
+    "categoria": {
+      "id": "cat-1",
+      "name": "Máquinas y herramientas"
+    },
+    "subcategoria": {
+      "id": "subcat-13",
+      "name" : "Herramientas manuales"
+    },
+    "icono": "ci-iphone",
+    "ruta": "../assets/img/productos/rotomartillosyDemoledores.jpg",
+    "variedades": [
+      {
+        "titulo": "20 pulgadas",
+        "id": "p20"
+      },
+      {
+        "titulo": "30 pulgadas",
+        "id": "p30"
+      },
+      {
+        "titulo": "40 pulgadas",
+        "id": "p40"
+      }
+    ]
+  },  {
+    "id": "px8",
+    "name": "Martillos y mazos",
+    "stock": 200,
+    "precio": 50,
+    "nVentas": 400,
+    "categoria": {
+      "id": "cat-1",
+      "name": "Máquinas y herramientas"
+    },
+    "subcategoria": {
+      "id": "subcat-13",
+      "name" : "Herramientas manuales"
+    },
+    "icono": "ci-iphone",
+    "ruta": "../assets/img/productos/rotomartillosyDemoledores.jpg",
+    "variedades": [
+      {
+        "titulo": "20 pulgadas",
+        "id": "p20"
+      },
+      {
+        "titulo": "30 pulgadas",
+        "id": "p30"
+      },
+      {
+        "titulo": "40 pulgadas",
+        "id": "p40"
+      }
+    ]
+  },  {
+    "id": "px9",
+    "name": "Desarmadores",
+    "stock": 200,
+    "precio": 50,
+    "nVentas": 400,
+    "categoria": {
+      "id": "cat-1",
+      "name": "Máquinas y herramientas"
+    },
+    "subcategoria": {
+      "id": "subcat-13",
+      "name" : "Herramientas manuales"
+    },
+    "icono": "ci-iphone",
+    "ruta": "../assets/img/productos/rotomartillosyDemoledores.jpg",
+    "variedades": [
+      {
+        "titulo": "20 pulgadas",
+        "id": "p20"
+      },
+      {
+        "titulo": "30 pulgadas",
+        "id": "p30"
+      },
+      {
+        "titulo": "40 pulgadas",
+        "id": "p40"
+      }
+    ]
+  },  {
+    "id": "px10",
+    "name": "Cintas métricas",
+    "stock": 200,
+    "precio": 50,
+    "nVentas": 400,
+    "categoria": {
+      "id": "cat-1",
+      "name": "Máquinas y herramientas"
+    },
+    "subcategoria": {
+      "id": "subcat-13",
+      "name" : "Herramientas manuales"
+    },
+    "icono": "ci-iphone",
+    "ruta": "../assets/img/productos/rotomartillosyDemoledores.jpg",
+    "variedades": [
+      {
+        "titulo": "20 pulgadas",
+        "id": "p20"
+      },
+      {
+        "titulo": "30 pulgadas",
+        "id": "p30"
+      },
+      {
+        "titulo": "40 pulgadas",
+        "id": "p40"
+      }
+    ]
+  },  {
+    "id": "px11",
+    "name": "Tanques de agua y accesorios",
+    "stock": 200,
+    "precio": 50,
+    "nVentas": 400,
+    "categoria": {
+      "id": "cat-2",
+      "name": "Gasfitería y Baño"
+    },
+    "subcategoria": {
+      "id": "subcat-21",
+        "name" : "Gasfitería"
+    },
+    "icono": "ci-iphone",
+    "ruta": "../assets/img/productos/rotomartillosyDemoledores.jpg",
+    "variedades": [
+      {
+        "titulo": "20 pulgadas",
+        "id": "p20"
+      },
+      {
+        "titulo": "30 pulgadas",
+        "id": "p30"
+      },
+      {
+        "titulo": "40 pulgadas",
+        "id": "p40"
+      }
+    ]
+  },  {
+    "id": "px12",
+    "name": "Bombas y accesorios",
+    "stock": 200,
+    "precio": 50,
+    "nVentas": 400,
+    "categoria": {
+      "id": "cat-2",
+      "name": "Gasfitería y Baño"
+    },
+    "subcategoria": {
+      "id": "subcat-21",
+        "name" : "Gasfitería"
+    },
+    "icono": "ci-iphone",
+    "ruta": "../assets/img/productos/rotomartillosyDemoledores.jpg",
+    "variedades": [
+      {
+        "titulo": "20 pulgadas",
+        "id": "p20"
+      },
+      {
+        "titulo": "30 pulgadas",
+        "id": "p30"
+      },
+      {
+        "titulo": "40 pulgadas",
+        "id": "p40"
+      }
+    ]
+  },  {
+    "id": "px13",
+    "name": "Filtros y purificadores de agua",
+    "stock": 200,
+    "precio": 50,
+    "nVentas": 400,
+    "categoria": {
+      "id": "cat-2",
+      "name": "Gasfitería y Baño"
+    },
+    "subcategoria": {
+      "id": "subcat-21",
+        "name" : "Gasfitería"
+    },
+    "icono": "ci-iphone",
+    "ruta": "../assets/img/productos/rotomartillosyDemoledores.jpg",
+    "variedades": [
+      {
+        "titulo": "20 pulgadas",
+        "id": "p20"
+      },
+      {
+        "titulo": "30 pulgadas",
+        "id": "p30"
+      },
+      {
+        "titulo": "40 pulgadas",
+        "id": "p40"
+      }
+    ]
+  },  {
+    "id": "px14",
+    "name": "Válvulas y llaves de paso",
+    "stock": 200,
+    "precio": 50,
+    "nVentas": 400,
+    "categoria": {
+      "id": "cat-2",
+      "name": "Gasfitería y Baño"
+    },
+    "subcategoria": {
+      "id": "subcat-21",
+        "name" : "Gasfitería"
+    },
+    "icono": "ci-iphone",
+    "ruta": "../assets/img/productos/rotomartillosyDemoledores.jpg",
+    "variedades": [
+      {
+        "titulo": "20 pulgadas",
+        "id": "p20"
+      },
+      {
+        "titulo": "30 pulgadas",
+        "id": "p30"
+      },
+      {
+        "titulo": "40 pulgadas",
+        "id": "p40"
+      }
+    ]
+  },  {
+    "id": "px15",
+    "name": "Herramientas  de gasfitería",
+    "stock": 200,
+    "precio": 50,
+    "nVentas": 400,
+    "categoria": {
+      "id": "cat-2",
+      "name": "Gasfitería y Baño"    },
+    "subcategoria": {
+      "id": "subcat-21",
+        "name" : "Gasfitería"
+    },
+    "icono": "ci-iphone",
+    "ruta": "../assets/img/productos/rotomartillosyDemoledores.jpg",
+    "variedades": [
+      {
+        "titulo": "20 pulgadas",
+        "id": "p20"
+      },
+      {
+        "titulo": "30 pulgadas",
+        "id": "p30"
+      },
+      {
+        "titulo": "40 pulgadas",
+        "id": "p40"
+      }
+    ]
+  },  {
+    "id": "px16",
+    "name": "Adhesivos y lubricantes",
+    "stock": 200,
+    "precio": 50,
+    "nVentas": 400,
+    "categoria": {
+      "id": "cat-2",
+      "name": "Gasfitería y Baño"
+    },
+    "subcategoria": {
+      "id": "subcat-21",
+        "name" : "Gasfitería"
+    },
+    "icono": "ci-iphone",
+    "ruta": "../assets/img/productos/rotomartillosyDemoledores.jpg",
+    "variedades": [
+      {
+        "titulo": "20 pulgadas",
+        "id": "p20"
+      },
+      {
+        "titulo": "30 pulgadas",
+        "id": "p30"
+      },
+      {
+        "titulo": "40 pulgadas",
+        "id": "p40"
+      }
+    ]
+  },  {
+    "id": "px17",
+    "name": "Sumideros y registros",
+    "stock": 200,
+    "precio": 50,
+    "nVentas": 400,
+    "categoria": {
+      "id": "cat-2",
+      "name": "Gasfitería y Baño"
+    },
+    "subcategoria": {
+      "id": "subcat-21",
+        "name" : "Gasfitería"
+    },
+    "icono": "ci-iphone",
+    "ruta": "../assets/img/productos/rotomartillosyDemoledores.jpg",
+    "variedades": [
+      {
+        "titulo": "20 pulgadas",
+        "id": "p20"
+      },
+      {
+        "titulo": "30 pulgadas",
+        "id": "p30"
+      },
+      {
+        "titulo": "40 pulgadas",
+        "id": "p40"
+      }
+    ]
+  },  {
+    "id": "px18",
+    "name": "Instalación de gas",
+    "stock": 200,
+    "precio": 50,
+    "nVentas": 400,
+    "categoria": {
+      "id": "cat-2",
+      "name": "Gasfitería y Baño"
+    },
+    "subcategoria": {
+      "id": "subcat-21",
+        "name" : "Gasfitería"
+    },
+    "icono": "ci-iphone",
+    "ruta": "../assets/img/productos/rotomartillosyDemoledores.jpg",
+    "variedades": [
+      {
+        "titulo": "20 pulgadas",
+        "id": "p20"
+      },
+      {
+        "titulo": "30 pulgadas",
+        "id": "p30"
+      },
+      {
+        "titulo": "40 pulgadas",
+        "id": "p40"
+      }
+    ]
+  }, {
+    "id": "px19",
+    "name": "Ductos de ventilación",
+    "stock": 200,
+    "precio": 50,
+    "nVentas": 400,
+    "categoria": {
+      "id": "cat-2",
+      "name": "Gasfitería y Baño"
+    },
+    "subcategoria": {
+      "id": "subcat-21",
+        "name" : "Gasfitería"
+    },
+    "icono": "ci-iphone",
+    "ruta": "../assets/img/productos/rotomartillosyDemoledores.jpg",
+    "variedades": [
+      {
+        "titulo": "20 pulgadas",
+        "id": "p20"
+      },
+      {
+        "titulo": "30 pulgadas",
+        "id": "p30"
+      },
+      {
+        "titulo": "40 pulgadas",
+        "id": "p40"
+      }
+    ]
+  }
+]

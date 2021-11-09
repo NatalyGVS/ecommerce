@@ -1,7 +1,10 @@
+import { ConfiguracionService } from './../../../services/configuracion.service';
+
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 declare var noUiSlider;
 declare var $: any; //importar jquery
+declare var tns;
 
 @Component({
   selector: 'app-index-producto',
@@ -9,10 +12,11 @@ declare var $: any; //importar jquery
   styleUrls: ['./index-producto.component.css'],
 })
 export class IndexProductoComponent implements OnInit {
-  public configuracion_categorias: any[];
-  public configuracion_categorias_original: any[];
-  public productos: any[];
-  public productos_original: any[];
+  public categorias: any[];
+  public categoriaActual: any = {};
+  public subcategorias: any[];
+  public productos: any[] = [];
+  public productos_original: any[] = [];
 
   public filter_category = '';
   public filter_product = '';
@@ -33,32 +37,45 @@ export class IndexProductoComponent implements OnInit {
     cantidad: 1,
   };
   public btn_cart = false;
-  constructor(private _route: ActivatedRoute) {
-    this.configuracion_categorias = JSON.parse(
-      localStorage.getItem('categorias')
-    );
-    this.configuracion_categorias_original = JSON.parse(
-      localStorage.getItem('categorias')
-    );
-    this.productos_original = JSON.parse(localStorage.getItem('productos'));
-
-    this._route.params.subscribe((params) => {
-      this.route_category = params['categoria'];
-      this.productos = JSON.parse(localStorage.getItem('productos'));
-
-      if (this.route_category) {
-        // si estoy enviando ruta
-        this.productos = JSON.parse(localStorage.getItem('productos')).filter(
-          (px) => px.categoria == this.route_category
-        );
-      } else {
-        this.productos = JSON.parse(localStorage.getItem('productos'));
-      }
+  constructor(
+    private _route: ActivatedRoute,
+    private _configuracionService: ConfiguracionService
+  ) {
+    //llenado de categorias
+    this._configuracionService.get_categorias().subscribe((response) => {
+      this.categorias = response;
+      console.log('cat', response);
     });
 
-    setTimeout(() => {
+    //llenado de productos
+    this._configuracionService.get_productos().subscribe((response) => {
+      this._route.params.subscribe((params) => {
+        this.route_category = params['id'];
+        console.log('this.route_category', this.route_category);
+
+        this.categoriaActual = this.categorias.find(
+          (x) => x.id == this.route_category
+        );
+
+        if (this.route_category) {
+          // si estoy enviando ruta
+          this.productos = response.filter(
+            (px) => px.categoria.id == this.route_category
+          );
+
+          console.log(' this.productos', this.productos);
+          //llenar subcategorias
+          this.subcategorias = this.categorias.find(
+            (element) => element.id == this.route_category
+          ).subcategorias;
+
+          console.log('------>this.subcategorias', this.subcategorias);
+        } else {
+          this.productos = response;
+        }
+      });
       this.load_data = false;
-    }, 1500);
+    });
   }
 
   ngOnInit(): void {
@@ -84,6 +101,46 @@ export class IndexProductoComponent implements OnInit {
       $('.cs-range-slider-value-max').val(values[1]);
     });
     $('.noUi-tooltip').css('font-size', '11px');
+    $('#custom-controls-trending').css({ display: 'flex' });
+
+    // CAROUSEL SUBCATEGORIAS
+    setTimeout(() => {
+      tns({
+        container: '.cs-carousel-inner-subcategorias',
+        nav: false,
+        autoplay: true,
+        autoplayButton: false,
+        autoplayButtonOutput: false,
+
+        controlsText: [
+          '<i class="cxi-arrow-left"></i>',
+          '<i class="cxi-arrow-right"></i>',
+        ],
+        controlsContainer: '#custom-controls-trending',
+        responsive: {
+          0: {
+            items: 1,
+            gutter: 20,
+          },
+          480: {
+            items: 3,
+            gutter: 24,
+          },
+          700: {
+            items: 4,
+            gutter: 24,
+          },
+          900: {
+            items: 5,
+            gutter: 24,
+          },
+          1000: {
+            items: 7,
+            gutter: 30,
+          },
+        },
+      });
+    }, 2000);
   }
 
   buscar_categorias() {
@@ -91,19 +148,17 @@ export class IndexProductoComponent implements OnInit {
     //Validacion
     if (this.filter_category) {
       var search = new RegExp(this.filter_category, 'i');
-      this.configuracion_categorias = this.configuracion_categorias.filter(
-        (category) => search.test(category.name)
+      this.categorias = this.categorias.filter((category) =>
+        search.test(category.name)
       );
     } else {
-      this.configuracion_categorias = this.configuracion_categorias_original;
+      this._configuracionService.get_categorias().subscribe((response) => {
+        this.categorias = response;
+      });
     }
   }
 
   buscar_producto() {
-    // this.productos = this.productos_original.filter(
-    //   (px) => (px.name = this.filter_product)
-    // );
-
     //Validacion
 
     if (this.filter_product) {
@@ -114,6 +169,7 @@ export class IndexProductoComponent implements OnInit {
     } else {
       this.productos = this.productos_original;
     }
+
     setTimeout(() => {
       this.load_data = false;
     }, 1500);
@@ -190,7 +246,10 @@ export class IndexProductoComponent implements OnInit {
   agregar_producto(producto) {
     if (this.dataCarrito.cantidad <= producto.stock) {
       let data = {
-        id : 'C00'+ producto.id+ JSON.parse(localStorage.getItem('user_data')).dni,
+        id:
+          'C00' +
+          producto.id +
+          JSON.parse(localStorage.getItem('user_data')).dni,
         producto: producto.id,
         cliente: JSON.parse(localStorage.getItem('user_data')).dni,
         cantidad: 1,
@@ -198,23 +257,18 @@ export class IndexProductoComponent implements OnInit {
         titulo_variedad: 'Pulgadas',
         ruta: producto.ruta,
         name: producto.name,
-        precio : producto.precio
-
+        precio: producto.precio,
       };
       this.btn_cart = true;
 
       setTimeout(() => {
-
-
         //Agregar al carrito actual
         let carritoGeneral = localStorage.getItem('carrito_compras');
         // if (carritoGeneral) carritoGeneral.split(',');
         console.log('carritoGeneral', carritoGeneral);
         let carritoTotal;
         if (carritoGeneral) {
-          carritoGeneral = JSON.parse(
-            localStorage.getItem('carrito_compras')
-          );
+          carritoGeneral = JSON.parse(localStorage.getItem('carrito_compras'));
           carritoTotal = [...carritoGeneral, ...[data]];
           console.log('carritoTotal', carritoTotal);
         } else {
@@ -230,4 +284,6 @@ export class IndexProductoComponent implements OnInit {
       console.log('la maxima cantidad disponible es ', producto.stock);
     }
   }
+
+ 
 }

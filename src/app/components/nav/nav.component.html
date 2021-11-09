@@ -3,14 +3,14 @@
 
   <!-- Navbar -->
   <!-- Remove "navbar-sticky" class to make navigation bar scrollable with the page -->
-  <div class="navbar navbar-expand-lg navbar-light bg-light navbar-sticky" data-fixed-element>
+  <div class="navbar navbar-expand-lg navbar-light bg-light navbar-sticky " data-fixed-element>
     <div class="container px-0 px-xl-3">
-      <a href="index.html" class="mr-0 navbar-brand order-lg-1 pr-lg-3 mr-lg-4">
-        <img src="assets/img/ecommerce/logo.svg" alt="Createx Logo" width="130">
+      <a [routerLink]="['/']" class="mr-0 navbar-brand order-lg-1 pr-lg-3 mr-lg-4">
+        <img src="assets/img/logo.png" alt="Logo Ferri" width="110">
       </a>
       <!-- Search desktop -->
       <div class="ml-4 input-group-overlay d-lg-block d-none order-lg-3" style="max-width: 21rem;">
-        <input class="form-control appended-form-control" type="text" placeholder="Search for products...">
+        <input class="form-control appended-form-control" type="text" placeholder="Buscar...">
         <div class="input-group-append-overlay">
           <span class="input-group-text"><i class="align-middle cxi-search lead"></i></span>
         </div>
@@ -82,7 +82,7 @@
         <!-- Search mobile -->
         <div class="mb-0 input-group-overlay form-group d-lg-none d-block">
           <input type="text" class="border-0 form-control prepended-form-control rounded-0"
-            placeholder="Search for products...">
+            placeholder="Buscar producto">
           <div class="input-group-prepend-overlay">
             <span class="input-group-text">
               <i class="align-middle cxi-search font-size-lg mt-n1"></i>
@@ -90,28 +90,45 @@
           </div>
         </div>
         <!-- Menu -->
-        <ul class="mr-auto navbar-nav">
-          <li class="nav-item">
-            <a [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
-              class="nav-link">Inicio</a>
+        <ul class="mr-auto navbar-nav bg-dark d-flex d-md-none">
+          <li class="py-0 my-0 nav-item dropdown mega-dropdown" *ngFor="let categoria of categorias">
+            <a [routerLink]=" ['/productos/categoria/', categoria.id]" routerLinkActive="active"
+              [routerLinkActiveOptions]="{exact: true}" class="text-center text-white nav-link"
+              (click)="pintarNavSelected()" data-toggle="dropdown">{{categoria.name}}</a>
+            <div class="dropdown-menu bg-light">
+              <div class="container pt-lg-1 pb-lg-3">
+                <div class="row">
+                  <div class="py-2 col-12 col-sm-6 " *ngFor="let sub of categoria.subcategorias">
+                    <h4 class="pt-1 mb-2 font-size-sm text-uppercase">{{sub.name}}</h4>
+                    <ul class="list-unstyled">
+                      <li *ngFor="let px of sub.productos"><a href="#" class="dropdown-item text-dark">{{px.name}}</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
           </li>
+        </ul>
+
+        <!-- <ul class="mr-auto navbar-nav">    
           <li class="nav-item dropdown">
             <a [routerLink]="['/productos']" routerLinkActive="active" class="nav-link dropdown-toggle"
               data-toggle="dropdown">Tienda</a>
             <ul class="dropdown-menu">
-              <li *ngFor="let category of configuracion_categorias;">
-                <a [routerLink]="['/productos/categoria/', category.name]" class="dropdown-item">
+              <li *ngFor="let category of categorias;">
+                <a [routerLink]="['/productos/categoria/', category.id]" class="dropdown-item">
                   <i class="cxi-profile"></i> &nbsp;
                   {{category.name}}
                 </a>
               </li>
             </ul>
-          </li>
-          <li class="nav-item">
+          </li> -->
+        <!-- <li class="nav-item">
             <a [routerLink]="['/contacto']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
               class="nav-link">Contacto</a>
-          </li>
-          <li class="nav-item dropdown mega-dropdown">
+          </li> -->
+        <!-- <li class="nav-item dropdown mega-dropdown">
             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Megamenu</a>
             <div class="dropdown-menu">
               <div class="container pt-lg-1 pb-lg-3">
@@ -186,13 +203,42 @@
                 </div>
               </div>
             </div>
-          </li>
+          </li> -->
 
-        </ul>
+        <!-- </ul> -->
       </nav>
     </div>
   </div>
 </header>
+
+
+<!-- Dark navbar (change to .container-fluid for full width navbar) -->
+<div class="py-0 navbar navbar-expand-lg navbar-dark bg-dark navbar-fixed-top sticky-top d-none d-md-flex">
+  <div class="container px-0 px-xl-3 row col-12 justify-content-center">
+    <ul class="nav nav-category">
+      <li class="py-0 my-0 nav-item dropdown mega-dropdown" *ngFor="let categoria of categorias">
+        <a id="{{categoria.id}}" (click)=" refrescarPantalla(categoria.id)" routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact: true}" class="text-center nav-link"
+          data-toggle="dropdown">{{categoria.name}}</a>
+        <div class="dropdown-menu ">
+          <div class="container pt-lg-1 pb-lg-3">
+            <div class="row">
+              <div class="py-2 col-md-3" *ngFor="let sub of categoria.subcategorias">
+                <h4 class="pt-1 mb-2 font-size-sm text-uppercase">{{sub.name}}</h4>
+                <ul class="list-unstyled">
+                  <li *ngFor="let px of sub.productos"><a href="#" class="dropdown-item text-dark">{{px.name}}</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+
+  </div>
+</div>
+
+
 
 <div id="cart" class="cs-offcanvas cs-offcanvas-right">
 

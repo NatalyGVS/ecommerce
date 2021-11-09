@@ -54,21 +54,9 @@ export class ShowProductoComponent implements OnInit {
         navContainer: '#cs-thumbnails',
         navAsThumbnails: true,
         gutter: 15,
+        autoplay: true,
+        autoplayButton: false,
       });
-
-      //la lupa q se acerca al slider
-      var e = document.querySelectorAll('.cs-gallery');
-      if (e.length) {
-        for (var t = 0; t < e.length; t++) {
-          lightGallery(e[t], {
-            selector: '.cs-gallery-item',
-            download: !1,
-            videojs: !0,
-            youtubePlayerParams: { modestbranding: 1, showinfo: 0, rel: 0 },
-            vimeoPlayerParams: { byline: 0, portrait: 0 },
-          });
-        }
-      }
 
       //inicializar segundo slider
       tns({
@@ -81,8 +69,8 @@ export class ShowProductoComponent implements OnInit {
         controlsPosition: 'top',
         mouseDrag: !0,
         speed: 600,
-        autoplayHoverPause: !0,
-        autoplayButtonOutput: !1,
+        // autoplayHoverPause: !0,
+        // autoplayButtonOutput: !1,
         nav: false,
         controlsContainer: '#custom-controls-related',
         responsive: {
@@ -104,13 +92,30 @@ export class ShowProductoComponent implements OnInit {
           },
         },
       });
+
+      //la lupa q se acerca al slider
+      var e = document.querySelectorAll('.cs-gallery');
+      if (e.length) {
+        for (var t = 0; t < e.length; t++) {
+          lightGallery(e[t], {
+            selector: '.cs-gallery-item',
+            download: !1,
+            videojs: !0,
+            youtubePlayerParams: { modestbranding: 1, showinfo: 0, rel: 0 },
+            vimeoPlayerParams: { byline: 0, portrait: 0 },
+          });
+        }
+      }
     }, 500);
   }
   agregar_producto() {
     if (this.dataCarrito.variedad) {
       if (this.dataCarrito.cantidad <= this.producto.stock) {
         let data = {
-          id : 'C00'+ this.producto.id+ JSON.parse(localStorage.getItem('user_data')).dni,
+          id:
+            'C00' +
+            this.producto.id +
+            JSON.parse(localStorage.getItem('user_data')).dni,
           producto: this.producto.id,
           cliente: JSON.parse(localStorage.getItem('user_data')).dni,
           cantidad: this.dataCarrito.cantidad,
@@ -118,7 +123,7 @@ export class ShowProductoComponent implements OnInit {
           titulo_variedad: 'Pulgadas',
           ruta: this.producto.ruta,
           name: this.producto.name,
-          precio : this.producto.precio
+          precio: this.producto.precio,
         };
         this.btn_cart = true;
 

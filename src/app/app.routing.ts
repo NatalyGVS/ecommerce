@@ -43,7 +43,7 @@ const appRoute: Routes = [
     canActivate: [AuthGuard],
   },
   { path: 'productos', component: IndexProductoComponent },
-  { path: 'productos/categoria/:categoria', component: IndexProductoComponent },
+  { path: 'productos/categoria/:id', component: IndexProductoComponent },
   { path: 'productos/:id', component: ShowProductoComponent },
 
   { path: 'contacto', component: ContactoComponent },

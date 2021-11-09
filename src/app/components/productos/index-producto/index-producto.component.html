@@ -1,17 +1,50 @@
 <app-nav></app-nav>
 <main class="cs-page-wrapper">
   <!-- Breadcrumb -->
-  <nav class="mb-3 bg-secondary" aria-label="breadcrumb">
+  <nav class="mb-0 bg-secondary" aria-label="breadcrumb">
     <div class="container">
       <ol class="mb-0 breadcrumb breadcrumb-alt">
         <li class="breadcrumb-item">
           <a [routerLink]="['/']"><i class="cxi-home"></i></a>
         </li>
 
-        <li class="breadcrumb-item active" aria-current="page">Todos los productos</li>
+        <li class="breadcrumb-item active" aria-current="page">{{categoriaActual.name}}</li>
       </ol>
     </div>
   </nav>
+
+  <!-- Trending products (carousel) -->
+  <section class="py-0" style="background-color: #e5e8ed;">
+    <div class="container py-2 my-0">
+      <div class="pb-0 mb-1 d-flex justify-content-end">
+        <div class="tns-custom-controls cs-controls-inverse " id="custom-controls-trending" tabindex="0">
+          <button type="button" data-controls="prev" tabindex="-1">
+            <i class="cxi-arrow-left"></i>
+          </button>
+          <button type="button" data-controls="next" tabindex="-1">
+            <i class="cxi-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+      <div class="pb-2 cs-carousel">
+        <div class="cs-carousel-inner cs-carousel-inner-subcategorias" data-carousel-options='{
+            }'>
+
+          <div *ngFor="let item of subcategorias">
+            <a [routerLink]="['/productos/categoria/', item.name]"
+              class="text-center d-block cs-image-scale cs-heading-highlight">
+              <div class="mx-auto mb-4 cs-image-inner parent-img-sub-category" style="height: 150px;">
+                <img src={{item.ruta}} alt="{{item.name}}">
+              </div>
+              <h6 class="mb-3 h6">{{item.name}}</h6>
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
 
   <!-- Contenido de la pagina -->
   <!-- Page container -->
@@ -57,7 +90,7 @@
               <option value="21">21</option>
               <option value="28">28</option>
             </select>
-            <span class="ml-2 font-size-sm text-muted text-nowrap d-none d-lg-block">productor por página</span>
+            <span class="ml-2 font-size-sm text-muted text-nowrap d-none d-lg-block">productos por página</span>
           </div>
           <ngb-pagination [(page)]="page" [pageSize]="pageSize" [collectionSize]="productos.length">
           </ngb-pagination>
@@ -140,7 +173,7 @@
                         </label>
                       </div>
                     </li>
-                    <li class="cs-filter-item" *ngFor="let categoria of configuracion_categorias;let indice = index">
+                    <li class="cs-filter-item" *ngFor="let categoria of categorias;let indice = index">
                       <div class="custom-control custom-checkbox">
                         <input type="radio" name="group1" (change)="buscar_por_categoria()" class="custom-control-input"
                           id="blazers-{{indice}}" value="{{categoria.name}}" [(ngModel)]="filter_cat_productos">

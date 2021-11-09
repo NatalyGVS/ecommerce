@@ -1,3 +1,4 @@
+import { ConfiguracionService } from './../../services/configuracion.service';
 import { Component, OnInit } from '@angular/core';
 declare var tns;
 @Component({
@@ -7,16 +8,25 @@ declare var tns;
 })
 export class InicioComponent implements OnInit {
   public productos: any[];
-  public configuracion_categorias: any[];
+  public categorias: any[];
+  public banners;
 
-  constructor() {
+  constructor(private _configuracionService: ConfiguracionService) {
     this.productos = JSON.parse(localStorage.getItem('productos'));
-    this.configuracion_categorias = JSON.parse(
-      localStorage.getItem('categorias')
-    );
   }
 
   ngOnInit(): void {
+    //llenado de categorias
+    this._configuracionService.get_categorias().subscribe((response) => {
+      this.categorias = response;
+    });
+
+    //productos populares
+
+    this._configuracionService.get_productos().subscribe((response) => {
+      this.productos = response;
+    });
+
     setTimeout(() => {
       tns({
         container: '.cs-carousel-inner',
@@ -26,31 +36,17 @@ export class InicioComponent implements OnInit {
         ],
         mode: 'gallery',
         navContainer: '#pager',
+        loop: true,
+        speed: 200,
+        autoplay: true,
+        autoplayButton: false,
+        autoplayButtonOutput: false,
         responsive: {
           0: { controls: false },
           991: { controls: true },
         },
-      });
-
-      tns({
-        container: '.cs-carousel-inner-two',
         controls: false,
-        responsive: {
-          0: {
-            gutter: 20,
-          },
-          400: {
-            items: 2,
-            gutter: 20,
-          },
-          520: {
-            gutter: 30,
-          },
-          768: {
-            items: 3,
-            gutter: 30,
-          },
-        },
+        mouseDrag: !0,
       });
 
       tns({
@@ -128,17 +124,6 @@ export class InicioComponent implements OnInit {
           750: { items: 4 },
           1000: { items: 5 },
           1250: { items: 6 },
-        },
-      });
-
-      tns({
-        container: '.cs-carousel-inner-six',
-        controls: false,
-        gutter: 15,
-        responsive: {
-          0: { items: 2 },
-          500: { items: 3 },
-          1200: { items: 3 },
         },
       });
     }, 500);

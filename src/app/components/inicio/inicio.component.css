@@ -1,0 +1,36 @@
+.bg-sl-1 {
+  background: url(/../../assets/img/inicio/carousel-slider/01.jpeg) center
+    no-repeat;
+
+  height: 100%;
+  width: 100vw;
+  justify-content: center;
+  background-size: contain;
+  background-position: center;
+}
+
+.bg-sl-2 {
+  background: url(/../../assets/img/inicio/carousel-slider/06.jpg) center
+    no-repeat;
+
+  height: 100%;
+  width: 100vw !important;
+  justify-content: center;
+  background-size: contain;
+  background-position: center;
+}
+
+.btn-outline-primary {
+  background-color: black;
+  color: white;
+}
+
+.btn-outline-primary:hover {
+  background-color: #00aa8e;
+  color: white;
+  border: none;
+}
+
+.parent-img-category > img {
+  height: 200px;
+}

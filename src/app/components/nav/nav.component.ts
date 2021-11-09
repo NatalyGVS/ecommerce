@@ -1,6 +1,8 @@
+import { ConfiguracionService } from './../../services/configuracion.service';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 declare var $;
+
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
@@ -8,22 +10,22 @@ declare var $;
 })
 export class NavComponent implements OnInit {
   public user_ls: any = undefined;
-  public configuracion_categorias: any[];
+  public categorias: any[];
 
   public carrito_compras_cart = false;
   public data_carrito_compras: any[] = [];
   public subtotal = 0;
 
-  constructor(private _router: Router) {
+  constructor(
+    private _router: Router,
+    private _configuracionService: ConfiguracionService
+  ) {
     if (localStorage.getItem('user_data')) {
       this.user_ls = JSON.parse(localStorage.getItem('user_data'));
     } else {
       this.user_ls = undefined;
     }
-    this.configuracion_categorias = JSON.parse(
-      localStorage.getItem('categorias')
-    );
-    console.log('configuracion_categorias', this.configuracion_categorias);
+
     if (localStorage.getItem('carrito_compras')) {
       this.data_carrito_compras = JSON.parse(
         localStorage.getItem('carrito_compras')
@@ -31,11 +33,15 @@ export class NavComponent implements OnInit {
     } else {
       this.data_carrito_compras = [];
     }
-
     this.calcular_carrito();
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    //llenado de categorias
+    this._configuracionService.get_categorias().subscribe((response) => {
+      this.categorias = response;
+    });
+  }
   logout() {
     window.location.reload();
     localStorage.clear();
@@ -85,5 +91,22 @@ export class NavComponent implements OnInit {
     );
     this.calcular_carrito();
     console.log('neivo carrito', this.data_carrito_compras);
+  }
+
+  pintarNavSelected(id) {
+    $('.nav.nav-category > .nav-item').removeClass('active-parent');
+    $('#' + id)
+      .parent()
+      .addClass('active-parent');
+    console.log('selectsdddd', $('#' + id));
+  }
+
+  refrescarPantalla(id) {
+    this._router.navigate(['/productos/categoria/', id]).then(() => {
+      window.location.reload();
+      // setTimeout(() => {
+      this.pintarNavSelected(id);
+      // }, 2000);
+    });
   }
 }

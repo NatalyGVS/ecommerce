@@ -1,0 +1,25 @@
+/* ------------ SEARCH RESULTS ---------------- */
+.search-results {
+  background-color: var(--main-color-3);
+}
+.result-item {
+  margin: 15px;
+  text-align: center;
+}
+.result-item img {
+  max-height: 90px;
+  display: block;
+  margin: auto;
+}
+.result-item h3 {
+  font-size: 13px;
+  margin-top: 10px;
+}
+.owl-dots {
+  display: none;
+}
+
+.parent-img-sub-category > img {
+  height: 150px;
+  width: auto;
+}
