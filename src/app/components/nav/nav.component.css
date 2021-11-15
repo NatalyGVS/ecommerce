@@ -28,3 +28,9 @@
 .active-parent {
   background-color: #17696a !important;
 }
+
+
+
+.navbar .li-menu{
+  padding: 2.3px;
+}

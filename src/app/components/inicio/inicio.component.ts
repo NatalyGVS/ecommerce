@@ -11,22 +11,23 @@ export class InicioComponent implements OnInit {
   public categorias: any[];
   public banners;
 
-  constructor(private _configuracionService: ConfiguracionService) {
-    this.productos = JSON.parse(localStorage.getItem('productos'));
-  }
+  constructor(private _configuracionService: ConfiguracionService) {}
 
   ngOnInit(): void {
     //llenado de categorias
-    this._configuracionService.get_categorias().subscribe((response) => {
+    this._configuracionService.getCategorias().subscribe((response) => {
       this.categorias = response;
     });
 
     //productos populares
-
-    this._configuracionService.get_productos().subscribe((response) => {
+    this._configuracionService.getProductos().subscribe((response) => {
       this.productos = response;
     });
 
+    this.inicializacionCarousel();
+  }
+
+  inicializacionCarousel() {
     setTimeout(() => {
       tns({
         container: '.cs-carousel-inner',

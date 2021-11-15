@@ -6,21 +6,22 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root',
 })
-export class ClienteService {
+export class UserService {
   public url;
-
+  public user;
   constructor(private _http: HttpClient) {
     this.url = GLOBAL.url;
   }
 
-  login_cliente(data): Observable<any> {
-    let headers = new HttpHeaders().set('Content-Type', 'application/json');
-    return this._http.post(this.url + 'login_cliente', data, {
-      headers: headers,
-    });
+  getUsuario() {
+    let user = JSON.parse(localStorage.getItem('user_data'));
+
+    this.user = user != undefined ? user : null;
+    return this.user;
   }
 
-  get_envios():Observable<any>{
+  getEnvios(): Observable<any> {
     return this._http.get('./assets/envios.json');
   }
+  
 }

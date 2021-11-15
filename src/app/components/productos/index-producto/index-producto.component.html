@@ -8,49 +8,19 @@
           <a [routerLink]="['/']"><i class="cxi-home"></i></a>
         </li>
 
-        <li class="breadcrumb-item active" aria-current="page">{{categoriaActual.name}}</li>
+        <li class="breadcrumb-item" aria-current="page">
+          <a [routerLink]="['/productos/categoria', categoriaActual.id]"> {{categoriaActual.name}}</a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">{{subCategoriaActual.name}}</li>
+
       </ol>
     </div>
   </nav>
 
-  <!-- Trending products (carousel) -->
-  <section class="py-0" style="background-color: #e5e8ed;">
-    <div class="container py-2 my-0">
-      <div class="pb-0 mb-1 d-flex justify-content-end">
-        <div class="tns-custom-controls cs-controls-inverse " id="custom-controls-trending" tabindex="0">
-          <button type="button" data-controls="prev" tabindex="-1">
-            <i class="cxi-arrow-left"></i>
-          </button>
-          <button type="button" data-controls="next" tabindex="-1">
-            <i class="cxi-arrow-right"></i>
-          </button>
-        </div>
-      </div>
-      <div class="pb-2 cs-carousel">
-        <div class="cs-carousel-inner cs-carousel-inner-subcategorias" data-carousel-options='{
-            }'>
-
-          <div *ngFor="let item of subcategorias">
-            <a [routerLink]="['/productos/categoria/', item.name]"
-              class="text-center d-block cs-image-scale cs-heading-highlight">
-              <div class="mx-auto mb-4 cs-image-inner parent-img-sub-category" style="height: 150px;">
-                <img src={{item.ruta}} alt="{{item.name}}">
-              </div>
-              <h6 class="mb-3 h6">{{item.name}}</h6>
-            </a>
-          </div>
-
-        </div>
-      </div>
-
-    </div>
-  </section>
-
   <!-- Contenido de la pagina -->
-  <!-- Page container -->
   <section class="container pt-3 pb-5 mb-2 pb-md-6 mb-lg-0">
 
-    <!-- Toolbar + Pagination -->
+    <!-- Toolbar + Paginacion -->
     <div class="pb-2 mb-4 row">
       <div class="mb-3 col-md-3 pr-lg-4 mb-md-0">
 
@@ -63,7 +33,7 @@
         <button type="button" class="mt-0 btn btn-primary btn-block d-lg-none" data-toggle="offcanvas"
           data-target="filtersOffcanvas">
           <i class="mr-1 cxi-filter-2"></i>
-          Show filters
+          Mostrar filtros
         </button>
       </div>
 
@@ -101,7 +71,7 @@
     <div class="row flex-lg-nowrap">
 
 
-      <!-- Filters (sidebar) -->
+      <!-- Filtros (sidebar) -->
       <div id="filtersSidebar" class="col-lg-3 pr-lg-4">
         <div id="filtersOffcanvas" class="cs-offcanvas cs-offcanvas-collapse">
           <div class="mb-3 cs-offcanvas-cap align-items-center border-bottom">
@@ -246,12 +216,32 @@
         <div *ngIf="!load_data" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3" data-filters-columns>
 
           <ng-container *ngIf="productos.length ==0">
-            <div class="col-lg-12 col-md-5">
-              <h3 class="mb-2 h6 text-uppercase">No se encontraron productos</h3>
-              <h2 class="h1 pb-lg-3">Es posible que sea un error</h2>
-
+            <div class="col-lg-12 row">
+              <!-- <h3 class="mb-2 h3 text-uppercase">No encontramos tu búsqueda</h3>
+              <h2 class="h3 pb-lg-3">Por favor intenta con otra palabra</h2>
               <a style="cursor: pointer;" class="btn btn-gradient btn-hover-shadow" (click)="reset_productos()">Mostrar
-                todos los productos</a>
+                todos los productos</a> -->
+
+              <!-- <div class="col-lg-12 col-md-5">
+                    <h3 class="mb-2 h3 text-uppercase">No encontramos tu búsqueda</h3>
+                    <h2 class="h3 pb-lg-3">Por favor intenta con otra palabra</h2>
+                    <a style="cursor: pointer;" class="btn btn-gradient btn-hover-shadow" (click)="reset_productos()">Mostrar
+                      todos los productos</a>
+                  </div> -->
+
+              <div class="col-lg-4">
+
+                <img src="assets/img/no-encontrado.jpg" alt="" style="width:100%;">
+              </div>
+              <div class="my-auto col-lg-8">
+
+                <dl style="font-size : 1.5rem !important;">
+                  <dt>No encontramos tu búsqueda 😯</dt>
+                  <dd>Por favor intenta con otro filtro</dd>
+                </dl>
+              </div>
+
+
             </div>
           </ng-container>
 
@@ -290,7 +280,7 @@
                   <div class="pb-1 mb-2 d-flex align-items-center">
                     <div class="row">
                       <div class="col-12">
-                        <a href="">{{producto.categoria}}</a>
+                        <a href="">{{producto.subcategoria.name}}</a>
 
                       </div>
                     </div>

@@ -1,4 +1,4 @@
-import { ClienteService } from './../../services/cliente.service';
+import { UserService } from './../../services/user.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -10,10 +10,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   public user: any = {};
   public user_data: any = {};
-  constructor(
-    private _clienteService: ClienteService,
-    private _router: Router
-  ) {
+  constructor(private _UserService: UserService, private _router: Router) {
     //if esta logueado
 
     if (localStorage.getItem('user_data')) this._router.navigate(['/']);
@@ -40,21 +37,22 @@ export class LoginComponent implements OnInit {
         email: 'nataly.vasquez9718@gmail.com',
         dni: '75715222',
         celular: '97999999',
-        direcciones:[{
-          id: 1,
-          cliente: '75715222',
-          destinatario:'Duvan Saenz',
-          dni: '7777777',
-          zip: '005',
-          direccion: 'Jr Argentina 201',
-          telefono: '97999999',
-          pais: 'Perú',
-          distrito: 'Comas',
-          provincia: "Lima ",
-          region: "Lima",
-          principal: true,
-
-        }]
+        direcciones: [
+          {
+            id: 1,
+            cliente: '75715222',
+            destinatario: 'Duvan Saenz',
+            dni: '7777777',
+            zip: '005',
+            direccion: 'Jr Argentina 201',
+            telefono: '97999999',
+            pais: 'Perú',
+            distrito: 'Comas',
+            provincia: 'Lima ',
+            region: 'Lima',
+            principal: true,
+          },
+        ],
       };
 
       //Pasarle nombre de usuario al nav

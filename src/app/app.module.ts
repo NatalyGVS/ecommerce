@@ -23,6 +23,7 @@ import { DireccionesComponent } from './components/usuario/direcciones/direccion
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { IndexPedidosComponent } from './components/usuario/pedidos/index-pedidos/index-pedidos.component';
 import { DetallePedidoComponent } from './components/usuario/pedidos/detalle-pedido/detalle-pedido.component';
+import { IndexCategoriasComponent } from './components/productos/index-categorias/index-categorias.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { DetallePedidoComponent } from './components/usuario/pedidos/detalle-ped
     ContactoComponent,
     IndexPedidosComponent,
     DetallePedidoComponent,
+    IndexCategoriasComponent,
   ],
   imports: [
     BrowserModule,

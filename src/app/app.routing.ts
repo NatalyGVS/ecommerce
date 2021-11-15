@@ -1,3 +1,4 @@
+import { IndexCategoriasComponent } from './components/productos/index-categorias/index-categorias.component';
 import { DetallePedidoComponent } from './components/usuario/pedidos/detalle-pedido/detalle-pedido.component';
 import { IndexPedidosComponent } from './components/usuario/pedidos/index-pedidos/index-pedidos.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
@@ -42,8 +43,14 @@ const appRoute: Routes = [
     component: CarritoComponent,
     canActivate: [AuthGuard],
   },
-  { path: 'productos', component: IndexProductoComponent },
+  // { path: 'productos', component: IndexProductoComponent },
+  { path: 'categoria/:id', component: IndexCategoriasComponent },
+
   { path: 'productos/categoria/:id', component: IndexProductoComponent },
+  {
+    path: 'productos/categoria/:id/:id-sub',
+    component: IndexProductoComponent,
+  },
   { path: 'productos/:id', component: ShowProductoComponent },
 
   { path: 'contacto', component: ContactoComponent },

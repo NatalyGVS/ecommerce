@@ -1,3 +1,5 @@
+import { CarritoService } from './../../services/carrito.service';
+import { UserService } from './../../services/user.service';
 import { ConfiguracionService } from './../../services/configuracion.service';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
@@ -18,27 +20,21 @@ export class NavComponent implements OnInit {
 
   constructor(
     private _router: Router,
-    private _configuracionService: ConfiguracionService
+    private _configuracionService: ConfiguracionService,
+    private _userService: UserService,
+    private _carritoService: CarritoService
   ) {
-    if (localStorage.getItem('user_data')) {
-      this.user_ls = JSON.parse(localStorage.getItem('user_data'));
-    } else {
-      this.user_ls = undefined;
-    }
+    this.user_ls = this._userService.getUsuario();
+    this.data_carrito_compras = this._carritoService.getCarrito();
+    console.log('this.user_ls', this.user_ls);
+    console.log('this.data_carrito_compras', this.data_carrito_compras);
 
-    if (localStorage.getItem('carrito_compras')) {
-      this.data_carrito_compras = JSON.parse(
-        localStorage.getItem('carrito_compras')
-      );
-    } else {
-      this.data_carrito_compras = [];
-    }
-    this.calcular_carrito();
+    this.calcularCarrito();
   }
 
   ngOnInit(): void {
     //llenado de categorias
-    this._configuracionService.get_categorias().subscribe((response) => {
+    this._configuracionService.getCategorias().subscribe((response) => {
       this.categorias = response;
     });
   }
@@ -49,10 +45,9 @@ export class NavComponent implements OnInit {
   }
 
   open_modal_cart() {
-    this.data_carrito_compras = JSON.parse(
-      localStorage.getItem('carrito_compras')
-    );
+    this.data_carrito_compras = this._carritoService.getCarrito(); //prox quitar
 
+    console.log('this.data_carrito_compras', this.data_carrito_compras);
     if (!this.carrito_compras_cart) {
       //si es false, mostrar
       this.carrito_compras_cart = true;
@@ -63,36 +58,29 @@ export class NavComponent implements OnInit {
       $('#cart').removeClass('show');
     }
   }
-  calcular_carrito() {
+  calcularCarrito() {
     this.subtotal = 0;
 
-    if (localStorage.getItem('carrito_compras')) {
-      this.subtotal = this.data_carrito_compras.reduce((acc, px) => {
-        return px.precio + acc;
-      }, 0);
-      console.log('this.subtotal', this.subtotal);
-    }
+    this.subtotal = this.data_carrito_compras.reduce((acc, px) => {
+      return px.precio + acc;
+    }, 0);
+    console.log('this.subtotal', this.subtotal);
   }
 
-  eliminar_item(id) {
-    this.data_carrito_compras = JSON.parse(
-      localStorage.getItem('carrito_compras')
-    );
+  eliminarItem(id) {
+    this.data_carrito_compras = this._carritoService.getCarrito(); //prox quitar
 
-    this.data_carrito_compras = this.data_carrito_compras.filter(function (
-      item
-    ) {
-      return item.id !== id;
-    });
+    this._carritoService
+      .eliminarItemCarrito(this.data_carrito_compras, id)
+      .subscribe((response) => {
+        this.data_carrito_compras = response;
 
-    localStorage.setItem(
-      'carrito_compras',
-      JSON.stringify(this.data_carrito_compras)
-    );
-    this.calcular_carrito();
-    console.log('neivo carrito', this.data_carrito_compras);
+        this.calcularCarrito();
+        console.log('neivo carrito', response);
+      });
   }
 
+  //reemplazar ngclass
   pintarNavSelected(id) {
     $('.nav.nav-category > .nav-item').removeClass('active-parent');
     $('#' + id)
@@ -102,7 +90,7 @@ export class NavComponent implements OnInit {
   }
 
   refrescarPantalla(id) {
-    this._router.navigate(['/productos/categoria/', id]).then(() => {
+    this._router.navigate(['/categoria/', id]).then(() => {
       window.location.reload();
       // setTimeout(() => {
       this.pintarNavSelected(id);

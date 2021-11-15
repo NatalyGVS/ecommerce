@@ -1,0 +1,23 @@
+.card-categoria {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
+.card-img-cat img {
+  border-radius: 10%;
+}
+
+.text-categoria {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%, -0%);
+
+  width: 91%;
+  background: rgba(0, 0, 0, 0.5);
+  overflow-x: hidden;
+  font-weight: 400;
+  color: white;
+  font-size: 25px;
+  border-radius: 2px;
+}

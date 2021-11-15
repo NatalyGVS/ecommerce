@@ -1,5 +1,5 @@
 import { Router } from '@angular/router';
-import { ClienteService } from './../../services/cliente.service';
+import { UserService } from './../../services/user.service';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 declare var Cleave;
 declare var StickySidebar;
@@ -36,14 +36,11 @@ export class CarritoComponent implements OnInit {
   public btn_load = false;
   public carrito_load = true;
 
-  constructor(
-    private _clienteService: ClienteService,
-    private _router: Router
-  ) {
+  constructor(private _UserService: UserService, private _router: Router) {
     this.venta.cliente = JSON.parse(localStorage.getItem('user_data')).dni;
     this.user = JSON.parse(localStorage.getItem('user_data'));
 
-    this._clienteService.get_envios().subscribe((response) => {
+    this._UserService.getEnvios().subscribe((response) => {
       this.envios = response;
     });
   }
@@ -57,7 +54,7 @@ export class CarritoComponent implements OnInit {
     }
     console.log(' this.data_carrito_compras', this.data_carrito_compras);
 
-    this.calcular_carrito();
+    this.calcularCarrito();
     this.calcular_total('Envío gratis');
 
     this.data_carrito_compras.forEach((element) => {
@@ -157,7 +154,7 @@ export class CarritoComponent implements OnInit {
     this._router.navigate(['/']);
   }
 
-  calcular_carrito() {
+  calcularCarrito() {
     this.subtotal = this.data_carrito_compras.reduce((acc, px) => {
       return px.precio + acc;
     }, 0);
@@ -174,11 +171,11 @@ export class CarritoComponent implements OnInit {
 
     console.log('thisventa', this.venta);
   }
-  eliminar_item(id) {
+  eliminarItem(id) {
     this.data_carrito_compras = JSON.parse(
       localStorage.getItem('carrito_compras')
     );
-    //calcular_carrito
+    //calcularCarrito
 
     this.data_carrito_compras = this.data_carrito_compras.filter(function (
       item
@@ -190,7 +187,7 @@ export class CarritoComponent implements OnInit {
       'carrito_compras',
       JSON.stringify(this.data_carrito_compras)
     );
-    this.calcular_carrito();
+    this.calcularCarrito();
     console.log('neivo carrito', this.data_carrito_compras);
   }
 

@@ -6,15 +6,27 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class ConfiguracionService {
+  public principal;
   constructor(private _http: HttpClient) {}
 
-  get_categorias(): Observable<any> {
+  getCategorias(): Observable<any> {
     return this._http.get('./assets/categorias.json');
   }
+/*
+  getPrincipal(idPrincipal): any {
+    this._http.get('./assets/categorias.json').subscribe((response) => {
+      this.principal = response.find((item) => {
+        return item.id == idPrincipal;
+      });
+      return this.principal;
+    });
+  }*/
 
-  get_productos(): Observable<any> {
+  getProductos(): Observable<any> {
     return this._http.get('./assets/productos.json');
   }
 
-
+  getProductosbySubCategoria() {
+    let categoriasCompletasTotales = this._http.get('./assets/categorias.json');
+  }
 }
