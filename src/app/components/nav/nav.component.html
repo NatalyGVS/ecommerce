@@ -228,7 +228,8 @@
                   class="pt-1 mb-2 font-size-sm text-uppercase">{{sub.name}}</a>
                 <ul class="list-unstyled">
                   <li *ngFor="let sc of sub.subCategorias">
-                    <a href="#" class="p-0 dropdown-item text-dark">{{sc.name}}</a>
+                    <a [routerLink]=" ['/productos/categoria/', principal.id, sub.id, sc.id]"
+                      class="p-0 dropdown-item text-dark">{{sc.name}}</a>
                   </li>
                 </ul>
               </div>

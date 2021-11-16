@@ -12,19 +12,21 @@ declare var tns;
   styleUrls: ['./index-producto.component.css'],
 })
 export class IndexProductoComponent implements OnInit {
-  public categorias: any[];
+  public principalActual: any = {};
   public categoriaActual: any = {};
   public subCategoriaActual: any = {};
 
-  public subcategorias: any[];
+  // public categoriasPrincipal: any[];
+  // public subcategorias: any[];
   public productos: any[] = [];
 
   public filter_category = '';
   public filter_product = '';
-  public filter_cat_productos = 'todos';
+  public filter_cat_productos;
   public load_data = true;
 
   //categoria por ruta
+  public route_principal;
   public route_category;
   public route_subcategory;
   //paginacion
@@ -43,7 +45,9 @@ export class IndexProductoComponent implements OnInit {
   constructor(
     private _route: ActivatedRoute,
     private _configuracionService: ConfiguracionService
-  ) {}
+  ) {
+    this.filter_cat_productos = 'todos';
+  }
   initSlider() {
     var slider: any = document.getElementById('slider');
     noUiSlider.create(slider, {
@@ -70,48 +74,61 @@ export class IndexProductoComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    //llenado de categorias
-    this._configuracionService.getCategorias().subscribe((response) => {
-      this.categorias = response;
+    this._route.params.subscribe((params) => {
+      this.route_principal = params['id-prin'];
+      this.route_category = params['id-cat'];
+      this.route_subcategory = params['id-sub'];
+      console.log('this.route_principal', this.route_principal);
+      console.log('this.route_category', this.route_category);
+      console.log('this.route_subcategory', this.route_subcategory);
+
+      //llenado de categorias
+
+      this.principalActual = this._configuracionService
+        .getCategorias()
+        .subscribe((response) => {
+          this.principalActual = response.find((item) => {
+            return item.id == this.route_principal;
+          });
+          console.log('response principalActual', this.principalActual);
+
+          this.categoriaActual = this.principalActual.categorias.find((cat) => {
+            return cat.id == this.route_category;
+          });
+          console.log('response categoriaActual', this.categoriaActual);
+
+          if (this.route_subcategory) {
+            this.subCategoriaActual = this.categoriaActual.subCategorias.find(
+              (sub) => {
+                return sub.id == this.route_subcategory;
+              }
+            );
+            this.filter_cat_productos = this.subCategoriaActual.name;
+          }
+
+          //llenado de productos
+          this._configuracionService.getProductos().subscribe((response) => {
+            if (this.route_subcategory) {
+              this.productos = response.filter((px) => {
+                return (
+                  px.principal.id == this.route_principal &&
+                  px.categoria.id == this.route_category &&
+                  px.subcategoria.id == this.route_subcategory
+                );
+              });
+            } else {
+              this.productos = response.filter((px) => {
+                return (
+                  px.principal.id == this.route_principal &&
+                  px.categoria.id == this.route_category
+                );
+              });
+            }
+            this.load_data = false;
+            console.log('response productos', this.productos);
+          });
+        });
     });
-
-    //llenado de productos
-    /*
-    this._configuracionService.getProductos().subscribe((response) => {
-      this._route.params.subscribe((params) => {
-        this.route_category = params['id'];
-
-        this.categoriaActual = this.categorias.find(
-          (x) => x.id == this.route_category
-        );
-
-        this.route_subcategory = params['id-sub'];
-        if (this.route_subcategory) {
-
-          //llenar subcategorias
-          this.subCategoriaActual = this.categoriaActual.subcategorias.find(
-            (element) => element.id == this.route_subcategory
-          );
-
-          this.productos = response.filter(
-            (px) => px.subcategoria.id == this.route_subcategory
-          );
-        } else {
-
-          this.productos = response.filter(
-            (px) => px.categoria.id == this.route_category
-          );
-
-          console.log(' this.productos', this.productos);
-          //llenar subcategorias
-          this.subcategorias = this.categorias.find(
-            (element) => element.id == this.route_category
-          ).subcategorias;
-        }
-      });
-      this.load_data = false;
-    });
-    */
     this.initSlider();
   }
 
@@ -120,46 +137,36 @@ export class IndexProductoComponent implements OnInit {
     //Validacion
     if (this.filter_category) {
       var search = new RegExp(this.filter_category, 'i');
-      this.categorias = this.categorias.filter((category) =>
-        search.test(category.name)
-      );
+      this.categoriaActual.subCategorias =
+        this.categoriaActual.subCategorias.filter((sub) =>
+          search.test(sub.name)
+        );
     } else {
       this._configuracionService.getCategorias().subscribe((response) => {
-        this.categorias = response;
+        this.categoriaActual = response
+          .find((item) => {
+            return item.id == this.route_principal;
+          })
+          .categorias.find((sub) => {
+            return sub.id == this.route_category;
+          });
+
+        console.log('response categoriaActualllll', this.categoriaActual);
       });
     }
   }
 
   buscar_producto() {
-    //Validacion
-    /*
-    if (this.filter_product) {
-      var search = new RegExp(this.filter_product, 'i');
-
-
-      this.productos = this.productos_original.filter((px) =>
-        search.test(px.name)
-      );
-    } else {*/
-    //llenado de productos
     this._configuracionService.getProductos().subscribe((response) => {
       this.load_data = false;
 
       if (this.filter_product) {
-        var search = new RegExp(this.filter_product, 'i');
-
-        this.productos = response.filter(
-          (px) => px.categoria.id == this.route_category
-        );
-
-        this.productos = this.productos.filter((px) => search.test(px.name));
+        // var search = new RegExp(this.filter_product, 'i');
+        this.buscar_por_categoria(this.filter_product);
       } else {
-        this.productos = response.filter(
-          (px) => px.categoria.id == this.route_category
-        );
+        this.buscar_por_categoria();
       }
     });
-    // }
   }
 
   buscar_precios() {
@@ -180,20 +187,36 @@ export class IndexProductoComponent implements OnInit {
     console.log('this.productosssss', this.productos);
   }
 
-  buscar_por_categoria() {
+  buscar_por_categoria(filter?) {
+    //llenado de productos
+    console.log('this.route_principal', this.route_principal);
+    console.log('this.route_category', this.route_category);
     console.log('this.filter_cat_productos', this.filter_cat_productos);
 
     this._configuracionService.getProductos().subscribe((response) => {
-      this.load_data = false;
+      if (this.filter_cat_productos == 'todos') {
+        this.productos = response.filter((px) => {
+          return (
+            px.principal.id == this.route_principal &&
+            px.categoria.id == this.route_category
+          );
+        });
+        console.log('this.productos  filtrados', this.productos);
+      } else {
+        this.productos = response.filter((px) => {
+          return (
+            px.principal.id == this.route_principal &&
+            px.categoria.id == this.route_category &&
+            px.subcategoria.name == this.filter_cat_productos
+          );
+        });
 
-      // if (this.filter_cat_productos == 'todos') {
-      //   this.productos = this.productos_original;
-      // } else {
-      this.productos = response.filter(
-        (px) => px.categoria.name == this.filter_cat_productos
-      );
-      console.log('this.productos  filtrados', this.productos);
-      // }
+        console.log('this.productos  filtrados', this.productos);
+      }
+      if (filter) {
+        var search = new RegExp(this.filter_product, 'i');
+        this.productos = this.productos.filter((px) => search.test(px.name));
+      }
     });
   }
 

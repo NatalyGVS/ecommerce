@@ -44,11 +44,11 @@ const appRoute: Routes = [
     canActivate: [AuthGuard],
   },
   // { path: 'productos', component: IndexProductoComponent },
-  { path: 'categoria/:id', component: IndexCategoriasComponent },
+  { path: 'categoria/:id', component: IndexCategoriasComponent }, //principal
 
-  { path: 'productos/categoria/:id', component: IndexProductoComponent },
+  { path: 'productos/categoria/:id-prin/:id-cat', component: IndexProductoComponent }, //principal, categoria
   {
-    path: 'productos/categoria/:id/:id-sub',
+    path: 'productos/categoria/:id-prin/:id-cat/:id-sub', //principal, categoria, subcategoria
     component: IndexProductoComponent,
   },
   { path: 'productos/:id', component: ShowProductoComponent },

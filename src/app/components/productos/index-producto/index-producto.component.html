@@ -7,11 +7,19 @@
         <li class="breadcrumb-item">
           <a [routerLink]="['/']"><i class="cxi-home"></i></a>
         </li>
-
         <li class="breadcrumb-item" aria-current="page">
-          <a [routerLink]="['/productos/categoria', categoriaActual.id]"> {{categoriaActual.name}}</a>
+          <a [routerLink]="['/categoria/', principalActual.id]"> {{principalActual.name}}</a>
         </li>
-        <li class="breadcrumb-item active" aria-current="page">{{subCategoriaActual.name}}</li>
+
+        <li *ngIf="subCategoriaActual" class="breadcrumb-item" aria-current="page">
+          <a [routerLink]="['/productos/categoria', principalActual.id, categoriaActual.id]">
+            {{categoriaActual.name}}</a>
+        </li>
+        <li *ngIf="!subCategoriaActual" class="breadcrumb-item active" aria-current="page">{{categoriaActual.name}}
+        </li>
+
+        <li *ngIf="subCategoriaActual" class="breadcrumb-item active" aria-current="page">{{subCategoriaActual.name}}
+        </li>
 
       </ol>
     </div>
@@ -143,13 +151,13 @@
                         </label>
                       </div>
                     </li>
-                    <li class="cs-filter-item" *ngFor="let categoria of categorias;let indice = index">
+                    <li class="cs-filter-item" *ngFor="let sub of categoriaActual.subCategorias; let indice = index">
                       <div class="custom-control custom-checkbox">
                         <input type="radio" name="group1" (change)="buscar_por_categoria()" class="custom-control-input"
-                          id="blazers-{{indice}}" value="{{categoria.name}}" [(ngModel)]="filter_cat_productos">
+                          id="blazers-{{indice}}" value="{{sub.name}}" [(ngModel)]="filter_cat_productos">
                         <label for="blazers-{{indice}}" class="custom-control-label">
-                          <span class="cs-filter-item-text">{{categoria.name}}</span>
-                          <span class="pl-1 text-muted">( {{categoria.cantidad}} )</span>
+                          <span class="cs-filter-item-text">{{sub.name}}</span>
+                          <span class="pl-1 text-muted">( {{sub.cantidad}} )</span>
                         </label>
                       </div>
                     </li>

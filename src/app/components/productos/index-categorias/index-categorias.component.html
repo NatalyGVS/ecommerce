@@ -53,7 +53,7 @@
                   <div class="mt-1 input-group-overlay d-lg-block d-none order-lg-3"
                     *ngFor="let subcat of category.subCategorias">
 
-                    <a [routerLink]=" ['/productos/categoria/', category.id, subcat.id]">
+                    <a [routerLink]=" ['/productos/categoria/', principal.id, category.id, subcat.id]">
                       {{subcat.name}}
                     </a>
 
@@ -88,7 +88,7 @@
 
               <div class="m-2 col card-categoria" *ngFor="let category of principal.categorias">
 
-                <a [routerLink]=" ['/productos/categoria/', category.id]" class="">
+                <a [routerLink]=" ['/productos/categoria/', principal.id, category.id]" class="">
                   <div class="card-img-cat">
                     <img src={{category.ruta}} alt={{category.name}} width="100%">
                   </div>

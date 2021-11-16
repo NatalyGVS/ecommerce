@@ -1,7 +1,7 @@
 [
   {
     "id": "px1",
-    "name": "Taladros",
+    "name": "Taladros prod1",
     "stock": 200,
     "precio": 40,
     "nVentas": 40,
@@ -35,9 +35,9 @@
     ]
   }, {
     "id": "px2",
-    "name": "Taladros",
+    "name": "Taladros prod2",
     "stock": 200,
-    "precio": 40,
+    "precio": 50,
     "nVentas": 40,
     "principal": {
       "id": "principal-1",
@@ -68,11 +68,79 @@
       }
     ]
   }, {
-    "id": "px3",
-    "name": "Taladros 3",
+    "id": "px5",
+    "name": "Taladros prod5",
     "stock": 200,
-    "precio": 40,
-    "nVentas": 40,
+    "precio": 60,
+    "nVentas": 80,
+    "principal": {
+      "id": "principal-1",
+      "name": "GASTIFERIA Y TUBERIAS"
+    },
+    "categoria": {
+      "id": "cat-12",
+      "name" : "GASFITERÍA"
+    },
+    "subcategoria": {
+      "id": "subcat-2",
+      "name": "Grupo Electrógeno y Generador"
+    },
+    "icono": "ci-iphone",
+    "ruta": "../assets/img/productos/taladros.jpg",
+    "variedades": [
+      {
+        "titulo": "20 pulgadas",
+        "id": "p20"
+      },
+      {
+        "titulo": "30 pulgadas",
+        "id": "p30"
+      },
+      {
+        "titulo": "40 pulgadas",
+        "id": "p40"
+      }
+    ]
+  }, {
+    "id": "px6",
+    "name": "Taladros prod6",
+    "stock": 200,
+    "precio": 70,
+    "nVentas": 60,
+    "principal": {
+      "id": "principal-1",
+      "name": "GASTIFERIA Y TUBERIAS"
+    },
+    "categoria": {
+      "id": "cat-12",
+      "name" : "GASFITERÍA"
+    },
+    "subcategoria": {
+      "id": "subcat-2",
+      "name": "Grupo Electrógeno y Generador"
+    },
+    "icono": "ci-iphone",
+    "ruta": "../assets/img/productos/taladros.jpg",
+    "variedades": [
+      {
+        "titulo": "20 pulgadas",
+        "id": "p20"
+      },
+      {
+        "titulo": "30 pulgadas",
+        "id": "p30"
+      },
+      {
+        "titulo": "40 pulgadas",
+        "id": "p40"
+      }
+    ]
+  }, {
+    "id": "px3",
+    "name": "Taladros prod 3",
+    "stock": 200,
+    "precio": 90,
+    "nVentas": 140,
     "principal": {
       "id": "principal-1",
       "name": "GASTIFERIA Y TUBERIAS"
@@ -106,7 +174,7 @@
     "name": "Taladros 4",
     "stock": 200,
     "precio": 40,
-    "nVentas": 40,
+    "nVentas": 50,
     "principal": {
       "id": "principal-1",
       "name": "GASTIFERIA Y TUBERIAS"
