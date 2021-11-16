@@ -1,0 +1,63 @@
+/* reducir agregar producto */
+.btn-content-input input {
+  border: none;
+  background: none;
+  /* pointer-events: none;
+  color:black */
+}
+
+button.btn.btn-outline-secondary {
+  font-size: 18px;
+  font-weight: 800;
+}
+.metodos-entrega .card-entrega {
+  width: 45%;
+  margin: 0 2%;
+}
+/*
+.card-body {
+  flex: 1 1 auto;
+  padding: 1.5rem 1.5rem;
+}
+
+.text-center {
+  text-align: center !important;
+}
+.card-hover {
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+element.style {
+  max-width: 24rem;
+}
+.card-hover {
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.text-center {
+  text-align: center !important;
+}
+.mb-grid-gutter {
+  margin-bottom: 30px !important;
+}
+.w-100 {
+  width: 100% !important;
+}
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid #e5e8ed;
+  border-radius: 0.25rem;
+}
+img,
+figure {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+*/

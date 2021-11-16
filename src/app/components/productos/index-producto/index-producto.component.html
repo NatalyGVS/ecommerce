@@ -18,7 +18,12 @@
         <li *ngIf="!subCategoriaActual" class="breadcrumb-item active" aria-current="page">{{categoriaActual.name}}
         </li>
 
-        <li *ngIf="subCategoriaActual" class="breadcrumb-item active" aria-current="page">{{subCategoriaActual.name}}
+        <li *ngIf="filter_cat_productos && filter_cat_productos!='todos' " class="breadcrumb-item active"
+          aria-current="page">{{filter_cat_productos}}
+        </li>
+
+        <li *ngIf="!filter_cat_productos && subCategoriaActual" class="breadcrumb-item active" aria-current="page">
+          {{subCategoriaActual.name}}
         </li>
 
       </ol>
@@ -83,7 +88,7 @@
       <div id="filtersSidebar" class="col-lg-3 pr-lg-4">
         <div id="filtersOffcanvas" class="cs-offcanvas cs-offcanvas-collapse">
           <div class="mb-3 cs-offcanvas-cap align-items-center border-bottom">
-            <h2 class="mb-0 h5">Shop filters</h2>
+            <h2 class="mb-0 h5">Filtros</h2>
             <button class="close mr-n1" type="button" data-dismiss="offcanvas" aria-label="Close">
               <span class="mb-0 h2 font-weight-normal mt-n1" aria-hidden="true">&times;</span>
             </button>
@@ -262,7 +267,7 @@
                   <a [routerLink]="['/productos/', producto.id]" class="card-img-top">
                     <img src={{producto.ruta}} alt="Product image">
                   </a>
-                  <div class="card-product-widgets-top">
+                  <!-- <div class="card-product-widgets-top">
                     <div class="ml-auto star-rating">
                       <i class="sr-star cxi-star-filled active"></i>
                       <i class="sr-star cxi-star-filled active"></i>
@@ -274,7 +279,7 @@
                   <div class="card-product-widgets-bottom">
                     <a href="#" class="ml-auto btn-wishlist" data-toggle="tooltip" data-placement="left"
                       title="Add to wishlist"></a>
-                  </div>
+                  </div> -->
                 </div>
                 <div class="pb-2 card-body">
                   <h3 class="mb-2 card-product-title text-truncate">
@@ -288,8 +293,8 @@
                   <div class="pb-1 mb-2 d-flex align-items-center">
                     <div class="row">
                       <div class="col-12">
-                        <a href="">{{producto.subcategoria.name}}</a>
-
+                        <a
+                          [routerLink]=" ['/productos/categoria/', producto.principal.id, producto.categoria.id, producto.subcategoria.id]">{{producto.subcategoria.name}}</a>
                       </div>
                     </div>
                   </div>

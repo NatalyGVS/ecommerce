@@ -7,12 +7,13 @@ import { Injectable } from '@angular/core';
 })
 export class ConfiguracionService {
   public principal;
+  public producto;
   constructor(private _http: HttpClient) {}
 
   getCategorias(): Observable<any> {
     return this._http.get('./assets/categorias.json');
   }
-/*
+  /*
   getPrincipal(idPrincipal): any {
     this._http.get('./assets/categorias.json').subscribe((response) => {
       this.principal = response.find((item) => {
@@ -25,8 +26,13 @@ export class ConfiguracionService {
   getProductos(): Observable<any> {
     return this._http.get('./assets/productos.json');
   }
-
-  getProductosbySubCategoria() {
-    let categoriasCompletasTotales = this._http.get('./assets/categorias.json');
-  }
+  /*
+  getProducto(idProducto) {
+    this._http.get('./assets/productos.json').subscribe((response: []) => {
+      console.log('responseeeee', response);
+     return  this.producto = response.find((item: any) => {
+        return item.id == idProducto;
+      });
+    });
+  }*/
 }

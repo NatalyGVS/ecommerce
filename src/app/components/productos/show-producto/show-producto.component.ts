@@ -1,3 +1,4 @@
+import { ConfiguracionService } from './../../../services/configuracion.service';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 declare var tns;
@@ -17,27 +18,11 @@ export class ShowProductoComponent implements OnInit {
     cantidad: 1,
   };
   public btn_cart = false;
-  constructor(private _route: ActivatedRoute) {
-    this._route.params.subscribe((params) => {
-      this.idProducto = params['id'];
-      console.log('this.idProducto', this.idProducto);
-      this.producto = JSON.parse(localStorage.getItem('detalleProducto'));
-    });
-
-    this.productosRecomendados = JSON.parse(
-      localStorage.getItem('productos')
-    ).filter(
-      (px) =>
-        px.categoria ==
-        JSON.parse(localStorage.getItem('detalleProducto')).categoria
-      //limitar a 8 productos
-    );
-
-    console.log('this.productosRecomendados', this.productosRecomendados);
-  }
-
-  ngOnInit(): void {
-    //inicializar el slider
+  constructor(
+    private _route: ActivatedRoute,
+    private _configuracionService: ConfiguracionService
+  ) {}
+  initSlider() {
     setTimeout(() => {
       tns({
         container: '.cs-carousel-inner',
@@ -106,8 +91,38 @@ export class ShowProductoComponent implements OnInit {
           });
         }
       }
-    }, 500);
+    }, 300);
   }
+  ngOnInit(): void {
+    //obtener porducto
+    this._route.params.subscribe((params) => {
+      this.idProducto = params['id'];
+      this._configuracionService.getProductos().subscribe((response) => {
+        this.producto = response.find((item) => {
+          return item.id == this.idProducto;
+        });
+        console.log('this.producto', this.producto);
+
+        //productos recomendados
+
+        this._configuracionService.getProductos().subscribe((response) => {
+          this.productosRecomendados = response.filter((item) => {
+            return (
+              item.principal.id == this.producto.principal.id &&
+              item.categoria.id == this.producto.categoria.id &&
+              item.subcategoria.id == this.producto.subcategoria.id
+            );
+          });
+
+          console.log('this.productosRecomendados', this.productosRecomendados);
+          this.initSlider();
+        });
+      });
+    });
+
+    //inicializar el slider
+  }
+
   agregar_producto() {
     if (this.dataCarrito.variedad) {
       if (this.dataCarrito.cantidad <= this.producto.stock) {
@@ -154,5 +169,14 @@ export class ShowProductoComponent implements OnInit {
       //notificacion de seleccione la variedad de producto (talla)
       console.log('seleccione la variedad de producto');
     }
+  }
+
+  reduceProduct() {
+    if (this.dataCarrito.cantidad > 1) this.dataCarrito.cantidad--;
+    console.log(' this.dataCarrito.cantidad', this.dataCarrito.cantidad);
+  }
+  addProduct() {
+    this.dataCarrito.cantidad++;
+    console.log(' this.dataCarrito.cantidad', this.dataCarrito.cantidad);
   }
 }

@@ -192,6 +192,7 @@ export class IndexProductoComponent implements OnInit {
     console.log('this.route_principal', this.route_principal);
     console.log('this.route_category', this.route_category);
     console.log('this.filter_cat_productos', this.filter_cat_productos);
+    // this.subCategoriaActual.name = this.filter_cat_productos;
 
     this._configuracionService.getProductos().subscribe((response) => {
       if (this.filter_cat_productos == 'todos') {
