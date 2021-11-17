@@ -8,7 +8,7 @@ declare var tns;
 })
 export class InicioComponent implements OnInit {
   public productos: any[];
-  public categorias: any[];
+  public principales: any[];
   public banners;
 
   constructor(private _configuracionService: ConfiguracionService) {}
@@ -16,15 +16,14 @@ export class InicioComponent implements OnInit {
   ngOnInit(): void {
     //llenado de categorias
     this._configuracionService.getCategorias().subscribe((response) => {
-      this.categorias = response;
+      this.principales = response;
     });
 
     //productos populares
     this._configuracionService.getProductos().subscribe((response) => {
       this.productos = response;
+      this.inicializacionCarousel();
     });
-
-    this.inicializacionCarousel();
   }
 
   inicializacionCarousel() {

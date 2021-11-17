@@ -12,6 +12,7 @@
 }
 .nav.nav-category > .nav-item > a {
   color: rgb(216, 216, 216) !important;
+  font-size: 14px;
 }
 .nav.nav-category > .nav-item:hover {
   background-color: #17696a !important;
@@ -29,8 +30,18 @@
   background-color: #17696a !important;
 }
 
-
-
-.navbar .li-menu{
+.navbar .li-menu {
   padding: 2.3px;
+}
+
+.cs-header > .navbar {
+  /* position: relative;
+  z-index: 1030; */
+
+  background: rgb(4, 209, 168) !important;
+  background: linear-gradient(
+    90deg,
+    rgba(4, 209, 168, 1) 0%,
+    rgba(18, 170, 141, 1) 100%
+  ) !important;
 }
