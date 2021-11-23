@@ -26,6 +26,10 @@ export class ConfiguracionService {
   getProductos(): Observable<any> {
     return this._http.get('./assets/productos.json');
   }
+
+  getProductosInicio(): Observable<any> {
+    return this._http.get('./assets/productos_inicio.json');
+  }
   /*
   getProducto(idProducto) {
     this._http.get('./assets/productos.json').subscribe((response: []) => {

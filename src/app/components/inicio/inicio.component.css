@@ -40,7 +40,6 @@
   background-color: #f2f2f2;
 }
 
-
 /* SECCION DESCRIPCION CATEGORIAS FERRI ================================================================================= */
 #section-desc-categorias {
   background-color: #f2f2f2;
@@ -169,41 +168,15 @@
   padding: 7px;
   border-radius: 25px;
 }
-
-.card-product-category:hover {
-  background-color: #fff;
-  -webkit-box-shadow: 0px 4px 6px -1px rgba(110, 104, 110, 0.4);
-  -moz-box-shadow: 0px 4px 6px -1px rgba(110, 104, 110, 0.4);
-  box-shadow: 0px 4px 6px -1px rgba(110, 104, 110, 0.4);
-}
-.detalle-product {
-  background-color: #fff;
-  border-radius: 15px;
-}
-/*
-.cards-category-products {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+.card-category-products {
+  width: 100%;
 }
 .list-product-cart {
-  display: flex;
   flex-wrap: wrap;
+  display: flex;
   justify-content: center;
-  padding: 20px 0;
 }
-.card-home {
-  width: 190px;
-  height: 291px;
-  background: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-  margin: 5px;
-  transition: 0.3s all ease;
-  padding: 10px 12px;
-  overflow: hidden;
-}
-*/
+
 /* SECCION CATEGORIAS POPULARES ================================================================================= */
 
 .parent-img-category > img {
@@ -215,11 +188,11 @@
   width: 80%;
 }
 
-
 /* SECCION REGALO ================================================================================================== */
 
 .regalos__list {
   display: flex;
   gap: 20px;
   place-items: center;
+  flex-wrap: wrap;
 }

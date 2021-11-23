@@ -29,6 +29,7 @@ import { RegaloComponent } from './components/inicio/regalo/regalo.component';
 import { InfoComponent } from './components/inicio/info/info.component';
 import { TimerComponent } from './components/inicio/oferta/timer/timer.component';
 import { DosDigitosPipe } from './pipes/dos-digitos.pipe';
+import { ItemProductComponent } from './components/item-product/item-product.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { DosDigitosPipe } from './pipes/dos-digitos.pipe';
     InfoComponent,
     TimerComponent,
     DosDigitosPipe,
+    ItemProductComponent,
   ],
   imports: [
     BrowserModule,

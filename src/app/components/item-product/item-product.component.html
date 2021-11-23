@@ -1,0 +1,49 @@
+<div *ngIf="product.background && product.background ==true  else cardProduct">
+  <div class="card-home card-bg-imagen">
+    <div class="card-product-image gh-gtm-img bg-imagen">
+      <a [routerLink]="['/productos/', product.id]" class="card-enlace">
+        <img src={{product.ruta}} alt={{product.name}}>
+      </a>
+    </div>
+  </div>
+</div>
+<ng-template #cardProduct>
+  <div class="card-home">
+    <div class="card-product gh-gtm-img">
+      <a [routerLink]="['/productos/', product.id]" class="card-enlace">
+        <div class="card-product-image">
+          <img src={{product.ruta}} alt="{{product.name}}">
+        </div>
+        <div class="flag-wrapper active" *ngIf="product.descuento">
+          <div class="flag linea-blanca-tag" style="display:block">
+            <span>{{product.descuento}}</span>
+          </div>
+        </div>
+        <div class="card-product-detail">
+          <h3 class="product-name">
+            <span itemprop="name">{{product.name}}</span>
+          </h3>
+        </div>
+        <div class="card-product-price">
+          <div class="product-price product-price--best">
+            <div class="best-price">
+              <span class="price">
+                <span class="soles"> S/ </span>
+                <span>{{product.numEntero}}</span>
+                <sup *ngIf="product.numDecimal!='00'">{{product.numDecimal}} </sup>
+              </span>
+            </div>
+
+            <div class="list-price" *ngIf="product.precioDescuento">
+              <div class="text-list-price">Regular: </div>
+              <span class="price">
+                S/{{product.precioOriginal}}
+              </span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+</ng-template>

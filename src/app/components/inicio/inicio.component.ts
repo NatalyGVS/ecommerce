@@ -2,17 +2,16 @@ import { ConfiguracionService } from './../../services/configuracion.service';
 import { Component, OnInit } from '@angular/core';
 declare var tns;
 
-
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.component.html',
   styleUrls: ['./inicio.component.css'],
 })
 export class InicioComponent implements OnInit {
-
   public productos: any[];
   public principales: any[];
   public banners;
+  public regalos: any[];
 
   constructor(private _configuracionService: ConfiguracionService) {}
 
@@ -20,14 +19,41 @@ export class InicioComponent implements OnInit {
     //llenado de categorias
     this._configuracionService.getCategorias().subscribe((response) => {
       this.principales = response;
+      this.regalos = [
+        {
+          precio: 80,
+          contenido:
+            'Lorem ipsum dolor sit amet consectetur adipisicing elit. ',
+        },
+        {
+          precio: 70,
+          contenido:
+            'Lorem ipsum dolor sit amet consectetur adipisicing elit. ',
+        },
+        {
+          precio: 60,
+          contenido:
+            'Lorem ipsum dolor sit amet consectetur adipisicing elit. ',
+        },
+        {
+          precio: 50,
+          contenido:
+            'Lorem ipsum dolor sit amet consectetur adipisicing elit. ',
+        },
+        {
+          precio: 50,
+          contenido:
+            'Lorem ipsum dolor sit amet consectetur adipisicing elit. ',
+        },
+      ];
     });
 
     //productos populares
-    this._configuracionService.getProductos().subscribe((response) => {
+    this._configuracionService.getProductosInicio().subscribe((response) => {
       this.productos = response;
+      console.log('this.productos', this.productos);
       this.inicializacionCarousel();
     });
-
   }
 
   inicializacionCarousel() {

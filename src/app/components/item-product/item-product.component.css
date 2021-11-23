@@ -1,0 +1,203 @@
+.card-home.card-bg-imagen {
+  border: 0;
+  padding: 0;
+  position: relative;
+}
+.card-home .card-product-image.bg-imagen {
+  margin: 0 auto;
+}
+
+.card-home .card-product-image.bg-imagen img {
+  width: 100%;
+  display: block;
+}
+
+/* //************************************* */
+.card-home {
+  width: 190px;
+  height: 291px;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  margin: 5px;
+  transition: 0.3s all ease;
+  padding: 10px 12px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.card-home:hover {
+  background-color: #fff;
+  -webkit-box-shadow: 0px 4px 6px -1px rgba(110, 104, 110, 0.4);
+  -moz-box-shadow: 0px 4px 6px -1px rgba(110, 104, 110, 0.4);
+  box-shadow: 0px 4px 6px -1px rgba(110, 104, 110, 0.4);
+}
+.card-home:hover .card-product .card-product-image img {
+  transform: scale(1.07);
+}
+
+.card-home .card-product {
+  position: relative;
+  cursor: pointer;
+}
+
+.card-product {
+  max-width: 22rem;
+  margin-right: auto;
+  margin-left: auto;
+  border: 0;
+  box-shadow: none;
+  background-color: transparent;
+}
+
+a {
+  text-decoration-line: none;
+  color: inherit;
+}
+
+.card-home .card-product .card-product-image {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  min-height: 150px;
+  position: relative;
+}
+
+.card-home .card-product .card-product-image img {
+  width: 100%;
+  display: block;
+  transition: all 0.5s;
+}
+
+.card-home .card-product .flag-wrapper {
+  position: absolute;
+  z-index: 6;
+  right: 0;
+  top: 0;
+  pointer-events: none;
+  width: 100%;
+}
+
+.card-home .card-product .flag-wrapper .flag.linea-blanca-tag {
+  width: 40px;
+  height: 22px;
+  background: #ff8a00;
+  margin-top: 0;
+  /* box-shadow: 0 1px 3px rgb(0 0 0 / 30%); */
+  border-radius: 5px 0 0;
+  float: left;
+  top: -10px;
+  left: -13px;
+  display: block;
+}
+
+.card-home .card-product .flag-wrapper .flag {
+  position: absolute;
+  font-size: 0;
+  background: url(https://promart.vteximg.com.br/arquivos/sprite-promart-new.png);
+  display: none;
+  right: 0;
+  float: right;
+}
+.card-home .card-product .flag-wrapper .flag.linea-blanca-tag:after {
+  content: "";
+  position: absolute;
+  border: 12px solid transparent;
+  top: 22px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-width: 7px 20px 0;
+  border-color: #ff8a00 transparent transparent;
+  text-shadow: 0 1px 3px transparent;
+}
+.card-home .card-product .flag-wrapper .flag > span {
+  font-size: 15px;
+  font-weight: 400;
+  margin-top: 3.5px;
+  width: 40px;
+  left: 0;
+  text-align: center;
+  color: #fff;
+  position: absolute;
+  top: 4px;
+  line-height: 9px;
+  display: block;
+}
+
+.card-home .card-product .card-product-detail .product-name {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 13px;
+  text-align: center;
+  height: 32px;
+  overflow: hidden;
+  margin-bottom: 4px;
+  font-weight: 600;
+  line-height: 16px;
+  font-size: 15px;
+}
+/* h3 margin */
+
+.card-home .card-product .card-product-price {
+  text-align: center;
+}
+
+.card-home
+  .card-product
+  .card-product-price
+  .product-price.product-price--best
+  .best-price {
+  display: inline-block;
+  padding: 1.5px 6px;
+  background: #ff6e00;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 11px;
+}
+
+.card-home
+  .card-product
+  .card-product-price
+  .product-price.product-price--best
+  .best-price
+  .price
+  span {
+  font-size: 20px;
+  position: relative;
+}
+
+.card-home
+  .card-product
+  .card-product-price
+  .product-price.product-price--best
+  .best-price
+  .price
+  span.soles {
+  font-size: 15px;
+  font-variant: normal;
+}
+.card-home
+  .card-product
+  .card-product-price
+  .product-price.product-price--best
+  .best-price
+  .price
+  sup {
+  vertical-align: text-top;
+  position: relative;
+  top: -2px;
+  font-size: 11px;
+}
+.product-price .list-price {
+  font-size: 11px;
+  color: #6d6464;
+  padding: 4px 0 0;
+}
+.list-price .text-list-price {
+  display: inline-block;
+}

@@ -243,7 +243,7 @@
   style="background-color: #4E4E4E;">
   <div class="container px-0 px-xl-3 row col-12 justify-content-center">
     <ul class="nav nav-category" style="justify-content: space-evenly;">
-      <li class="py-0 my-0 nav-item dropdown mega-dropdown" *ngFor="let principal of categorias">
+      <li class="py-0 my-0 nav-item dropdown mega-dropdown category-list-menu" *ngFor="let principal of categorias">
         <a id="{{principal.id}}" [routerLink]=" ['/categoria/', principal.id]" routerLinkActive="active"
           [routerLinkActiveOptions]="{exact: true}" class="text-center nav-link d-flex" data-toggle="dropdown"
           style="align-items: center;">
@@ -256,13 +256,15 @@
         <div class=" dropdown-menu">
           <div class="container pt-lg-1 pb-lg-3">
             <div class="row justify-content-center">
-              <div class="py-2 col-md-3" *ngFor="let sub of principal.categorias">
+              <div class="py-2 col-md-3 " *ngFor="let sub of principal.categorias">
                 <a [routerLink]=" ['/productos/categoria/', principal.id, sub.id]"
-                  class="pt-1 mb-2 font-size-sm text-uppercase">{{sub.name}}</a>
+                  class="pt-1 mb-2 font-size-sm text-uppercase ">{{sub.name}}
+                </a>
                 <ul class="list-unstyled">
                   <li *ngFor="let sc of sub.subCategorias">
                     <a [routerLink]=" ['/productos/categoria/', principal.id, sub.id, sc.id]"
-                      class="p-0 dropdown-item text-dark" style="white-space: normal !important;">{{sc.name}} </a>
+                      class="p-0 dropdown-item text-dark" style="white-space: normal !important;">{{sc.name}}
+                    </a>
                   </li>
                 </ul>
               </div>

@@ -1,0 +1,182 @@
+[
+  {
+    "id": "px3",
+    "background" : true,
+    "ruta": "../assets/img/inicio/products/bg1.png",
+    "name": "Taladros"
+  },
+  {
+    "id": "px1",
+    "name": "Taladros",
+    "stock": 200,
+    "precioOriginal": 35.00,
+    "descuento" : "-20%",
+    "precioDescuento" :29.99,
+    "principal": {
+      "id": "principal-1",
+      "name": "GASTIFERIA Y TUBERIAS"
+    },
+    "categoria": {
+      "id": "cat-12",
+      "name" : "GASFITERÍA"
+    },
+    "subcategoria": {
+      "id": "subcat-1",
+      "name": "Rotomartillos y Demoledores"
+    },
+    "icono": "ci-iphone",
+    "ruta": "../assets/img/productos/taladros.jpg"
+  }, {
+    "id": "px2",
+    "name": "Amoladores y Esmeriles",
+    "stock": 200,
+    "precioOriginal": 40.99,
+    "descuento" : "-25%",
+    "precioDescuento" :30,
+    "principal": {
+      "id": "principal-1",
+      "name": "GASTIFERIA Y TUBERIAS"
+    },
+    "categoria": {
+      "id": "cat-12",
+      "name" : "GASFITERÍA"
+    },
+    "subcategoria": {
+      "id": "subcat-1",
+      "name": "Rotomartillos y Demoledores"
+    },
+    "icono": "ci-iphone",
+    "ruta": "../assets/img/productos/amoladorasyEsmeriles.png"
+  }, {
+    "id": "px3",
+    "name": "Atornilladores",
+    "stock": 200,
+    "precioOriginal": 49.90,
+    "principal": {
+      "id": "principal-1",
+      "name": "GASTIFERIA Y TUBERIAS"
+    },
+    "categoria": {
+      "id": "cat-12",
+      "name" : "GASFITERÍA"
+    },
+    "subcategoria": {
+      "id": "subcat-1",
+      "name": "Rotomartillos y Demoledores"
+    },
+    "icono": "ci-iphone",
+    "ruta": "../assets/img/productos/atornilladores.jpg"
+  },
+  {
+    "id": "px1",
+    "name": "Taladros",
+    "stock": 200,
+    "precioOriginal": 35.00,
+    "descuento" : "-20%",
+    "precioDescuento" :29.99,
+    "principal": {
+      "id": "principal-1",
+      "name": "GASTIFERIA Y TUBERIAS"
+    },
+    "categoria": {
+      "id": "cat-12",
+      "name" : "GASFITERÍA"
+    },
+    "subcategoria": {
+      "id": "subcat-1",
+      "name": "Rotomartillos y Demoledores"
+    },
+    "icono": "ci-iphone",
+    "ruta": "../assets/img/productos/taladros.jpg"
+  },
+  {
+    "id": "px2",
+    "background" : true,
+    "ruta": "../assets/img/inicio/products/bg2.png"
+  },
+  {
+    "id": "px1",
+    "name": "Taladros",
+    "stock": 200,
+    "precioOriginal": 35.00,
+    "descuento" : "-20%",
+    "precioDescuento" :29.99,
+    "principal": {
+      "id": "principal-1",
+      "name": "GASTIFERIA Y TUBERIAS"
+    },
+    "categoria": {
+      "id": "cat-12",
+      "name" : "GASFITERÍA"
+    },
+    "subcategoria": {
+      "id": "subcat-1",
+      "name": "Rotomartillos y Demoledores"
+    },
+    "icono": "ci-iphone",
+    "ruta": "../assets/img/productos/taladros.jpg"
+  }, {
+    "id": "px2",
+    "name": "Amoladores y Esmeriles",
+    "stock": 200,
+    "precioOriginal": 40.99,
+    "descuento" : "-25%",
+    "precioDescuento" :30,
+    "principal": {
+      "id": "principal-1",
+      "name": "GASTIFERIA Y TUBERIAS"
+    },
+    "categoria": {
+      "id": "cat-12",
+      "name" : "GASFITERÍA"
+    },
+    "subcategoria": {
+      "id": "subcat-1",
+      "name": "Rotomartillos y Demoledores"
+    },
+    "icono": "ci-iphone",
+    "ruta": "../assets/img/productos/amoladorasyEsmeriles.png"
+  }, {
+    "id": "px3",
+    "name": "Atornilladores",
+    "stock": 200,
+    "precioOriginal": 49.90,
+    "principal": {
+      "id": "principal-1",
+      "name": "GASTIFERIA Y TUBERIAS"
+    },
+    "categoria": {
+      "id": "cat-12",
+      "name" : "GASFITERÍA"
+    },
+    "subcategoria": {
+      "id": "subcat-1",
+      "name": "Rotomartillos y Demoledores"
+    },
+    "icono": "ci-iphone",
+    "ruta": "../assets/img/productos/atornilladores.jpg"
+  },
+  {
+    "id": "px1",
+    "name": "Taladros",
+    "stock": 200,
+    "precioOriginal": 35.00,
+    "descuento" : "-20%",
+    "precioDescuento" :29.99,
+    "principal": {
+      "id": "principal-1",
+      "name": "GASTIFERIA Y TUBERIAS"
+    },
+    "categoria": {
+      "id": "cat-12",
+      "name" : "GASFITERÍA"
+    },
+    "subcategoria": {
+      "id": "subcat-1",
+      "name": "Rotomartillos y Demoledores"
+    },
+    "icono": "ci-iphone",
+    "ruta": "../assets/img/productos/taladros.jpg"
+  }
+
+]
