@@ -45,3 +45,14 @@
     rgba(18, 170, 141, 1) 100%
   ) !important;
 }
+.categorias-list > a {
+  text-decoration: none;
+  font-weight: 600;
+}
+.categorias-list > a:hover {
+  text-decoration: underline;
+}
+
+.sub-categorias-list .dropdown-item:hover {
+  text-decoration: underline;
+}

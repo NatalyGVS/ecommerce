@@ -243,27 +243,34 @@
   style="background-color: #4E4E4E;">
   <div class="container px-0 px-xl-3 row col-12 justify-content-center">
     <ul class="nav nav-category" style="justify-content: space-evenly;">
-      <li class="py-0 my-0 nav-item dropdown mega-dropdown category-list-menu" *ngFor="let principal of categorias">
+      <li class="py-0 my-0 nav-item dropdown mega-dropdown category-list-menu" *ngFor="let principal of categorias"
+        style="line-height: 18px;">
         <a id="{{principal.id}}" [routerLink]=" ['/categoria/', principal.id]" routerLinkActive="active"
           [routerLinkActiveOptions]="{exact: true}" class="text-center nav-link d-flex" data-toggle="dropdown"
           style="align-items: center;">
           <!-- <i class="mb-1 cxi-profile nav-tool-icon "></i> -->
           <i class="mr-2 fas fa-wrench"></i>
-          <span>
+          <span style="font-size: 13px;">
             {{principal.name}}
           </span>
         </a>
         <div class=" dropdown-menu">
           <div class="container pt-lg-1 pb-lg-3">
             <div class="row justify-content-center">
-              <div class="py-2 col-md-3 " *ngFor="let sub of principal.categorias">
+              <div class="py-2 col-md-3 categorias-list" *ngFor="let sub of principal.categorias">
                 <a [routerLink]=" ['/productos/categoria/', principal.id, sub.id]"
-                  class="pt-1 mb-2 font-size-sm text-uppercase ">{{sub.name}}
+                  class="pt-1 mb-2 font-size-sm text-uppercase ">{{sub.name}} >
                 </a>
-                <ul class="list-unstyled">
-                  <li *ngFor="let sc of sub.subCategorias">
+                <ul class="list-unstyled sub-categorias-list" *ngIf="sub && sub.subCategorias"
+                  style="line-height: 20px;">
+                  <li *ngFor="let sc of sub.subCategorias.slice(0,6); let i = index">
                     <a [routerLink]=" ['/productos/categoria/', principal.id, sub.id, sc.id]"
                       class="p-0 dropdown-item text-dark" style="white-space: normal !important;">{{sc.name}}
+                    </a>
+                    <a [routerLink]=" ['/productos/categoria/', principal.id, sub.id]"
+                      *ngIf="sub.subCategorias.length >6 && i ==5" class="p-0 dropdown-item"
+                      style="white-space: normal !important; color : #12AB8D !important; font-weight: 400;">Ver
+                      más >
                     </a>
                   </li>
                 </ul>
