@@ -1,0 +1,70 @@
+.item-info-ferri {
+  margin: 5px;
+  display: flex;
+  max-width: 274px;
+  justify-content: center;
+  height: 100%;
+}
+.item-info-ferri .item-icon,
+.item-info-ferri .item-info {
+  -webkit-box-shadow: 0px 4px 6px -1px rgba(110, 104, 110, 0.4);
+  -moz-box-shadow: 0px 4px 6px -1px rgba(110, 104, 110, 0.4);
+  box-shadow: 0px 4px 6px -1px rgba(110, 104, 110, 0.4);
+  background-color: #fff !important;
+}
+
+.item-info-ferri .item-icon {
+  width: 72%;
+  padding: 5px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  border-radius: 48px 0 48px 48px;
+  height: 90%;
+  margin-right: 10px;
+}
+
+.item-info-ferri .item-info {
+  padding: 15px;
+  border-radius: 0 48px 48px 48px;
+}
+
+.item-info-ferri .item-info .title-info {
+  border-left: 4px solid #12ab8e;
+  padding-left: 10px;
+  margin-bottom: 5px;
+}
+
+.item-info-ferri .item-info .title-info h5 {
+  font-weight: 400;
+  color: #808080;
+  margin-bottom: 3px;
+  font-weight: 800;
+  text-align: left;
+  font-size: 18px;
+}
+
+.item-info-ferri .item-info .title-info .content-h4 {
+  background: rgb(4, 209, 168);
+  background: linear-gradient(
+    90deg,
+    rgba(4, 209, 168, 1) 0%,
+    rgba(19, 168, 140, 1) 100%
+  );
+  margin: 0;
+  text-align: left;
+  border-radius: 0 15px 15px 15px;
+  padding: 2px;
+  padding-right: 15px;
+  white-space: nowrap;
+}
+.item-info-ferri .item-info .title-info .content-h4 h4 {
+  color: #fff;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
+.item-info-ferri .item-info .content-info {
+  font-size: 9px;
+}

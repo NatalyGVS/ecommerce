@@ -1,0 +1,18 @@
+<div class="timer" *ngIf="time">
+  <p class="unit">
+    <strong>{{time.days | dosDigitos}} </strong>
+    <span>Días</span>
+  </p>
+  <p class="unit">
+    <strong>{{time.hours | dosDigitos}} </strong>
+    <span>Horas</span>
+  </p>
+  <p class="unit">
+    <strong>{{time.minutes | dosDigitos}} </strong>
+    <span>Min.</span>
+  </p>
+  <p class="unit">
+    <strong>{{time.seconds | dosDigitos}} </strong>
+    <span>Seg.</span>
+  </p>
+</div>

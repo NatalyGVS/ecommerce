@@ -1,3 +1,5 @@
+/* SECCION SLIDER CAROUSEL FERRI ================================================================================= */
+
 .bg-sl-1 {
   background: url(/../../assets/img/inicio/carousel-slider/01.jpeg) center
     no-repeat;
@@ -22,17 +24,13 @@
 
 .btn-outline-primary {
   background-color: black;
-  color: white;
+  color: #fff;
 }
 
 .btn-outline-primary:hover {
   background-color: #00aa8e;
-  color: white;
+  color: #fff;
   border: none;
-}
-
-.parent-img-category > img {
-  height: 180px;
 }
 
 /* SECCION INFO FERRI ================================================================================= */
@@ -41,74 +39,7 @@
 #section-desc-categorias {
   background-color: #f2f2f2;
 }
-.item-info-ferri {
-  margin: 5px;
-  display: flex;
-}
-.item-info-ferri .item-icon,
-.item-info-ferri .item-info {
-  -webkit-box-shadow: 0px 4px 6px -1px rgba(110, 104, 110, 0.4);
-  -moz-box-shadow: 0px 4px 6px -1px rgba(110, 104, 110, 0.4);
-  box-shadow: 0px 4px 6px -1px rgba(110, 104, 110, 0.4);
 
-  background-color: white !important;
-}
-
-.item-info-ferri .item-icon {
-  width: 72%;
-  padding: 5px;
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  border-radius: 48px 0 48px 48px;
-  height: 90%;
-  margin-right: 10px;
-}
-
-.item-info-ferri .item-info {
-  padding: 15px;
-  border-radius: 0 48px 48px 48px;
-}
-
-.item-info-ferri .item-info .title-info {
-  border-left: 4px solid #12ab8e;
-  padding-left: 10px;
-  margin-bottom: 5px;
-}
-
-.item-info-ferri .item-info .title-info h5 {
-  font-weight: 400;
-  color: #808080;
-  margin-bottom: 3px;
-  font-weight: 800;
-  text-align: left;
-  font-size: 18px;
-}
-
-.item-info-ferri .item-info .title-info .content-h4 {
-  background: rgb(4, 209, 168);
-  background: linear-gradient(
-    90deg,
-    rgba(4, 209, 168, 1) 0%,
-    rgba(19, 168, 140, 1) 100%
-  );
-  margin: 0;
-  text-align: left;
-  border-radius: 0 15px 15px 15px;
-  padding: 2px;
-  padding-right: 15px;
-  white-space: nowrap;
-}
-.item-info-ferri .item-info .title-info .content-h4 h4 {
-  color: white;
-  font-weight: 800;
-  text-transform: uppercase;
-  font-size: 18px;
-}
-
-.item-info-ferri .item-info .content-info {
-  font-size: 9px;
-}
 
 /* SECCION DESCRIPCION CATEGORIAS FERRI ================================================================================= */
 #section-desc-categorias {
@@ -148,41 +79,40 @@
   font-size: 22px;
   display: flex;
   height: 45px;
-  z-index: 1;
   position: relative;
   overflow: hidden;
   transition: all 0.5s;
+  z-index: 1;
 }
-
-.card-category-header:hover .category-name:before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
+.card-category-header:hover .category-name:hover:before {
+  width: 100%;
+}
+.card-category-header .category-name:before {
   width: 0%;
-  height: 100%;
-  background-color: #2edcbc;
+  background-color: #04d1a8;
   transition: all 0.5s;
-  border-radius: 10rem;
   z-index: -1;
 }
 
+.card-category-header .category-name:after {
+  width: 100%;
+  background-color: #32a28c;
+  z-index: -2;
+}
+
+.card-category-header .category-name:before,
 .card-category-header .category-name:after {
   content: "";
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 100%;
   height: 100%;
-  background-color: #14ad90;
   border-radius: 10rem;
-  z-index: -2;
 }
-
 .card-category-header .category-name a {
   padding: 5px 13px;
   text-decoration: none;
-  color: white;
+  color: #fff;
 }
 
 /* ************* category button */
@@ -204,17 +134,9 @@
 }
 .card-category-header .category-button:before {
   width: 0%;
-  background-color: #2edcbc;
+  background-color: #04d1a8;
   transition: all 0.5s;
   z-index: -1;
-}
-.category-header .category-button:before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  height: 100%;
-  border-radius: 10rem;
 }
 .card-category-header .category-button:after {
   width: 100%;
@@ -238,7 +160,7 @@
   height: 45px;
   width: 172px;
   text-decoration-line: none;
-  color: white;
+  color: #fff;
 }
 
 /* ************* category products */
@@ -249,13 +171,13 @@
 }
 
 .card-product-category:hover {
-  background-color: white;
+  background-color: #fff;
   -webkit-box-shadow: 0px 4px 6px -1px rgba(110, 104, 110, 0.4);
   -moz-box-shadow: 0px 4px 6px -1px rgba(110, 104, 110, 0.4);
   box-shadow: 0px 4px 6px -1px rgba(110, 104, 110, 0.4);
 }
 .detalle-product {
-  background-color: white;
+  background-color: #fff;
   border-radius: 15px;
 }
 /*
@@ -282,3 +204,22 @@
   overflow: hidden;
 }
 */
+/* SECCION CATEGORIAS POPULARES ================================================================================= */
+
+.parent-img-category > img {
+  height: 180px;
+}
+
+/* SECCION OFERTA POR TIEMPO LIMITADO ================================================================================= */
+#section-offer .container {
+  width: 80%;
+}
+
+
+/* SECCION REGALO ================================================================================================== */
+
+.regalos__list {
+  display: flex;
+  gap: 20px;
+  place-items: center;
+}

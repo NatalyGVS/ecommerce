@@ -1,0 +1,93 @@
+.regalo__card {
+  margin: 5px;
+}
+.regalo__item {
+  text-align: center;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s;
+}
+.regalo__item:hover {
+  -webkit-box-shadow: -1px 1px 12px -3px rgba(0, 0, 0, 0.78);
+  box-shadow: -1px 1px 12px -3px rgba(0, 0, 0, 0.78);
+}
+.regalo__item:hover .regalo__precio {
+  background: #2c2c2c;
+  color: #fff;
+}
+.regalo__item:hover .regalo__title{
+  color: #2c2c2c;
+}
+
+.regalo__item::before {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 120px;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgb(4, 209, 168) !important;
+  background: linear-gradient(
+    90deg,
+    rgba(4, 209, 168, 1) 0%,
+    rgba(19, 168, 140, 1) 100%
+  ) !important;
+  /* z-index: 1000; */
+  -moz-border-radius: 100px 100px 0 0;
+  -webkit-border-radius: 100px 100px 0 0;
+  border-radius: 100px 100px 0 0;
+}
+.regalo__header {
+  padding: 25px;
+  width: 200px;
+  height: 120px;
+  text-align: center;
+  position: relative;
+}
+
+.regalo__title {
+  font-weight: 600;
+  color: #fff;
+  font-size: 19px;
+  transition: all 0.5s;
+}
+.regalo__precio {
+  margin-top: 5px;
+  background: #fff;
+  color: #808080;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+  border-radius: 25px;
+  border: 1px solid #808080;
+  transition: all 0.5s;
+}
+.regalo__icon {
+  background-color: #04d2a9;
+  color: #fff;
+  border-radius: 50%;
+  width: 41px;
+  height: 41px;
+  line-height: 41px;
+}
+.regalo__icon svg {
+  font-size: 20px;
+}
+.regalo__precio span {
+  display: inline-block;
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.regalo__footer {
+  color: #808080;
+  background: #fff;
+  font-size: 12px;
+  padding: 18px;
+  width: 200px;
+  height: 80px;
+  text-align: center;
+}

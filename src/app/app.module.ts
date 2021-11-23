@@ -24,6 +24,11 @@ import { ContactoComponent } from './components/contacto/contacto.component';
 import { IndexPedidosComponent } from './components/usuario/pedidos/index-pedidos/index-pedidos.component';
 import { DetallePedidoComponent } from './components/usuario/pedidos/detalle-pedido/detalle-pedido.component';
 import { IndexCategoriasComponent } from './components/productos/index-categorias/index-categorias.component';
+import { OfertaComponent } from './components/inicio/oferta/oferta.component';
+import { RegaloComponent } from './components/inicio/regalo/regalo.component';
+import { InfoComponent } from './components/inicio/info/info.component';
+import { TimerComponent } from './components/inicio/oferta/timer/timer.component';
+import { DosDigitosPipe } from './pipes/dos-digitos.pipe';
 
 @NgModule({
   declarations: [
@@ -42,6 +47,11 @@ import { IndexCategoriasComponent } from './components/productos/index-categoria
     IndexPedidosComponent,
     DetallePedidoComponent,
     IndexCategoriasComponent,
+    OfertaComponent,
+    RegaloComponent,
+    InfoComponent,
+    TimerComponent,
+    DosDigitosPipe,
   ],
   imports: [
     BrowserModule,

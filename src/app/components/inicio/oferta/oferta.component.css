@@ -1,0 +1,128 @@
+.oferta__card {
+  display: flex;
+  /* width: 90%; */
+  justify-content: center;
+}
+
+/* ***** oferta descripcion */
+
+.oferta__descripcion {
+  width: 41%;
+  padding: 5px;
+}
+
+.oferta__icon {
+  padding: 8px;
+  border-radius: 50%;
+  width: 46px;
+  height: 46px;
+  float: left;
+
+  background: rgb(4, 209, 168);
+  background: linear-gradient(
+    90deg,
+    rgba(4, 209, 168, 1) 0%,
+    rgba(19, 168, 140, 1) 100%
+  );
+}
+
+.oferta__titulo {
+  font-size: 35px;
+  color: #808080;
+  font-weight: 800;
+}
+.oferta__descripcion__sub {
+  background: rgb(4, 209, 168);
+  background: linear-gradient(
+    90deg,
+    rgba(4, 209, 168, 1) 0%,
+    rgba(19, 168, 140, 1) 100%
+  );
+}
+.oferta__descripcion__sub h3 {
+  color: #fff;
+  font-weight: 800;
+}
+.oferta__descripcion__text {
+  color: #808080;
+  line-height: 20px;
+}
+.oferta__descrpicion__button {
+  text-align: center;
+}
+.oferta__btn-1 {
+  background-color: #808080;
+  color: #fff;
+  padding: 5px 15px;
+  border: none;
+}
+
+/* ***** oferta imagen */
+.oferta__imagen {
+  padding: 8px;
+  width: 41%;
+  position: relative;
+}
+.oferta__imagen__text {
+  position: absolute;
+  top: 20%;
+  left: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: self-start;
+}
+.oferta__text1 {
+  padding: 5px 10px;
+  font-size: 33px;
+  background-color: #ff6e00;
+  font-weight: 400;
+  color: #fff;
+}
+.oferta__text2 {
+  padding: 5px 10px;
+  font-weight: 800;
+  font-size: 33px;
+  background-color: #ff6e00;
+  color: #fff;
+}
+.oferta__imagen__countdown {
+  position: absolute;
+  bottom: 5%;
+  left: 10px;
+}
+/* ***** oferta detalle */
+
+.oferta__detalle {
+  padding: 8px;
+  width: 18%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.oferta__producto__name {
+  color: #606060;
+}
+.oferta__producto__desc {
+  color: #606060;
+}
+.oferta__precio {
+  background-color: #ff6e00;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 7px;
+  width: 100%;
+  text-align: center;
+  font-size: 35px;
+  font-weight: 400;
+}
+.oferta__precio_antes {
+  color: #606060;
+}
+.oferta__btn-2 {
+  background-color: #2c2c2c;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 7px;
+  width: 100%;
+}

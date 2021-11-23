@@ -1,12 +1,15 @@
 import { ConfiguracionService } from './../../services/configuracion.service';
 import { Component, OnInit } from '@angular/core';
 declare var tns;
+
+
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.component.html',
   styleUrls: ['./inicio.component.css'],
 })
 export class InicioComponent implements OnInit {
+
   public productos: any[];
   public principales: any[];
   public banners;
@@ -24,6 +27,7 @@ export class InicioComponent implements OnInit {
       this.productos = response;
       this.inicializacionCarousel();
     });
+
   }
 
   inicializacionCarousel() {
