@@ -12,6 +12,8 @@ export class InicioComponent implements OnInit {
   public principales: any[];
   public banners;
   public regalos: any[];
+  public load_data_px = true;
+
 
   constructor(private _configuracionService: ConfiguracionService) {}
 
@@ -51,6 +53,7 @@ export class InicioComponent implements OnInit {
     //productos populares
     this._configuracionService.getProductosInicio().subscribe((response) => {
       this.productos = response;
+      this.load_data_px = false;
       console.log('this.productos', this.productos);
       this.inicializacionCarousel();
     });

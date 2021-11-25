@@ -15,7 +15,7 @@ export class IndexProductoComponent implements OnInit {
   public principalActual: any = {};
   public categoriaActual: any = {};
   public subCategoriaActual: any = {};
-
+  public productModal: any = {};
   // public categoriasPrincipal: any[];
   // public subcategorias: any[];
   public productos: any[] = [];
@@ -302,5 +302,13 @@ export class IndexProductoComponent implements OnInit {
       //la maxima cantidad disponible es: this.producto.stock
       console.log('la maxima cantidad disponible es ', producto.stock);
     }
+  }
+
+
+  abrirModal(event) {
+    $('#modalCarritoCompras').modal('show');
+    console.log('event', event);
+    this.productModal = event;
+    console.log('abrir modal', this.productModal);
   }
 }

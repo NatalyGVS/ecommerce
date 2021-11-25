@@ -12,7 +12,8 @@
   display: block;
 }
 
-/* //************************************* */
+/* //*********************************************************** */
+
 .card-home {
   width: 190px;
   height: 291px;
@@ -24,6 +25,10 @@
   padding: 10px 12px;
   overflow: hidden;
   cursor: pointer;
+}
+.card-product-index {
+  width: 210px !important;
+  height: 314px !important;
 }
 
 .card-home:hover {
@@ -39,6 +44,10 @@
 .card-home .card-product {
   position: relative;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 283px;
 }
 
 .card-product {
@@ -141,7 +150,6 @@ a {
   line-height: 16px;
   font-size: 15px;
 }
-/* h3 margin */
 
 .card-home .card-product .card-product-price {
   text-align: center;
@@ -200,4 +208,180 @@ a {
 }
 .list-price .text-list-price {
   display: inline-block;
+}
+
+/* product bottom ********************************************************* */
+.prod-bottom {
+  opacity: inherit;
+  visibility: inherit;
+  position: relative;
+  padding: 0;
+  box-shadow: inherit;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  margin-top: 10px;
+  border-radius: 0 0 5px 5px;
+
+  width: 100%;
+  background: #fff;
+  transition: all 0.3s ease;
+
+  /* position: absolute;
+  bottom: -69px; */
+  left: 0;
+  right: 0;
+}
+
+.prod-bottom .ctrls {
+  margin-top: 0;
+  padding-top: 10px;
+}
+.por {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.clearfix:before {
+  content: " ";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+
+.prod-bottom .ctrls .cantidad {
+  font-size: 0;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+}
+
+.prod-bottom .ctrls .cantidad .mas-prod:active {
+  background: #ff6e00;
+  color: #fff;
+  box-shadow: 0 0 4px rgb(0 0 0 / 40%);
+  transform: scale(0.95);
+}
+
+.prod-bottom .ctrls .cantidad .mas-prod {
+  background: 0 0;
+  display: inline-block;
+  vertical-align: bottom;
+  cursor: pointer;
+  width: 28px;
+  height: 28px;
+  color: #ff6e01;
+  text-align: center;
+  line-height: 28px;
+  border-radius: 50%;
+  user-select: none;
+  box-shadow: 0 0 4px transparent;
+  transform: scale(1);
+  transition: all 0.3s ease;
+  font-size: 0;
+}
+
+.prod-bottom .ctrls .cantidad .mas-prod.js-down:before {
+  content: "\e914";
+  font-family: "createx-icons";
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.prod-bottom .ctrls .cantidad .mas-prod:before {
+  content: "\e915";
+  font-family: "createx-icons";
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.prod-bottom .ctrls .cantidad input.num {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.7);
+  width: 34px;
+  margin: 0 2px;
+  height: 23px;
+  border: none;
+  -webkit-appearance: none;
+  text-align: center;
+  background: 0 0;
+  box-shadow: none;
+  outline: none;
+}
+
+.prod-bottom .ctrls .cantidad .mas-prod {
+  background: 0 0;
+  display: inline-block;
+  vertical-align: bottom;
+  cursor: pointer;
+  width: 28px;
+  height: 28px;
+  color: #ff6e01;
+  text-align: center;
+  line-height: 28px;
+  border-radius: 50%;
+  user-select: none;
+  box-shadow: 0 0 4px transparent;
+  transform: scale(1);
+  transition: all 0.3s ease;
+  font-size: 0;
+}
+
+/*btn agregar  ************************** */
+.prod-bottom .ctrls .gh-btn {
+  font-size: 16px;
+  color: #fff !important;
+  background: #ff6e00;
+  padding: 0 7px;
+  box-sizing: border-box;
+  border-radius: 22px;
+  border: none;
+  cursor: pointer;
+  box-shadow: none;
+  height: 28px;
+  line-height: 28px;
+  transition: box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 89px;
+  float: right;
+  text-align: center;
+}
+.prod-bottom .ctrls .gh-btn em {
+  font-style: normal;
+}
+
+.prod-bottom .ctrls .gh-btn {
+  font-size: 16px;
+  color: #fff !important;
+  background: #ff6e00;
+  padding: 0 7px;
+  box-sizing: border-box;
+  border-radius: 22px;
+  border: none;
+  cursor: pointer;
+  box-shadow: none;
+  height: 28px;
+  line-height: 28px;
+  transition: box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 89px;
+  float: right;
+  text-align: center;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+  border: none;
+  box-shadow: none;
 }

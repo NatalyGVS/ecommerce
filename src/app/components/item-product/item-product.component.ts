@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+declare var $;
 
 @Component({
   selector: 'app-item-product',
@@ -7,23 +8,28 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ItemProductComponent implements OnInit {
   @Input() product: any;
+  @Input() productCarrito: any;
+  @Output() productModal = new EventEmitter();
+
+  public cantidad: number = 1;
+
   constructor() {}
 
   ngOnInit(): void {
-    let precio: string;
-
-    if (this.product.precioDescuento) {
-      precio = this.product.precioDescuento.toString().split('.');
-    } else if (this.product.precioOriginal) {
-      precio = this.product.precioOriginal.toString().split('.');
-    }
-    if (precio) {
-      this.product.numEntero = precio[0];
-      this.product.numDecimal = precio[1]
-        ? precio[1].length === 1
-          ? precio[1] + '0'
-          : precio[1]
-        : '00';
-    }
+    this.product.cantidad = 1;
   }
+
+  reduceProduct() {
+    if (this.cantidad > 1) this.product.cantidad--;
+    // this.product.cantidad = this.cantidad;
+  }
+  addProduct() {
+    this.product.cantidad++;
+    // this.product.cantidad = this.product.cantidad;
+  }
+
+  addCarrito(product: any) {
+    this.productModal.emit(product);
+  }
+
 }

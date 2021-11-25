@@ -30,6 +30,9 @@ import { InfoComponent } from './components/inicio/info/info.component';
 import { TimerComponent } from './components/inicio/oferta/timer/timer.component';
 import { DosDigitosPipe } from './pipes/dos-digitos.pipe';
 import { ItemProductComponent } from './components/item-product/item-product.component';
+import { ModalComponent } from './components/carrito/modal/modal.component';
+import { NumParteEnteraPipe } from './pipes/num-parte-entera.pipe';
+import { NumParteDecimalPipe } from './pipes/num-parte-decimal.pipe';
 
 @NgModule({
   declarations: [
@@ -54,6 +57,9 @@ import { ItemProductComponent } from './components/item-product/item-product.com
     TimerComponent,
     DosDigitosPipe,
     ItemProductComponent,
+    ModalComponent,
+    NumParteEnteraPipe,
+    NumParteDecimalPipe,
   ],
   imports: [
     BrowserModule,

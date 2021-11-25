@@ -1,0 +1,54 @@
+<div class="modal fade" id="modalCarritoCompras">
+  <div class="modal-dialog ">
+  </div>
+  <div class="layer-add-to-cart">
+    <div class="add-content">
+      <div class="upper">
+        <label class="title">
+          <span class="check">
+            <i class="fas fa-check"></i>
+          </span>Producto agregado a tu carrito
+        </label>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <div class="cnt-added-prod">
+          <div class="added-prod">
+            <div class="lefted">
+              <span class="cur-quan-num">{{product.cantidad}}</span>
+              <img src={{product.ruta}}>
+            </div>
+            <div class="righted">
+              <label class="prd-name">{{product.name}}</label>
+              <label class="prd-sku">SKU:{{product.sku}}</label>
+              <div class="prices" *ngIf="!product.precioDescuento">
+                <label class="prc1">
+                  <em>S/ </em>
+                  <span>{{product.precioOriginal | numParteEntera}}</span>
+                  <sup>.{{product.precioOriginal | numParteDecimal}}</sup>
+                </label>
+              </div>
+              <div class="prices" *ngIf="product.precioDescuento">
+                <label class="prc1 precioOriginal cross">
+                  <em>S/ </em>
+                  <span>{{product.precioOriginal | numParteEntera}}</span>
+                  <sup>.{{product.precioOriginal | numParteDecimal}}</sup>
+                </label>
+                <label class="prc1 precioDescuento">
+                  <em>S/ </em>
+                  <span>{{product.precioDescuento | numParteEntera}}</span>
+                  <sup>.{{product.precioDescuento | numParteDecimal}}</sup>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bottomed">
+          <a class="lnk1" data-dismiss="modal"> Ver mas productos </a>
+          <a (click)="irCarrito()" class="lnk2 gh-btn v2">Ir a mi carrito</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

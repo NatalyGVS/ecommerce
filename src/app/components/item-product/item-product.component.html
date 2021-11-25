@@ -8,7 +8,65 @@
   </div>
 </div>
 <ng-template #cardProduct>
-  <div class="card-home">
+
+  <div class="card-home card-product-index" *ngIf="productCarrito && productCarrito==true">
+    <div class="card-product gh-gtm-img">
+      <a [routerLink]="['/productos/', product.id]" class="card-enlace">
+        <div class="card-product-image">
+          <img src={{product.ruta}} alt="{{product.name}}">
+        </div>
+        <div class="flag-wrapper active" *ngIf="product.descuento">
+          <div class="flag linea-blanca-tag" style="display:block">
+            <span>{{product.descuento}}</span>
+          </div>
+        </div>
+        <div class="card-product-detail">
+          <h3 class="product-name">
+            <span itemprop="name">{{product.name}}</span>
+          </h3>
+        </div>
+        <div class="card-product-price">
+          <div class="product-price product-price--best">
+            <div class="best-price">
+              <span class="price" *ngIf="product.precioDescuento">
+                <span class="soles"> S/ </span>
+                <span>{{product.precioDescuento | numParteEntera}}</span>
+                <sup >{{product.precioDescuento | numParteDecimal}} </sup>
+              </span>
+              <span class="price" *ngIf="!product.precioDescuento">
+                <span class="soles"> S/ </span>
+                <span>{{product.precioOriginal | numParteEntera}}</span>
+                <sup >{{product.precioOriginal | numParteDecimal}} </sup>
+              </span>
+            </div>
+
+            <div class="list-price" *ngIf="product.precioDescuento">
+              <div class="text-list-price">Regular: </div>
+              <span class="price">
+                S/{{product.precioOriginal}}
+              </span>
+            </div>
+          </div>
+        </div>
+      </a>
+      <div class="prod-bottom">
+
+        <div class="clearfix ctrls por ">
+
+          <div class="cantidad">
+            <span class="mas-prod js-down" (click)="reduceProduct()"></span>
+            <input class="num js-cantidad" type="number" size="1" value="1" name="cantidad" [(ngModel)]="product.cantidad">
+            <span class="mas-prod js-up" (click)="addProduct()"></span>
+          </div>
+          <button class="gh-btn js-addtocart" type="button" tabindex="0" (click)="addCarrito(product)">
+            <em>Agregar</em>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-home" *ngIf="!productCarrito || productCarrito==false">
     <div class="card-product gh-gtm-img">
       <a [routerLink]="['/productos/', product.id]" class="card-enlace">
         <div class="card-product-image">
@@ -45,5 +103,58 @@
       </a>
     </div>
   </div>
-
 </ng-template>
+<!-- <div class="modal fade" id="modalCarritoCompras">
+  <div class="modal-dialog ">
+  </div>
+  <div class="layer-add-to-cart">
+    <div class="add-content">
+      <div class="upper">
+        <label class="title">
+          <span class="check">
+            <i class="fas fa-check"></i>
+          </span>Producto agregado a tu carrito
+        </label>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <div class="cnt-added-prod">
+          <div class="added-prod">
+            <div class="lefted">
+              <span class="cur-quan-num">{{cantidad}}</span>
+              <img src={{product.ruta}}>
+            </div>
+            <div class="righted">
+              <label class="prd-name">{{product.name}}</label>
+              <label class="prd-sku">SKU:{{product.sku}}</label>
+              <div class="prices" *ngIf="!product.precioDescuento">
+                <label class="prc1">
+                  <em>S/ </em>
+                  <span>69</span>
+                  <sup>.90</sup>
+                </label>
+              </div>
+              <div class="prices" *ngIf="product.precioDescuento">
+                <label class="prc1 precioOriginal cross">
+                  <em>S/ </em>
+                  <span>69</span>
+                  <sup>.90</sup>
+                </label>
+                <label class="prc1 precioDescuento">
+                  <em>S/ </em>
+                  <span>69</span>
+                  <sup>.90</sup>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bottomed">
+          <a class="lnk1" data-dismiss="modal"> Ver mas productos </a>
+          <a (click)="irCarrito()" class="lnk2 gh-btn v2">Ir a mi carrito</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div> -->

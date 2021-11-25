@@ -23,3 +23,19 @@
   height: 150px;
   width: auto;
 }
+
+/* --CONTENIDO PRODUCTOS */
+/*
+.card-product {
+  padding: 7px;
+  margin: 0;
+}
+*/
+.card-category-products {
+  width: 100%;
+}
+.list-product-cart {
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+}

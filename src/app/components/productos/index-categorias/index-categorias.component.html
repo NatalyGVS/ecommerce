@@ -38,28 +38,46 @@
 
             <!-- Listado de Categorias -->
             <div class="card border-bottom" *ngFor="let category of principal.categorias">
-              <div class="py-3 card-header" id="{{category.id}}-panel">
-                <h6 class="accordion-heading">
-                  <a href="#{{category.id}}" role="button" data-toggle="collapse" aria-expanded="false"
-                    class="collapsed" aria-controls="{{category.id}}">
-                    {{category.name}}
-                    <span class="accordion-indicator"></span>
-                  </a>
-                </h6>
+
+              <div
+                *ngIf="category.subCategorias && category.subCategorias.length >0; then  tieneSubcategorias else NoTieneSubcategorias;">
               </div>
-              <div class="collapse" id="{{category.id}}" aria-labelledby="{{category.id}}-panel">
-                <div class="pt-2 pb-4 cs-widget mt-n3">
-                  <!-- listado de subcategorias -->
-                  <div class="mt-1 input-group-overlay d-lg-block d-none order-lg-3"
-                    *ngFor="let subcat of category.subCategorias">
-
-                    <a [routerLink]=" ['/productos/categoria/', principal.id, category.id, subcat.id]">
-                      {{subcat.name}}
+              <ng-template #tieneSubcategorias>
+                <div class="py-3 card-header" id="{{category.id}}-panel">
+                  <h6 class="accordion-heading">
+                    <a href="#{{category.id}}" role="button" data-toggle="collapse" aria-expanded="false"
+                      class="collapsed" aria-controls="{{category.id}}">
+                      {{category.name}}
+                      <span class="accordion-indicator"></span>
                     </a>
-
+                  </h6>
+                </div>
+                <div class="collapse" id="{{category.id}}" aria-labelledby="{{category.id}}-panel">
+                  <div class="pt-2 pb-4 cs-widget mt-n3">
+                    <!-- listado de subcategorias -->
+                    <div class="mt-1 input-group-overlay d-lg-block d-none order-lg-3"
+                      *ngFor="let subcat of category.subCategorias">
+                      <a [routerLink]=" ['/productos/categoria/', principal.id, category.id, subcat.id]">
+                        {{subcat.name}}
+                      </a>
+                    </div>
                   </div>
                 </div>
-              </div>
+
+              </ng-template>
+              <ng-template #NoTieneSubcategorias>
+                <div class="py-3 card-header" id="{{category.id}}-panel">
+                  <h6 class="accordion-heading">
+                    <a [routerLink]=" ['/productos/categoria/', principal.id, category.id]" role="button"
+                      data-toggle="collapse" aria-expanded="false" class="collapsed" aria-controls="{{category.id}}">
+                      {{category.name}}
+                    </a>
+                  </h6>
+                </div>
+
+              </ng-template>
+
+
             </div>
           </div>
         </div>
@@ -83,19 +101,16 @@
             <div class="imagen-principal">
               <img src={{principal.ruta}} alt={{principal.name}} width="100%">
             </div>
-            <div class="imagen-categorias row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3"
-              data-filters-columns>
+            <div class="imagen-categorias row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3">
 
-              <div class="m-2 col card-categoria" *ngFor="let category of principal.categorias">
+              <div class="mt-3 col card-categoria" *ngFor="let category of principal.categorias">
 
                 <a [routerLink]=" ['/productos/categoria/', principal.id, category.id]" class="">
                   <div class="card-img-cat">
                     <img src={{category.ruta}} alt={{category.name}} width="100%">
                   </div>
                   <div class="text-categoria">
-                    <!-- <div class="btn btn-success w-100" style="white-space: normal !important;"> -->
                     {{category.name}}
-                    <!-- </div> -->
                   </div>
                 </a>
               </div>
