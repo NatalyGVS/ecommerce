@@ -43,41 +43,6 @@ export class ShowProductoComponent implements OnInit {
         autoplayButton: false,
       });
 
-      //inicializar segundo slider
-      tns({
-        container: '.cs-carousel-inner-two',
-        controlsText: [
-          '<i class="cxi-arrow-left"></i>',
-          '<i class="cxi-arrow-right"></i>',
-        ],
-        navPosition: 'top',
-        controlsPosition: 'top',
-        mouseDrag: !0,
-        speed: 600,
-        // autoplayHoverPause: !0,
-        // autoplayButtonOutput: !1,
-        nav: false,
-        controlsContainer: '#custom-controls-related',
-        responsive: {
-          0: {
-            items: 1,
-            gutter: 20,
-          },
-          480: {
-            items: 2,
-            gutter: 24,
-          },
-          700: {
-            items: 3,
-            gutter: 24,
-          },
-          1100: {
-            items: 4,
-            gutter: 30,
-          },
-        },
-      });
-
       //la lupa q se acerca al slider
       var e = document.querySelectorAll('.cs-gallery');
       if (e.length) {
@@ -102,21 +67,7 @@ export class ShowProductoComponent implements OnInit {
           return item.id == this.idProducto;
         });
         console.log('this.producto', this.producto);
-
-        //productos recomendados
-
-        this._configuracionService.getProductos().subscribe((response) => {
-          this.productosRecomendados = response.filter((item) => {
-            return (
-              item.principal.id == this.producto.principal.id &&
-              item.categoria.id == this.producto.categoria.id &&
-              item.subcategoria.id == this.producto.subcategoria.id
-            );
-          });
-
-          console.log('this.productosRecomendados', this.productosRecomendados);
-          this.initSlider();
-        });
+        this.initSlider();
       });
     });
 

@@ -57,412 +57,138 @@
           <h4 class="mb-2 mb-md-0">{{producto.name}}</h4>
         </div>
 
-        <span class="text-muted"> nombre_marca | SKU: 139417</span>
+        <span class="text-muted"> nombre_marca | SKU: {{producto.sku}}</span>
 
-        <div class="mb-4 d-sm-flex align-items-center justify-content-between">
+        <div class="my-4">
 
           <!-- Precio -->
-          <div class="mb-4 d-flex align-items-center mb-sm-0">
-            <span class="mb-0 h3 d-inline-block text-danger">S/.{{producto.precio}}</span>
-          </div>
+          <!-- <div class="mb-4 d-flex align-items-center mb-sm-0">
+            <span class="mb-0 h3 d-inline-block text-danger">S/.{{producto.precioOriginal}}</span>
+          </div> -->
 
+          <!-- precio copiado  -->
+          <div class="price-seller-cnt">
+            <div class="price">
+              <span class="flag">-29% </span>
+              <i>Oferta</i>
+              <em>S/ </em>
+              <span>3599</span>
+            </div>
+            <div class="listprice">
+              <i>Regular</i>
+              <em>S/ </em>
+              <span>5,078</span>
+              <sup>.90 </sup>
+            </div>
+          </div>
         </div>
 
+
         <!-- Ordering form -->
-        <form class="row" style="align-items: center;">
+        <form class="row content-botones">
 
           <!-- Cantidad de producto -->
-          <div class="btn-toolbar" role="toolbar" aria-label="Pagination">
-            <div class="btn-group me-2" role="group" aria-label="First group">
-              <button (click)="reduceProduct()" type="button" class="btn btn-outline-secondary">-</button>
+          <div class="m-0 content-cantidad row">
+            <div class="btn-group me-2" role="group">
+              <button (click)="reduceProduct()" type="button" class="p-0 m-0 btn btn-outline-secondary">
+                <i class="cxi-minus"></i>
+              </button>
 
               <input type="text" class="btn btn-outline-secondary btn-content-input" size="1" value="1" name="cantidad"
                 [(ngModel)]="dataCarrito.cantidad" />
 
-              <button (click)="addProduct()" type="button" class="btn btn-outline-secondary">+</button>
+              <button (click)="addProduct()" type="button" class="p-0 m-0 btn btn-outline-secondary">
+                <i class="cxi-plus"></i>
+              </button>
             </div>
 
           </div>
 
-          <div class="col">
-            <button *ngIf="!btn_cart" class="btn btn-block btn-primary" (click)="agregar_producto()">
-              <i class="mr-2 cxi-cart"></i>
-              Agregar
-            </button>
+          <div class="botones-agregar row">
+            <div class="col">
+              <button *ngIf="!btn_cart" class="btn" (click)="agregar_producto()">
+                <i class="mr-2 cxi-cart"></i>
+                Agregar
+              </button>
 
-            <button *ngIf="btn_cart" type="button" class="btn btn-primary" disabled>
-              <span class="spinner-grow spinner-grow-sm me-2" role="status" aria-hidden="true"></span>
-              Agregando...
-            </button>
+              <button *ngIf="btn_cart" type="button" class="btn" disabled>
+                <span class="spinner-grow spinner-grow-sm me-2" role="status" aria-hidden="true"></span>
+                Agregando...
+              </button>
 
+            </div>
+            <div class="col">
+              <button *ngIf="!btn_cart" class="btn" (click)="agregar_producto()">
+                Realizar Pago
+              </button>
+
+              <button *ngIf="btn_cart" type="button" class="btn" disabled>
+                <span class="spinner-grow spinner-grow-sm me-2" role="status" aria-hidden="true"></span>
+                Agregando...
+              </button>
+
+            </div>
           </div>
 
         </form>
 
-        <!-- Terms -->
-        <!-- Accordion made of cards -->
-        <div class="mb-4 accordion-alt" id="productTerms">
 
-          <!-- Card -->
-          <div class="card border-bottom">
-            <div class="card-header" id="delivery-card">
-              <h6 class="accordion-heading">
-                <a href="#delivery" class="collapsed" role="button" data-toggle="collapse" aria-expanded="true"
-                  aria-controls="delivery">Métodos de entrega
-                  <span class="accordion-indicator"></span>
-                </a>
-              </h6>
+        <div class="mt-4 mb-3 metodos-entrega">
+          <h3>Métodos de entrega</h3>
+          <div class="metodos-content">
+            <div class="metodo-box">
+              <div class="aval-icon">
+                <i class="fas fa-location-arrow"></i>
+              </div>
+              <div class="aval-list">
+                <span class="aval-title">Despacho express</span>
+                <div class="date">No disponible</div>
+
+              </div>
+              <div class="aval-lnk">Ver distritos
+                <i class="cxi-angle-right"></i>
+              </div>
             </div>
-            <div class="collapse show" id="delivery" aria-labelledby="delivery-card" data-parent="#productTerms">
+            <div class="metodo-box disponible">
 
-              <div class="card-body">
-
-
-
-                <div class="metodos-entrega row justify-content-center">
-                  <div class="text-center card card-hover card-entrega">
-                    <div class="card-body">
-                      <img class="my-3" src="../../../../assets/img/icon-circle-delivery.svg" width="48"
-                        alt="icon-circle-delivery">
-                      <h3 class="mb-2 h5">Entrega a Domicilios</h3>
-                      <p class="mb-0 text-muted">Desde el 17 de nov. a partir de <strong> S/30 </strong>.</p>
-                    </div>
-                  </div>
-                  <div class="text-center card card-hover card-entrega">
-                    <div class="card-body">
-                      <img class="my-3" src="../../../../assets/img/icon-circle-store.svg" width="48"
-                        alt="icon-circle-store">
-                      <h3 class="mb-2 h5">Recoge en Tienda</h3>
-                      <p class="mb-0 text-muted">Desde el 17 de nov. <strong> Gratis </strong> .</p>
-                    </div>
-                  </div>
-
-                </div>
-
-
-
-
+              <div class="aval-icon">
+                <i class="fas fa-truck-moving"></i>
+              </div>
+              <div class="aval-list">
+                <span class="aval-title">Despacho programado</span>
+                <div class="date">Desde el <span>7 de dic. a partir de S/25</span></div>
+              </div>
+              <div class="aval-lnk">Calcular <i class="cxi-angle-right"></i></div>
+            </div>
+            <div class="metodo-box disponible">
+              <div class="aval-icon">
+                <i class="fas fa-store-alt"></i>
+              </div>
+              <div class="aval-list">
+                <span class="aval-title">Retiro en tienda</span>
+                <div class="date">Desde el <b>7 de dic. Gratis</b></div>
+              </div>
+              <div class="aval-lnk">Ver tiendas
+                <i class="cxi-angle-right"></i>
               </div>
             </div>
           </div>
-
-          <!-- Card -->
-          <div class="card border-bottom">
-            <div class="card-header" id="return-card">
-              <h6 class="accordion-heading">
-                <a class="collapsed" href="#return" role="button" data-toggle="collapse" aria-expanded="false"
-                  aria-controls="return">Cambios y devoluciones
-                  <span class="accordion-indicator"></span>
-                </a>
-              </h6>
-            </div>
-            <div class="collapse" id="return" aria-labelledby="return-card" data-parent="#productTerms">
-              <p class="font-size-sm">
-                Tienes hasta <strong> 90 días </strong> desde la recepción de tu producto para realizar tus cambios y
-                devoluciones.
-              </p>
-              <!-- <ul class="pl-3 mb-4">
-                <li>Free store return</li>
-                <li>Free returns via USPS Dropoff Service</li>
-              </ul> -->
-            </div>
+        </div>
+        <div class="my-3 stock">
+          <button class="btn-stock"> <i class="fas fa-box-open"></i> Consultar Stock <i class="cxi-angle-right"></i>
+          </button>
+        </div>
+        <div class="my-3 devoluciones">
+          <div class="text-devoluciones">
+            <i class="mr-2 fas fa-exchange-alt"></i> <span> Cambios y devoluciones:</span> Tienes hasta 90 días desde la
+            recepción de tu
+            producto para realizar tus cambios y devoluciones.
           </div>
         </div>
 
-        <!-- Share -->
-        <div class="mb-5 text-nowrap">
-          <h6 class="mb-0 mr-2 align-middle d-inline-block">Compartir:</h6>
-          <a class="mr-2 align-middle social-btn sb-solid" data-toggle="tooltip" title="Facebook">
-            <i class="cxi-facebook"></i>
-          </a>
-          <a class="mr-2 align-middle social-btn sb-solid" data-toggle="tooltip" title="Twitter">
-            <i class="cxi-twitter"></i>
-          </a>
-          <a class="align-middle social-btn sb-solid" data-toggle="tooltip" title="Pinterest">
-            <i class="cxi-pinterest"></i>
-          </a>
-        </div>
-
-        <!-- Payment -->
-        <div class="pb-3 text-nowrap" data-simplebar data-simplebar-auto-hide="false">
-          <a href="#" class="mb-3 mr-3 d-inline-block mr-xl-4">
-            <img src="assets/img/visa.jpg" alt="Visa" class="border rounded">
-          </a>
-          <a href="#" class="mb-3 mr-3 d-inline-block mr-xl-4">
-            <img src="assets/img/master-card.jpg" alt="Mastercard" class="border rounded">
-          </a>
-          <a href="#" class="mb-3 d-inline-block">
-            <img src="assets/img/pay-pal.jpg" alt="PayPal" class="border rounded">
-          </a>
-        </div>
       </div>
     </div>
   </section>
 
-  <div class="py-5" style="background-color: #e5e8ed;">
-    <section class="container py-2 my-lg-2 py-md-4">
-      <div class="row">
-        <div class="mb-4 col-lg-7 col-md-8 mb-md-0" [innerHTML]="producto.detalleHTML">
-          <!-- <h3 class="mb-3 h5">Detalles</h3>
-
-          <p>Id habitant tempor aliquam vulputate enim velit tincidunt sed. Urna sed facilisis nulla feugiat amet
-            venenatis. Id suspendisse ut quis tellus aliquam pellentesque neque, semper donec.</p>
-          <ul class="pl-3">
-            <li>Brand: Jordan</li>
-            <li>Color: gray / red / yellow</li>
-            <li>Mid-cut design</li>
-            <li>Lace-up fastening</li>
-            <li>Rubber outsole pods for durability and traction</li>
-            <li>Moulded grooves in forefoot offer added flexibility</li>
-            <li>Padded cuff with inner nodes designed to offer comfort and support around the Achilles tendon</li>
-          </ul>
-          <hr class="my-4">
-          <h3 class="mb-3 h5">Fabric</h3>
-          <ul class="pl-3">
-            <li>Upper: 50% real leather, 50% textile</li>
-            <li>Lining: 100% textile</li>
-            <li>Sole: 100% other materials</li>
-          </ul> -->
-        </div>
-        <div class="col-md-4 offset-lg-1">
-
-          <!-- Product card carousel -->
-          <div class="card card-product">
-            <div class="card-product-img">
-              <div class="cs-carousel cs-controls-onhover">
-                <a class="cs-carousel-inner">
-                  <div>
-                    <img class="card-img-top" src={{producto.ruta}} alt="Product image">
-                  </div>
-
-                </a>
-              </div>
-              <div class="card-product-widgets-top">
-                <div class="ml-auto star-rating">
-                  <i class="sr-star cxi-star-filled active"></i>
-                  <i class="sr-star cxi-star-filled active"></i>
-                  <i class="sr-star cxi-star-filled active"></i>
-                  <i class="sr-star cxi-star-filled active"></i>
-                  <i class="sr-star cxi-star"></i>
-                </div>
-              </div>
-              <div class="card-product-widgets-bottom">
-                <a class="ml-auto btn-wishlist" href="#" data-toggle="tooltip" data-placement="left"
-                  title="Add to wishlist"></a>
-              </div>
-            </div>
-            <div class="pb-2 card-body" style="background-color: white;">
-              <h3 class="mb-2 card-product-title text-truncate">
-                <a href="#" class="nav-link">{{producto.name}}</a>
-              </h3>
-              <div class="mb-3 d-flex align-items-center">
-                <span class="mb-0 h5 d-inline-block text-danger">S/.{{producto.precio}}</span>
-                <del class="pl-1 ml-2 d-inline-block text-muted">$31.00</del>
-              </div>
-
-              <button type="button" class="mb-3 btn btn-primary btn-block">
-                <i class="mr-2 align-middle cxi-cart mt-n1"></i>
-                Agregar al carrito
-              </button>
-            </div>
-            <div class="card-footer">
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-  </div>
-
-  <section class="py-5" style="background-color: #ffffff !important;">
-    <div class="container py-2 my-lg-2 py-md-4">
-      <div class="mb-5 d-flex align-items-center justify-content-between pb-sm-1">
-        <h3 class="pr-3 mb-0 h2">Productos recomendados</h3>
-        <div class="tns-custom-controls cs-controls-inverse" id="custom-controls-related" tabindex="0">
-          <button type="button" data-controls="prev" tabindex="-1">
-            <i class="cxi-arrow-left"></i>
-          </button>
-          <button type="button" data-controls="next" tabindex="-1">
-            <i class="cxi-arrow-right"></i>
-          </button>
-        </div>
-      </div>
-      <div class="pb-2 cs-carousel">
-        <div class="cs-carousel-inner-two" data-carousel-options=''>
-
-          <!-- Item -->
-          <div *ngFor="let px of productosRecomendados ">
-            <div class="mx-auto card card-product">
-              <div class="card-product-img">
-
-                <!-- <a [routerLink]="['/productos/', producto.id]" class="card-img-top"> -->
-
-
-                <a [routerLink]="['/productos/', px.id]"  class="card-img-top">
-                  <img src={{px.ruta}} alt="Product image">
-                </a>
-                <div class="card-product-widgets-bottom">
-                  <a [routerLink]="['/productos/', px.id]"  class="ml-auto btn-wishlist"
-                    data-toggle="tooltip" data-placement="left" title="Add to wishlist"></a>
-                </div>
-              </div>
-              <div class="pb-2 card-body bg-0">
-                <h3 class="mb-2 card-product-title text-truncate">
-                  <a [routerLink]="['/productos/', px.id]"  class="nav-link">{{px.name}}</a>
-                </h3>
-                <div class="d-flex align-items-center">
-                  <span class="mb-0 h5 d-inline-block">S/.{{px.precio}}</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="modal fade" id="modal-sizing" tabindex="-1" style="display: none;" aria-hidden="true">
-    <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
-      <div class="border-0 modal-content">
-        <div class="px-4 pb-0 border-0 modal-header px-md-5 d-block position-relative">
-          <h3 class="mt-4 mb-0 text-center modal-title">Size chart</h3>
-          <button type="button" class="close position-absolute" style="top: 1.5rem; right: 1.5rem;" data-dismiss="modal"
-            aria-label="Close">
-            <i class="cxi-cross" aria-hidden="true"></i>
-          </button>
-        </div>
-        <div class="px-4 modal-body px-md-5">
-          <ul class="nav nav-tabs justify-content-center">
-            <li class="nav-item">
-              <a href="#" class="nav-link active">Women</a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">Men</a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">Kids</a>
-            </li>
-          </ul>
-          <div class="border rounded table-responsive">
-            <h4 class="py-3 mb-0 text-center font-size-lg">Footwear</h4>
-            <table class="table mb-0 table-striped">
-              <tbody>
-                <tr>
-                  <th scope="row" class="font-weight-normal">Europe</th>
-                  <td>35</td>
-                  <td>36</td>
-                  <td>37</td>
-                  <td>38</td>
-                  <td>39</td>
-                  <td>40</td>
-                  <td>41</td>
-                  <td>42</td>
-                </tr>
-                <tr>
-                  <th scope="row" class="font-weight-normal">USA</th>
-                  <td>5</td>
-                  <td>6</td>
-                  <td>6.5</td>
-                  <td>7.5</td>
-                  <td>8</td>
-                  <td>9</td>
-                  <td>10</td>
-                  <td>11</td>
-                </tr>
-                <tr>
-                  <th scope="row" class="font-weight-normal">United Kingdom</th>
-                  <td>2</td>
-                  <td>3</td>
-                  <td>4</td>
-                  <td>5</td>
-                  <td>6</td>
-                  <td>7</td>
-                  <td>8</td>
-                  <td>9</td>
-                </tr>
-                <tr>
-                  <th scope="row" class="font-weight-normal">China</th>
-                  <td>230/83</td>
-                  <td>235/84</td>
-                  <td>240/85</td>
-                  <td>245/86</td>
-                  <td>255/87</td>
-                  <td>260/88</td>
-                  <td>265/89</td>
-                  <td>275/90</td>
-                </tr>
-                <tr>
-                  <th scope="row" class="font-weight-normal">Russia</th>
-                  <td>35</td>
-                  <td>36</td>
-                  <td>37</td>
-                  <td>38</td>
-                  <td>39</td>
-                  <td>40</td>
-                  <td>41</td>
-                  <td>42</td>
-                </tr>
-                <tr>
-                  <th scope="row" class="font-weight-normal">Italy</th>
-                  <td>35</td>
-                  <td>36</td>
-                  <td>37</td>
-                  <td>38</td>
-                  <td>39</td>
-                  <td>40</td>
-                  <td>41</td>
-                  <td>42</td>
-                </tr>
-                <tr>
-                  <th scope="row" class="font-weight-normal">Italy</th>
-                  <td>230</td>
-                  <td>235</td>
-                  <td>240</td>
-                  <td>245</td>
-                  <td>255</td>
-                  <td>260</td>
-                  <td>265</td>
-                  <td>275</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <hr class="my-4 mx-md-n5 mx-n4">
-          <div class="mb-4 d-flex flex-lg-row flex-column align-items-center justify-content-center">
-            <h6 class="mb-lg-0">I want to see size equivalence in: </h6>
-            <ul class="mb-0 nav nav-tabs ml-lg-4">
-              <li class="nav-item">
-                <a href="#" class="nav-link active">cm</a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">Inches</a>
-              </li>
-            </ul>
-          </div>
-          <div class="mb-4 border rounded table-responsive">
-            <h4 class="py-3 mb-0 text-center font-size-lg">Equivalence in centimeters</h4>
-            <table class="table mb-0 table-striped">
-              <tbody>
-                <tr>
-                  <th scope="row" class="font-weight-normal">Foot length</th>
-                  <td>22.4 cm</td>
-                  <td>23 cm</td>
-                  <td>23.6 cm</td>
-                  <td>24.3 cm</td>
-                  <td>24.9 cm</td>
-                  <td>25.5 cm</td>
-                  <td>26.2 cm</td>
-                  <td>26.8 cm</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 </main>
 <app-footer></app-footer>

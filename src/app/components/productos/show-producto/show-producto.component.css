@@ -14,50 +14,300 @@ button.btn.btn-outline-secondary {
   width: 45%;
   margin: 0 2%;
 }
-/*
-.card-body {
-  flex: 1 1 auto;
-  padding: 1.5rem 1.5rem;
-}
+/* Precio ================================================== */
 
-.text-center {
-  text-align: center !important;
-}
-.card-hover {
-  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-}
-
-element.style {
-  max-width: 24rem;
-}
-.card-hover {
-  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-}
-
-.text-center {
-  text-align: center !important;
-}
-.mb-grid-gutter {
-  margin-bottom: 30px !important;
-}
-.w-100 {
-  width: 100% !important;
-}
-.card {
-  position: relative;
+.price-seller-cnt {
   display: flex;
-  flex-direction: column;
-  min-width: 0;
-  word-wrap: break-word;
-  background-color: #fff;
-  background-clip: border-box;
-  border: 1px solid #e5e8ed;
-  border-radius: 0.25rem;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 70%;
+  max-width: 217px;
 }
-img,
-figure {
-  max-width: 100%;
-  height: auto;
-  vertical-align: middle;
+
+.price-seller-cnt .price {
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 32px;
+  width: 100%;
+  padding-right: 56px;
 }
-*/
+
+.price-seller-cnt > div {
+  margin-bottom: 4px;
+  position: relative;
+  text-align: right;
+}
+
+.price-seller-cnt .price .flag {
+  font-size: 13px;
+  color: #fff;
+  width: 44px;
+  height: 22px;
+  background: #ff8a00;
+  border-radius: 0 3px 3px 0;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  line-height: 22px;
+  text-align: center;
+  padding-left: 2px;
+}
+
+.price-seller-cnt .price .flag:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 36px;
+  width: 0;
+  height: 0;
+  border-top: 11px solid transparent;
+  border-bottom: 11px solid transparent;
+  border-right: 8px solid #ff8a00;
+  background: #fff;
+}
+
+.price-seller-cnt > div i {
+  position: absolute;
+  left: 0;
+  bottom: 3px;
+}
+
+.price-seller-cnt .price i {
+  color: rgba(0, 0, 0, 0.8);
+  font-style: normal;
+  font-size: 13px;
+}
+
+.price-seller-cnt .price em {
+  font-size: 20px;
+}
+
+.price-seller-cnt .listprice {
+  color: #000;
+  font-size: 20px;
+  width: 100%;
+  padding-right: 56px;
+}
+
+.price-seller-cnt .listprice i {
+  font-style: normal;
+  font-size: 13px;
+}
+
+.price-seller-cnt .listprice em {
+  font-size: 16px;
+}
+
+.price-seller-cnt .listprice span {
+  position: relative;
+}
+/* tachado */
+.price-seller-cnt .listprice span:before {
+  content: "";
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.6);
+  top: 0;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+/* numero superior */
+.price-seller-cnt .listprice sup {
+  font-size: 9px;
+}
+
+.price-seller-cnt .listprice sup {
+  position: relative;
+}
+sup {
+  vertical-align: super;
+}
+
+.price-seller-cnt .listprice sup:before {
+  content: "";
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.6);
+  top: 0;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+/* Contador cantidad y btns  ================================================== */
+
+.content-cantidad .btn-group button {
+  background-color: #f6f6f6;
+  border-radius: 50%;
+  border: 1px solid #dadada;
+  width: 39px !important;
+  height: 39px !important;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ff6e17;
+}
+.content-cantidad .btn-group button:hover {
+  background: #f6f6f6;
+  border-color: #b8b8b8;
+}
+
+.content-cantidad .btn-group input {
+  border: none;
+  font-size: 16px;
+}
+
+.content-botones {
+  justify-content: space-between;
+}
+
+.botones-agregar button {
+  box-shadow: none;
+  background-color: #ff6e00;
+  border: #ff6e00;
+  color: #fff;
+}
+
+/* Métodos de entrega  ================================================== */
+
+.metodos-entrega {
+  padding: 16px 0;
+  width: 100%;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.metodos-entrega h3 {
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.7);
+  text-align: center;
+}
+
+.metodos-entrega .metodos-content {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 17px;
+}
+
+.metodo-box {
+  width: 33.33%;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+  border: 1px solid rgba(0, 0, 0, 0.35);
+  border-radius: 11px;
+  max-width: 148px;
+  padding: 7px 4px 26px;
+  box-sizing: border-box;
+  text-align: center;
+  margin: 0 7px;
+  position: relative;
+  overflow: hidden;
+}
+
+.metodo-box:before {
+  content: "\e91e";
+  font-family: "createx-icons";
+  font-size: 20px;
+  font-weight: 100;
+  color: black;
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  right: -1px;
+  top: -1px;
+  clip-path: polygon(100% 0, 0 0, 100% 100%);
+  background-color: #999999;
+  padding-left: 18px;
+}
+
+.metodo-box.disponible:before {
+  content: "\e91c";
+  background-color: #47b867;
+}
+
+.metodo-box .aval-icon {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  color: #999999;
+  font-size: 20px;
+  margin: 18px auto 0;
+}
+.metodo-box.disponible .aval-icon {
+  color: #47b867 !important;
+}
+
+.metodo-box .aval-list {
+  margin-top: 4px;
+  min-height: 70px;
+  margin-bottom: 10px;
+}
+
+.metodo-box .aval-list .aval-title {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.8);
+  margin-bottom: 5px;
+  font-weight: 600;
+  display: block;
+}
+.metodo-box .aval-list .date {
+  color: rgba(49, 47, 47, 0.755);
+}
+.metodo-box .aval-list .date > span {
+  font-weight: 600;
+  color: rgb(49, 47, 47);
+}
+
+.metodo-box .aval-lnk {
+  display: none;
+  font-size: 14px;
+  color: rgb(49, 47, 47);
+  position: absolute;
+  bottom: 7px;
+  left: 0;
+  right: 0;
+  width: 80%;
+  margin: auto;
+}
+.metodo-box.disponible .aval-lnk {
+  display: block;
+}
+.metodo-box .aval-lnk i {
+  color: #ff6e00;
+  position: absolute;
+  bottom: 2px;
+}
+
+/* // consulta stock */
+.stock {
+  display: flex;
+  justify-content: center;
+}
+.stock .btn-stock svg {
+  color: #ff6e00;
+}
+.stock .btn-stock {
+  border: none;
+  background-color: none;
+  padding: 5px 13px;
+  border-radius: 5px;
+  box-shadow: 0px 3px 10px -2px rgba(0, 0, 0, 0.31);
+  -webkit-box-shadow: 0px 3px 10px -2px rgba(0, 0, 0, 0.31);
+  -moz-box-shadow: 0px 3px 10px -2px rgba(0, 0, 0, 0.31);
+}
+/* // devoluciones */
+
+.devoluciones .text-devoluciones svg {
+  color: #ff6e00;
+}
+.devoluciones .text-devoluciones span {
+  font-weight: 600;
+}
