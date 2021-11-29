@@ -206,25 +206,22 @@ em {
   text-decoration-line: none;
   cursor: pointer;
 }
-.add-content .upper .bottomed a.lnk1:before {
-  content: "\f007";
-  display: inline-block;
-  font-family: "Font Awesome 5 Free";
-  background-size: 930px 1300px;
-  width: 20px;
-  height: 18px;
-  vertical-align: middle;
-  margin: -5px 12px 0 0;
-  color: #ff6e00;
-  font-size: 16px;
-}
-.add-content .upper .bottomed a.lnk1:after {
-  content: "Ver más productos";
-  vertical-align: middle;
-  font-size: 16px;
-  color: #000;
-}
 
+.add-content .upper .bottomed a.lnk1 {
+  font-size: 16px;
+  max-width: 164px;
+  margin: 4px 0 4px 26px;
+  height: 40px;
+  line-height: 40px;
+  padding: 0;
+  border-radius: 22px;
+  text-shadow: none;
+  width: 100%;
+  border: none;
+  transition: all 0.3s ease;
+  float: none;
+  color: rgb(80, 80, 80);
+}
 .add-content .upper .bottomed a.lnk2 {
   font-size: 16px;
   max-width: 164px;
@@ -241,6 +238,7 @@ em {
   float: none;
   color: #fff;
 }
+
 .add-content .upper .bottomed a {
   display: inline-block;
 }

@@ -93,15 +93,15 @@
               <button (click)="reduceProduct()" type="button" class="p-0 m-0 btn btn-outline-secondary">
                 <i class="cxi-minus"></i>
               </button>
-
-              <input type="text" class="btn btn-outline-secondary btn-content-input" size="1" value="1" name="cantidad"
-                [(ngModel)]="dataCarrito.cantidad" />
+              <input type="number" class="btn btn-outline-secondary btn-content-input pop" size="1" value="1"
+                name="cantidad" [(ngModel)]="dataCarrito.cantidad" (keydown)="validar_stock()" (keyup)="validar_stock()"
+                data-container="body" data-toggle="popover" data-placement="top"
+                data-content="Has alcanzado el límite disponible para este producto" />
 
               <button (click)="addProduct()" type="button" class="p-0 m-0 btn btn-outline-secondary">
                 <i class="cxi-plus"></i>
               </button>
             </div>
-
           </div>
 
           <div class="botones-agregar row">
@@ -110,26 +110,23 @@
                 <i class="mr-2 cxi-cart"></i>
                 Agregar
               </button>
-
               <button *ngIf="btn_cart" type="button" class="btn" disabled>
                 <span class="spinner-grow spinner-grow-sm me-2" role="status" aria-hidden="true"></span>
                 Agregando...
               </button>
-
             </div>
             <div class="col">
-              <button *ngIf="!btn_cart" class="btn" (click)="agregar_producto()">
+              <button class="btn" (click)="agregar_producto()">
                 Realizar Pago
               </button>
 
-              <button *ngIf="btn_cart" type="button" class="btn" disabled>
+              <!-- <button *ngIf="btn_cart" type="button" class="btn" disabled>
                 <span class="spinner-grow spinner-grow-sm me-2" role="status" aria-hidden="true"></span>
-                Agregando...
-              </button>
+                Pagando...
+              </button> -->
 
             </div>
           </div>
-
         </form>
 
 
@@ -199,3 +196,5 @@
 <app-ver-tiendas [product]="producto"> </app-ver-tiendas>
 <app-calcular-despacho> </app-calcular-despacho>
 <app-ver-distritos></app-ver-distritos>
+<app-modal-carrito [product]="producto" *ngIf="producto">
+</app-modal-carrito>

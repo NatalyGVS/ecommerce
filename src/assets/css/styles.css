@@ -128,3 +128,16 @@
   box-shadow: 0px 10px 15px 0px rgba(30, 33, 44, 0.1);
 }
 
+/* popover */
+.popover {
+  border: 1px solid #808080 !important;
+  border-radius: 10px;
+}
+.arrow {
+  border: 1px solid #808080 !important;
+  clip-path: polygon(49% 100%, 0 0, 100% 0);
+  background-color: #808080;
+}
+.arrow:after {
+  content: none;
+}

@@ -12,7 +12,7 @@
   display: block;
 }
 
-/* //*********************************************************** */
+/* product //*********************************************************** */
 
 .card-home {
   width: 190px;
@@ -286,7 +286,7 @@ a {
   font-size: 0;
 }
 
-.prod-bottom .ctrls .cantidad .mas-prod.js-down:before {
+.prod-bottom .ctrls .cantidad .mas-prod.btn-down:before {
   content: "\e914";
   font-family: "createx-icons";
   font-size: 15px;
@@ -351,6 +351,7 @@ a {
   float: right;
   text-align: center;
 }
+
 .prod-bottom .ctrls .gh-btn em {
   font-style: normal;
 }

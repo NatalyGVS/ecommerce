@@ -1,6 +1,7 @@
 import { ConfiguracionService } from './../../../services/configuracion.service';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { CarritoService } from 'src/app/services/carrito.service';
 declare var tns;
 declare var lightGallery;
 declare var $: any; //importar jquery
@@ -22,8 +23,27 @@ export class ShowProductoComponent implements OnInit {
   public btn_cart = false;
   constructor(
     private _route: ActivatedRoute,
-    private _configuracionService: ConfiguracionService
+    private _configuracionService: ConfiguracionService,
+    private _carritoService: CarritoService
   ) {}
+
+  ngOnInit(): void {
+    //obtener porducto
+    this._route.params.subscribe((params) => {
+      this.idProducto = params['id'];
+      this._configuracionService.getProductos().subscribe((response) => {
+        this.producto = response.find((item) => {
+          return item.id == this.idProducto;
+        });
+        console.log('this.producto', this.producto);
+        this.initSlider();
+      });
+    });
+
+    //popover
+    this.inicializar_popover();
+  }
+
   initSlider() {
     setTimeout(() => {
       tns({
@@ -60,77 +80,48 @@ export class ShowProductoComponent implements OnInit {
       }
     }, 300);
   }
-  ngOnInit(): void {
-    //obtener porducto
-    this._route.params.subscribe((params) => {
-      this.idProducto = params['id'];
-      this._configuracionService.getProductos().subscribe((response) => {
-        this.producto = response.find((item) => {
-          return item.id == this.idProducto;
-        });
-        console.log('this.producto', this.producto);
-        this.initSlider();
-      });
-    });
-
-    //inicializar el slider
+  inicializar_popover() {
+    $('[data-toggle="popover"]').popover('hide');
   }
-
-  agregar_producto() {
-    if (this.dataCarrito.variedad) {
-      if (this.dataCarrito.cantidad <= this.producto.stock) {
-        let data = {
-          id:
-            'C00' +
-            this.producto.id +
-            JSON.parse(localStorage.getItem('user_data')).dni,
-          producto: this.producto.id,
-          cliente: JSON.parse(localStorage.getItem('user_data')).dni,
-          cantidad: this.dataCarrito.cantidad,
-          variedad: this.dataCarrito.variedad,
-          titulo_variedad: 'Pulgadas',
-          ruta: this.producto.ruta,
-          name: this.producto.name,
-          precio: this.producto.precio,
-        };
-        this.btn_cart = true;
-
-        setTimeout(() => {
-          //Agregar al carrito actual
-          let carritoGeneral = JSON.parse(
-            localStorage.getItem('carrito_compras')
-          );
-          // if (carritoGeneral) carritoGeneral.split(',');
-          console.log('carritoGeneral', carritoGeneral);
-          let carritoTotal;
-          if (carritoGeneral) {
-            carritoTotal = [...carritoGeneral, ...[data]];
-            console.log('carritoTotal', carritoTotal);
-          } else {
-            carritoTotal = [data];
-          }
-          // localStorage.setItem('carrito_compras', carritoTotal.toString());
-          localStorage.setItem('carrito_compras', JSON.stringify(carritoTotal));
-          this.btn_cart = false;
-        }, 500);
-      } else {
-        //notificacion que no hay stock
-        //la maxima cantidad disponible es: this.producto.stock
-        console.log('la maxima cantidad disponible es ', this.producto.stock);
-      }
-    } else {
-      //notificacion de seleccione la variedad de producto (talla)
-      console.log('seleccione la variedad de producto');
+  validar_stock() {
+    //validar si esta vacio
+    if (
+      this.dataCarrito.cantidad === null ||
+      parseInt(this.dataCarrito.cantidad) < 1
+    ) {
+      this.dataCarrito.cantidad = 1;
     }
+
+    // si supera el stock
+    if (parseInt(this.dataCarrito.cantidad) > this.producto.stock) {
+      $('[data-toggle="popover"]').popover('show');
+      this.dataCarrito.cantidad = this.producto.stock;
+
+      setTimeout(function () {
+        $('[data-toggle="popover"]').popover('hide');
+      }, 2600);
+    }
+  }
+  agregar_producto() {
+    this.btn_cart = true;
+    console.log('producto', this.producto);
+    this.producto.cantidad = this.dataCarrito.cantidad;
+    
+    setTimeout(() => {
+      this.btn_cart = false;
+      this._carritoService.agregarProductoCarrito(this.producto, null);
+      $('#modalCarritoCompras').modal('show');
+
+      // this.productModal.emit(product);
+    }, 900);
   }
 
   reduceProduct() {
     if (this.dataCarrito.cantidad > 1) this.dataCarrito.cantidad--;
-    console.log(' this.dataCarrito.cantidad', this.dataCarrito.cantidad);
   }
   addProduct() {
     this.dataCarrito.cantidad++;
-    console.log(' this.dataCarrito.cantidad', this.dataCarrito.cantidad);
+    this.validar_stock();
   }
 
   abrirConsultarStock() {

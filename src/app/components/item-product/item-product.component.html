@@ -54,13 +54,16 @@
         <div class="clearfix ctrls por ">
 
           <div class="cantidad">
-            <span class="mas-prod js-down" (click)="reduceProduct()"></span>
-            <input class="num js-cantidad" type="number" size="1" value="1" name="cantidad"
-              [(ngModel)]="product.cantidad">
-            <span class="mas-prod js-up" (click)="addProduct()"></span>
+            <span class="mas-prod btn-down" (click)="reduceProduct()"></span>
+            <input id="inpCant-{{product.id}}" class="num" type="number" size="1" value="1" name="cantidad"
+              [(ngModel)]="product.cantidad" (keydown)="validar_stock()" (keyup)="validar_stock()" data-container="body"
+              data-toggle="popover" data-placement="top"
+              data-content="Has alcanzado el límite disponible para este producto">
+            <span class="mas-prod" (click)="addProduct()"></span>
           </div>
-          <button class="gh-btn js-addtocart" type="button" tabindex="0" (click)="addCarrito(product)">
-            <em>Agregar</em>
+          <button class="gh-btn" type="button" tabindex="0" (click)="addCarrito(product)">
+            <em *ngIf="!btn_cart">Agregar</em>
+            <span *ngIf="btn_cart" class="spinner-grow spinner-grow-sm me-2"></span>
           </button>
         </div>
       </div>
