@@ -304,8 +304,7 @@ export class IndexProductoComponent implements OnInit {
     }
   }
 
-
-  abrirModal(event) {
+  abrirModalAddProduct(event) {
     $('#modalCarritoCompras').modal('show');
     console.log('event', event);
     this.productModal = event;

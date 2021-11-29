@@ -1,0 +1,60 @@
+.layer-add-to-cart {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  opacity: 1;
+  z-index: 99;
+  transition: all 1s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-content {
+  background: #e5e5e5;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 663px;
+}
+.add-content .header {
+  background: #fff;
+  text-align: center;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 0px !important;
+}
+
+.add-content .header .title {
+  display: block;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  font-size: 19px;
+  color: #fff;
+  background-color: #84b5e3;
+  text-align: center;
+  padding: 15px 15px 14px 55px !important;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.add-content .header .close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  color: #fff;
+  margin-top: 3px;
+  margin-right: 3px;
+}
+
+.add-content .body {
+  max-height: 230px;
+  overflow: auto;
+  margin: 30px;
+}

@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 declare var tns;
 declare var lightGallery;
+declare var $: any; //importar jquery
+
 @Component({
   selector: 'app-show-producto',
   templateUrl: './show-producto.component.html',
@@ -129,5 +131,18 @@ export class ShowProductoComponent implements OnInit {
   addProduct() {
     this.dataCarrito.cantidad++;
     console.log(' this.dataCarrito.cantidad', this.dataCarrito.cantidad);
+  }
+
+  abrirConsultarStock() {
+    $('#modalConsultarStock').modal('show');
+  }
+  abrirCalcularDespacho() {
+    $('#modalCalcularDespacho').modal('show');
+  }
+  abrirConsultarTiendas() {
+    $('#modalConsultarTiendas').modal('show');
+  }
+  abrirConsultarDistritos() {
+    $('#modalConsultarDistritos').modal('show');
   }
 }

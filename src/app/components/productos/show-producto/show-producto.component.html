@@ -49,7 +49,7 @@
             <button *ngFor="let item of producto.galeria; let indice = index" type="button" [attr.data-nav]="indice">
               <img src={{item.ruta}} alt="Thumbnail">
             </button>
-          </div> -
+          </div>
         </div>
       </div>
       <div class="col-md-6 pl-xl-5">
@@ -136,7 +136,8 @@
         <div class="mt-4 mb-3 metodos-entrega">
           <h3>Métodos de entrega</h3>
           <div class="metodos-content">
-            <div class="metodo-box">
+            <!-- quitar disponible -->
+            <div class="metodo-box disponible">
               <div class="aval-icon">
                 <i class="fas fa-location-arrow"></i>
               </div>
@@ -145,12 +146,11 @@
                 <div class="date">No disponible</div>
 
               </div>
-              <div class="aval-lnk">Ver distritos
+              <button class="aval-lnk" (click)="abrirConsultarDistritos()">Ver distritos
                 <i class="cxi-angle-right"></i>
-              </div>
+              </button>
             </div>
             <div class="metodo-box disponible">
-
               <div class="aval-icon">
                 <i class="fas fa-truck-moving"></i>
               </div>
@@ -158,7 +158,9 @@
                 <span class="aval-title">Despacho programado</span>
                 <div class="date">Desde el <span>7 de dic. a partir de S/25</span></div>
               </div>
-              <div class="aval-lnk">Calcular <i class="cxi-angle-right"></i></div>
+              <button class="aval-lnk" (click)="abrirCalcularDespacho()">Calcular
+                <i class="cxi-angle-right"></i>
+              </button>
             </div>
             <div class="metodo-box disponible">
               <div class="aval-icon">
@@ -168,17 +170,18 @@
                 <span class="aval-title">Retiro en tienda</span>
                 <div class="date">Desde el <b>7 de dic. Gratis</b></div>
               </div>
-              <div class="aval-lnk">Ver tiendas
+              <button class="aval-lnk" (click)="abrirConsultarTiendas()">Ver tiendas
                 <i class="cxi-angle-right"></i>
-              </div>
+              </button>
             </div>
           </div>
         </div>
-        <div class="my-3 stock">
-          <button class="btn-stock"> <i class="fas fa-box-open"></i> Consultar Stock <i class="cxi-angle-right"></i>
+        <div class="my-4 stock">
+          <button class="btn-stock" (click)="abrirConsultarStock()">
+            <i class="fas fa-box-open"></i> Consultar Stock <i class="cxi-angle-right"></i>
           </button>
         </div>
-        <div class="my-3 devoluciones">
+        <div class="my-4 devoluciones">
           <div class="text-devoluciones">
             <i class="mr-2 fas fa-exchange-alt"></i> <span> Cambios y devoluciones:</span> Tienes hasta 90 días desde la
             recepción de tu
@@ -192,3 +195,7 @@
 
 </main>
 <app-footer></app-footer>
+<app-consultar-stock [product]="producto"> </app-consultar-stock>
+<app-ver-tiendas [product]="producto"> </app-ver-tiendas>
+<app-calcular-despacho> </app-calcular-despacho>
+<app-ver-distritos></app-ver-distritos>

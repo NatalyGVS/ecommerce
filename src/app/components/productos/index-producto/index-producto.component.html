@@ -252,7 +252,7 @@
             <div class="list-product-cart" *ngIf="!load_data_px">
               <div class="p-2 mb-2"
                 *ngFor="let producto of productos| slice:(page-1)*pageSize : (page-1) * pageSize + pageSize ">
-                <app-item-product [product]="producto" [productCarrito]="true" (productModal)="abrirModal($event)">
+                <app-item-product [product]="producto" [productCarrito]="true" (productModal)="abrirModalAddProduct($event)">
                 </app-item-product>
               </div>
             </div>

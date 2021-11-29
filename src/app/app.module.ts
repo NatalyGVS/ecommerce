@@ -33,6 +33,11 @@ import { ItemProductComponent } from './components/item-product/item-product.com
 import { ModalComponent } from './components/carrito/modal/modal.component';
 import { NumParteEnteraPipe } from './pipes/num-parte-entera.pipe';
 import { NumParteDecimalPipe } from './pipes/num-parte-decimal.pipe';
+import { CalcularDespachoComponent } from './components/modals/calcular-despacho/calcular-despacho.component';
+import { VerTiendasComponent } from './components/modals/ver-tiendas/ver-tiendas.component';
+import { ConsultarStockComponent } from './components/modals/consultar-stock/consultar-stock.component';
+import { UbicacionComponent } from './components/modals/ubicacion/ubicacion.component';
+import { VerDistritosComponent } from './components/modals/ver-distritos/ver-distritos.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +65,11 @@ import { NumParteDecimalPipe } from './pipes/num-parte-decimal.pipe';
     ModalComponent,
     NumParteEnteraPipe,
     NumParteDecimalPipe,
+    CalcularDespachoComponent,
+    VerTiendasComponent,
+    ConsultarStockComponent,
+    UbicacionComponent,
+    VerDistritosComponent,
   ],
   imports: [
     BrowserModule,
