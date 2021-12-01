@@ -69,7 +69,7 @@
               </select>
             </div>
             <div class="col-sm-6 form-group">
-              <label for="ac-fn">Región</label>
+              <label for="ac-fn">Departamento / Región</label>
               <select id="sl-region" name="region" [(ngModel)]="direccion.region" class="custom-select custom-select-lg"
                 disabled (change)="select_region()" required>
                 <option value="" selected disabled>Seleccionar</option>
@@ -146,13 +146,12 @@
           <div class="col-12" *ngIf="direccionesCliente.length==0">
             <h3 class="mb-2 h6 text-uppercase">No se encontro direcciones</h3>
             <h4 class="h4 pb-lg-3">Debe registrar su dirección de envío.</h4>
-
           </div>
         </div>
-        <div class="row" *ngIf="!load_data">
+        <div class="row" *ngIf="load_data">
           <div class="text-center col-12">
             <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
-              <span class="visually-hidden">Loading...</span>
+              <span class="visually-hidden"></span>
             </div>
           </div>
         </div>

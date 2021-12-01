@@ -38,6 +38,9 @@ import { VerTiendasComponent } from './components/modals/ver-tiendas/ver-tiendas
 import { ConsultarStockComponent } from './components/modals/consultar-stock/consultar-stock.component';
 import { UbicacionComponent } from './components/modals/ubicacion/ubicacion.component';
 import { VerDistritosComponent } from './components/modals/ver-distritos/ver-distritos.component';
+import { ItemCarritoComponent } from './components/carrito/item-carrito/item-carrito.component';
+// import { FormWizardModule } from 'angular2-wizard';
+// import { ArchwizardModule } from 'angular-archwizard';
 
 @NgModule({
   declarations: [
@@ -70,6 +73,7 @@ import { VerDistritosComponent } from './components/modals/ver-distritos/ver-dis
     ConsultarStockComponent,
     UbicacionComponent,
     VerDistritosComponent,
+    ItemCarritoComponent,
   ],
   imports: [
     BrowserModule,
@@ -78,6 +82,7 @@ import { VerDistritosComponent } from './components/modals/ver-distritos/ver-dis
     HttpClientModule,
     routing,
     NgbPaginationModule,
+    // ArchwizardModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

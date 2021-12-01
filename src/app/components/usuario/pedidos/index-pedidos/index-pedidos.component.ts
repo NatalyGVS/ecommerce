@@ -16,7 +16,7 @@ export class IndexPedidosComponent implements OnInit {
 
   ngOnInit(): void {
     //servicio obtener pedidos del cliente
-    this.pedidos = JSON.parse(localStorage.getItem('user_data')).ventas;
+    this.pedidos = JSON.parse(localStorage.getItem('user_data')).compras;
     console.log('this.pedidos', this.pedidos);
 
     setTimeout(() => {

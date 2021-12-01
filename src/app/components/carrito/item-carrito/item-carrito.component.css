@@ -1,0 +1,71 @@
+.content-body {
+  justify-content: space-between;
+}
+
+/* precio unitario */
+
+.prices label {
+  text-align: center;
+  position: relative;
+  font-size: 15px;
+  display: inline-block;
+}
+.prices label.prc1 {
+  color: #000;
+  font-weight: 400;
+}
+.prices label.precioOriginal {
+  color: #000;
+  font-weight: 400;
+  font-size: 15px;
+}
+.prices label.precioDescuento {
+  color: #ff6e00;
+  font-weight: 800;
+  font-size: 15px;
+}
+.prices label.prc1.cross span:after {
+  content: "";
+  display: block;
+  width: 96%;
+  height: 1px;
+  border-top: 0.8px solid #000;
+  position: absolute;
+  top: 47%;
+  right: -2px;
+  transform: rotate(-18deg);
+}
+/* //input cantidad */
+
+/* Contador cantidad y btns  ================================================== */
+
+.content-cantidad .btn-group button {
+  background-color: #f6f6f6;
+  border-radius: 50%;
+  border: 1px solid #dadada;
+  width: 39px !important;
+  height: 39px !important;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ff6e17;
+}
+.content-cantidad .btn-group button:hover {
+  background: #f6f6f6;
+  border-color: #b8b8b8;
+}
+
+.content-cantidad .btn-group input {
+  border: none;
+  font-size: 16px;
+  width: 45px;
+  text-align: center;
+  padding: 0;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

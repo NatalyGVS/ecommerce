@@ -1,0 +1,76 @@
+<div class="px-2 py-4 media px-sm-4 border-bottom">
+
+  <a [routerLink]="['/productos', item.producto]" style="min-width: 80px;">
+    <!-- <a style="min-width: 80px;"> -->
+    <img src={{item.ruta}} width="80" alt="Product thumb">
+  </a>
+  <div class="pl-3 media-body w-100">
+    <div class="d-sm-flex align-items-center content-body">
+      <div class="w-100" style="max-width: 230px;">
+        <h3 class="mb-3 font-size-sm">
+          <a [routerLink]="['/productos', item.producto]" class="nav-link font-weight-bold">{{item.name}}</a>
+          <!-- <a class="nav-link font-weight-bold">{{item.name}}</a> -->
+        </h3>
+      </div>
+      <div class="px-3 d-flex justify-content-center">
+        <table class="table table-sm">
+          <thead>
+            <tr>
+              <th scope="col" class="text-center">Precio U.</th>
+              <th scope="col" class="text-center">Cantidad</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+
+                <div class="text-center prices" *ngIf="!item.precioDescuento">
+                  <label class="m-0 prc1">
+                    <em>S/ </em>
+                    <span>{{item.precioOriginal | numParteEntera}}</span>
+                    <sup>.{{item.precioOriginal | numParteDecimal}}</sup>
+                  </label>
+                </div>
+                <div class="text-center prices" *ngIf="item.precioDescuento">
+                  <label class="m-0 prc1 precioOriginal cross">
+                    <em>S/ </em>
+                    <span>{{item.precioOriginal | numParteEntera}}</span>
+                    <sup>.{{item.precioOriginal | numParteDecimal}}</sup>
+                  </label>
+                  <label class="pl-1 m-0 prc1 precioDescuento">
+                    <em>S/ </em>
+                    <span>{{item.precioDescuento | numParteEntera}}</span>
+                    <sup>.{{item.precioDescuento | numParteDecimal}}</sup>
+                  </label>
+                </div>
+
+              </td>
+              <td>
+                <div class="m-0 content-cantidad row">
+                  <div class="btn-group me-2" role="group">
+                    <button (click)="reduceProduct()" class="p-0 m-0 btn btn-outline-secondary">
+                      <i class="cxi-minus"></i>
+                    </button>
+                    <input type="number" class="btn btn-outline-secondary btn-content-input pop" size="1"
+                      [(ngModel)]="item.cantidad" value="{{item.cantidad}}" name="cantidad" (keydown)="validar_stock()"
+                      (keyup)="validar_stock()" data-container="body" data-toggle="popover" data-placement="top"
+                      data-content="Has alcanzado el límite disponible para este producto" />
+
+                    <button (click)="addProduct()" class="p-0 m-0 btn btn-outline-secondary">
+                      <i class="cxi-plus"></i>
+                    </button>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="d-flex align-items-center ">
+        <button (click)="eliminarItem(item.id)" class="mr-2 btn btn-outline-primary btn-sm mr-sm-0">
+          <i class="far fa-trash-alt"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

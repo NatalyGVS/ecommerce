@@ -1,6 +1,7 @@
 import { Router } from '@angular/router';
 import { UserService } from './../../services/user.service';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { CarritoService } from 'src/app/services/carrito.service';
 declare var Cleave;
 declare var StickySidebar;
 declare var paypal;
@@ -36,7 +37,11 @@ export class CarritoComponent implements OnInit {
   public btn_load = false;
   public carrito_load = true;
 
-  constructor(private _UserService: UserService, private _router: Router) {
+  constructor(
+    private _UserService: UserService,
+    private _router: Router,
+    private _carritoService: CarritoService
+  ) {
     this.venta.cliente = JSON.parse(localStorage.getItem('user_data')).dni;
     this.user = JSON.parse(localStorage.getItem('user_data'));
 
@@ -45,13 +50,8 @@ export class CarritoComponent implements OnInit {
     });
   }
   init_data() {
-    if (JSON.parse(localStorage.getItem('carrito_compras'))) {
-      this.data_carrito_compras = JSON.parse(
-        localStorage.getItem('carrito_compras')
-      );
-    } else {
-      this.data_carrito_compras = [];
-    }
+    this.data_carrito_compras = this._carritoService.getCarrito();
+
     console.log(' this.data_carrito_compras', this.data_carrito_compras);
 
     this.calcularCarrito();
@@ -70,7 +70,7 @@ export class CarritoComponent implements OnInit {
 
     setTimeout(() => {
       this.carrito_load = false;
-    }, 3000);
+    }, 1500);
   }
 
   ngOnInit(): void {
@@ -92,10 +92,10 @@ export class CarritoComponent implements OnInit {
     });
     //sidebar estatico
     var sidebar = new StickySidebar('.sidebar-sticky', { topSpacing: 20 });
-    this.instanciar_paypal();
+    // this.instanciar_paypal();
     this.obtener_direccion_principal();
   }
-
+  /*
   instanciar_paypal() {
     //Inicializar paypal
     paypal
@@ -132,7 +132,7 @@ export class CarritoComponent implements OnInit {
       })
       .render(this.paypalElement.nativeElement);
   }
-
+*/
   registrar_venta() {
     this.venta.detalles = this.dventa;
 
@@ -156,7 +156,7 @@ export class CarritoComponent implements OnInit {
 
   calcularCarrito() {
     this.subtotal = this.data_carrito_compras.reduce((acc, px) => {
-      return px.precio + acc;
+      return px.precio * px.cantidad + acc;
     }, 0);
     console.log('this.subtotal', this.subtotal);
     this.total_pagar = this.subtotal;
@@ -164,31 +164,20 @@ export class CarritoComponent implements OnInit {
 
   calcular_total(envio_titulo) {
     this.total_pagar =
-      parseInt(this.subtotal.toString()) + parseInt(this.precio_envio);
+      Number(this.subtotal.toString()) + Number(this.precio_envio);
     this.venta.subtotal = this.total_pagar;
-    this.venta.envio_precio = parseInt(this.precio_envio);
+    this.venta.envio_precio = Number(this.precio_envio);
     this.venta.envio_titulo = envio_titulo;
 
     console.log('thisventa', this.venta);
   }
+
   eliminarItem(id) {
-    this.data_carrito_compras = JSON.parse(
-      localStorage.getItem('carrito_compras')
-    );
-    //calcularCarrito
-
-    this.data_carrito_compras = this.data_carrito_compras.filter(function (
-      item
-    ) {
-      return item.id !== id;
-    });
-
-    localStorage.setItem(
-      'carrito_compras',
-      JSON.stringify(this.data_carrito_compras)
+    this.data_carrito_compras = this._carritoService.eliminarItemCarrito(
+      this.data_carrito_compras,
+      id
     );
     this.calcularCarrito();
-    console.log('neivo carrito', this.data_carrito_compras);
   }
 
   obtener_direccion_principal() {
@@ -223,5 +212,18 @@ export class CarritoComponent implements OnInit {
 
       this.registrar_venta();
     }, 2000);
+  }
+
+  reduceProduct() {
+    // if (this.dataCarrito.cantidad > 1) this.dataCarrito.cantidad--;
+  }
+  addProduct() {
+    // this.dataCarrito.cantidad++;
+    // this.validar_stock();
+  }
+
+  actualizarPrecio(item) {
+    this.calcularCarrito();
+    this.calcular_total('Envío gratis');
   }
 }

@@ -56,3 +56,57 @@
 .sub-categorias-list .dropdown-item:hover {
   text-decoration: underline;
 }
+
+/* Card carrito de compras /////////////////////////////////////////////////////// */
+.cantPxCarrito {
+  text-align: center;
+  width: 4.5rem;
+}
+
+/* //precio de productos */
+.content-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.content-title h3 {
+  font-size: 14px;
+  font-weight: 400;
+}
+.content-price {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.prices label {
+  text-align: left;
+  position: relative;
+  font-size: 15px;
+  display: inline-block;
+}
+.prices label.prc1 {
+  color: #000;
+  font-weight: 400;
+}
+.prices label.precioOriginal {
+  color: #000;
+  font-weight: 400;
+  font-size: 15px;
+}
+.prices label.precioDescuento {
+  color: #ff6e00;
+  font-weight: 800;
+  font-size: 15px;
+}
+.prices label.prc1.cross span:after {
+  content: "";
+  display: block;
+  width: 96%;
+  height: 1px;
+  border-top: 0.8px solid #000;
+  position: absolute;
+  top: 47%;
+  right: -2px;
+  transform: rotate(-18deg);
+}

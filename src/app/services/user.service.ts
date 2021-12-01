@@ -23,5 +23,51 @@ export class UserService {
   getEnvios(): Observable<any> {
     return this._http.get('./assets/envios.json');
   }
-  
+
+  getDirecciones(idCliente) {
+    return JSON.parse(localStorage.getItem('user_data')).direcciones;
+  }
+  addDireccion(idCliente, dataDireccion) {
+    let data = dataDireccion;
+    data.cliente = JSON.parse(localStorage.getItem('user_data')).dni;
+
+    let direccionesTotales = JSON.parse(
+      localStorage.getItem('user_data')
+    ).direcciones;
+
+    if (data.principal == true) {
+      direccionesTotales.forEach((element) => {
+        element.principal = false;
+      });
+    }
+    //establecer id:
+    let valorMaximo = direccionesTotales.reduce((prev, item) => {
+      return Math.max(prev, item.id);
+    }, -100);
+
+    data.id = valorMaximo + 1;
+
+    //Agregar direccion
+    direccionesTotales.push(data);
+    let user = JSON.parse(localStorage.getItem('user_data'));
+    user.direcciones = direccionesTotales;
+    localStorage.setItem('user_data', JSON.stringify(user));
+  }
+  establecerDireccionPrincipal(idCliente, idDireccionPrincipal) {
+    let direccionesTotales = JSON.parse(
+      localStorage.getItem('user_data')
+    ).direcciones;
+    direccionesTotales.forEach((elemento) => {
+      elemento.principal = false;
+
+      if (elemento.id == idDireccionPrincipal) {
+        elemento.principal = true;
+      }
+    });
+    let user = JSON.parse(localStorage.getItem('user_data'));
+    user.direcciones = direccionesTotales;
+    localStorage.setItem('user_data', JSON.stringify(user));
+
+    return direccionesTotales;
+  }
 }

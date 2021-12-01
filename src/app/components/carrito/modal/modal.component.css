@@ -140,6 +140,13 @@
   text-align: right;
   margin-top: -32px;
 }
+.add-content .upper .added-prod .righted .prices label {
+  text-align: left;
+  position: relative;
+  font-size: 15px;
+  display: inline-block;
+  margin-left: 14px;
+}
 .add-content .upper .added-prod .righted .prices label.prc1 {
   color: #000;
   font-weight: 800;
@@ -164,14 +171,6 @@
   top: 47%;
   right: -2px;
   transform: rotate(-18deg);
-}
-
-.add-content .upper .added-prod .righted .prices label {
-  text-align: left;
-  position: relative;
-  font-size: 15px;
-  display: inline-block;
-  margin-left: 14px;
 }
 
 em {

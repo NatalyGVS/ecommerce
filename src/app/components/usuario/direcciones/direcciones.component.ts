@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DireccionService } from 'src/app/services/direccion.service';
+import { UserService } from 'src/app/services/user.service';
 declare var $: any; //importar jquery
 
 @Component({
@@ -26,17 +27,16 @@ export class DireccionesComponent implements OnInit {
   public distritos_completas: Array<any> = [];
 
   //precargador
-  public load_data = true;// false: ya cargo , true: sigue cargando
+  public load_data = true; // false: ya cargo , true: sigue cargando
 
-  constructor(private _direccionService: DireccionService) {
-    this.direccionesCliente = JSON.parse(
-      localStorage.getItem('user_data')
-    ).direcciones;
-    console.log('this.direccionesCliente', this.direccionesCliente);
+  constructor(
+    private _direccionService: DireccionService,
+    private _userService: UserService
+  ) {
+    this.direccionesCliente = this._userService.getDirecciones(null);
     this.load_data = false;
   }
   ngOnInit(): void {
-    this.load_data = false;
     this._direccionService.get_regiones().subscribe((response) => {
       this.regiones_completas = response;
     });
@@ -106,7 +106,6 @@ export class DireccionesComponent implements OnInit {
   registrar(registroForm) {
     if (registroForm.valid) {
       let data = this.direccion;
-      data.cliente = JSON.parse(localStorage.getItem('user_data')).dni;
       data.region = this.regiones_completas.find(
         (element) => parseInt(element.id) == parseInt(this.direccion.region)
       ).name;
@@ -119,30 +118,9 @@ export class DireccionesComponent implements OnInit {
 
       console.log('data', data);
       //llamar al servicio
+      this._userService.addDireccion(null, data);
+
       //notificacion : Se agrego la nueva direccion correctamente
-
-      let direccionesTotales = JSON.parse(
-        localStorage.getItem('user_data')
-      ).direcciones;
-
-      if (this.direccion.principal == true) {
-        direccionesTotales.forEach((element) => {
-          element.principal = false;
-        });
-      }
-      //establecer id:
-      let valorMaximo = direccionesTotales.reduce((prev, item) => {
-        return Math.max(prev, item.id);
-      }, -100);
-
-      console.log('valor_maximo', valorMaximo);
-      data.id = valorMaximo + 1;
-
-      //Agregar direccion
-      direccionesTotales.push(data);
-      let user = JSON.parse(localStorage.getItem('user_data'));
-      user.direcciones = direccionesTotales;
-      localStorage.setItem('user_data', JSON.stringify(user));
 
       this.direccion = {
         pais: '',
@@ -154,24 +132,17 @@ export class DireccionesComponent implements OnInit {
       $('#sl-region').prop('disabled', false);
       $('#sl-provincia').prop('disabled', false);
       $('#sl-distrito').prop('disabled', false);
+
+      //refrecar tabla de direcciones
+      this.direccionesCliente = this._userService.getDirecciones(null);
     } else {
       // NOTIFICACION IZITOAST
+      console.log('form invalido');
     }
   }
   establecer_principal(id) {
-    let direccionesTotales = JSON.parse(
-      localStorage.getItem('user_data')
-    ).direcciones;
-    direccionesTotales.forEach((elemento) => {
-      elemento.principal = false;
 
-      if (elemento.id == id) {
-        elemento.principal = true;
-      }
-    });
-    let user = JSON.parse(localStorage.getItem('user_data'));
-    user.direcciones = direccionesTotales;
-    this.direccionesCliente = direccionesTotales;
-    localStorage.setItem('user_data', JSON.stringify(user));
+    this.direccionesCliente = this._userService.establecerDireccionPrincipal(null, id);
+
   }
 }

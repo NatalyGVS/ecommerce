@@ -53,6 +53,19 @@ export class LoginComponent implements OnInit {
             principal: true,
           },
         ],
+        compras: [
+          {
+            id: 'C-001',
+            destinatario: 'Fulanito Ramos',
+            total: 5000,
+            fechaEnvio: '10/10/2021',
+
+            detalleCompra: [
+              { id: 'px1', precio: 50, cantidad: 4 },
+              { id: 'px2', precio: 70, cantidad: 2 },
+            ],
+          },
+        ],
       };
 
       //Pasarle nombre de usuario al nav

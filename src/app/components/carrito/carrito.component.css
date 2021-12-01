@@ -1,0 +1,13 @@
+.cs-header {
+  background: rgb(4, 209, 168) !important;
+  background: linear-gradient(
+    90deg,
+    rgba(4, 209, 168, 1) 0%,
+    rgba(18, 170, 141, 1) 100%
+  ) !important;
+}
+
+.carrito__title i {
+  color: #ff6e00;
+}
+
