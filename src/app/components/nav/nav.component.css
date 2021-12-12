@@ -1,8 +1,47 @@
+.navbar-principal {
+  display: flex;
+  justify-content: space-evenly;
+}
 .nav.nav-category {
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   align-items: stretch;
+}
+
+.nav.nav-category .nav-link {
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+}
+.nav.nav-category .category-list-menu:not(:last-child) {
+  /* border-right: 4px solid blue; */
+}
+.nav.nav-category .nav_icon {
+  width: 30px;
+}
+.nav.nav-category .nav_name {
+  font-size: 12px;
+  font-weight: 800;
+}
+@media (max-width: 1300px) {
+  .nav.nav-category .nav-link {
+    width: auto;
+  }
+  .nav.nav-category .nav_name {
+    font-size: 11px;
+  }
+  .nav.nav-category .nav_icon {
+    width: 28px;
+  }
+}
+@media (max-width: 1120px) {
+  .nav.nav-category .nav_icon {
+    display: none;
+  }
+  .nav.nav-category .nav_name {
+    font-size: 12px;
+  }
 }
 
 .nav.nav-category > .nav-item {

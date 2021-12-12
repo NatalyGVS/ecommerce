@@ -121,13 +121,38 @@
             <a [routerLink]=" ['/categoria/', principal.id]" routerLinkActive="active"
               [routerLinkActiveOptions]="{exact: true}" class="text-center text-white nav-link"
               (click)="pintarNavSelected()" data-toggle="dropdown">{{principal.name}}</a>
-            <div class="dropdown-menu bg-light">
+            <!-- <div class="dropdown-menu bg-light">
               <div class="container pt-lg-1 pb-lg-3">
                 <div class="row">
                   <div class="py-2 col-12 col-sm-6 " *ngFor="let sub of principal.categorias">
                     <h4 class="pt-1 mb-2 font-size-sm text-uppercase">{{sub.name}}</h4>
                     <ul class="list-unstyled">
                       <li *ngFor="let px of sub.productos"><a href="#" class="dropdown-item text-dark">{{px.name}}</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+            <div class=" dropdown-menu bg-light">
+              <div class="container pt-lg-1 pb-lg-3">
+                <div class="row justify-content-center">
+                  <div class="py-2 col-12  col-sm-6 col-md-4 categorias-list text-center"
+                    *ngFor="let sub of principal.categorias">
+                    <a [routerLink]=" ['/productos/categoria/', principal.id, sub.id]"
+                      class="pt-1 mb-2 font-size-sm text-uppercase ">{{sub.name}} >
+                    </a>
+                    <ul class="list-unstyled sub-categorias-list" *ngIf="sub && sub.subCategorias"
+                      style="line-height: 20px;">
+                      <li *ngFor="let sc of sub.subCategorias.slice(0,5); let i = index">
+                        <a [routerLink]=" ['/productos/categoria/', principal.id, sub.id, sc.id]"
+                          class="p-0 dropdown-item text-dark" style="white-space: normal !important;">{{sc.name}}
+                        </a>
+                        <a [routerLink]=" ['/productos/categoria/', principal.id, sub.id]"
+                          *ngIf="sub.subCategorias.length >5 && i ==4" class="p-0 dropdown-item"
+                          style="white-space: normal !important; color : #12AB8D !important; font-weight: 400;">Ver
+                          más >
+                        </a>
                       </li>
                     </ul>
                   </div>
@@ -239,48 +264,44 @@
 
 
 <!-- Dark navbar (change to .container-fluid for full width navbar) -->
-<div class="py-0 navbar navbar-expand-lg navbar-dark navbar-fixed-top sticky-top d-none d-lg-flex"
+<div class="py-0 navbar navbar-principal navbar-expand-lg navbar-dark navbar-fixed-top sticky-top d-none d-lg-flex"
   style="background-color: #4E4E4E;">
-  <div class="container px-0 px-xl-3 row col-12 justify-content-center">
-    <ul class="nav nav-category" style="justify-content: space-evenly;">
-      <li class="py-0 my-0 nav-item dropdown mega-dropdown category-list-menu" *ngFor="let principal of categorias"
-        style="line-height: 18px;">
-        <a id="{{principal.id}}" [routerLink]=" ['/categoria/', principal.id]" routerLinkActive="active"
-          [routerLinkActiveOptions]="{exact: true}" class="text-center nav-link d-flex" data-toggle="dropdown"
-          style="align-items: center;">
-          <!-- <i class="mb-1 cxi-profile nav-tool-icon "></i> -->
-          <i class="mr-2 fas fa-wrench"></i>
-          <span style="font-size: 13px;">
-            {{principal.name}}
-          </span>
-        </a>
-        <div class=" dropdown-menu">
-          <div class="container pt-lg-1 pb-lg-3">
-            <div class="row justify-content-center">
-              <div class="py-2 col-md-3 categorias-list" *ngFor="let sub of principal.categorias">
-                <a [routerLink]=" ['/productos/categoria/', principal.id, sub.id]"
-                  class="pt-1 mb-2 font-size-sm text-uppercase ">{{sub.name}} >
-                </a>
-                <ul class="list-unstyled sub-categorias-list" *ngIf="sub && sub.subCategorias"
-                  style="line-height: 20px;">
-                  <li *ngFor="let sc of sub.subCategorias.slice(0,6); let i = index">
-                    <a [routerLink]=" ['/productos/categoria/', principal.id, sub.id, sc.id]"
-                      class="p-0 dropdown-item text-dark" style="white-space: normal !important;">{{sc.name}}
-                    </a>
-                    <a [routerLink]=" ['/productos/categoria/', principal.id, sub.id]"
-                      *ngIf="sub.subCategorias.length >6 && i ==5" class="p-0 dropdown-item"
-                      style="white-space: normal !important; color : #12AB8D !important; font-weight: 400;">Ver
-                      más >
-                    </a>
-                  </li>
-                </ul>
-              </div>
+  <ul class="nav nav-category">
+    <li class="p-0 my-0 nav-item dropdown mega-dropdown category-list-menu" *ngFor="let principal of categorias"
+      style="line-height: 18px;">
+      <a id="{{principal.id}}" [routerLink]=" ['/categoria/', principal.id]" routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact: true}" class="text-center nav-link d-flex " data-toggle="dropdown">
+        <!-- <i class="mb-1 cxi-profile nav-tool-icon "></i> -->
+        <img class="nav_icon mr-1" src="../../../assets/img/icons/{{principal.imagen}}.png">
+        <span class="nav_name">
+          {{principal.name}}
+        </span>
+      </a>
+      <div class=" dropdown-menu">
+        <div class="container pt-lg-1 pb-lg-3">
+          <div class="row justify-content-center">
+            <div class="py-2 col-md-3 categorias-list" *ngFor="let sub of principal.categorias">
+              <a [routerLink]=" ['/productos/categoria/', principal.id, sub.id]"
+                class="pt-1 mb-2 font-size-sm text-uppercase ">{{sub.name}} >
+              </a>
+              <ul class="list-unstyled sub-categorias-list" *ngIf="sub && sub.subCategorias" style="line-height: 20px;">
+                <li *ngFor="let sc of sub.subCategorias.slice(0,6); let i = index">
+                  <a [routerLink]=" ['/productos/categoria/', principal.id, sub.id, sc.id]"
+                    class="p-0 dropdown-item text-dark" style="white-space: normal !important;">{{sc.name}}
+                  </a>
+                  <a [routerLink]=" ['/productos/categoria/', principal.id, sub.id]"
+                    *ngIf="sub.subCategorias.length >6 && i ==5" class="p-0 dropdown-item"
+                    style="white-space: normal !important; color : #12AB8D !important; font-weight: 400;">Ver
+                    más >
+                  </a>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
-      </li>
-    </ul>
-  </div>
+      </div>
+    </li>
+  </ul>
 </div>
 
 
