@@ -25,6 +25,64 @@
   border: none;
 }
 
+/* SECCION CALL ================================================================================= */
+#section-call {
+  background: rgb(20, 153, 10);
+  background: linear-gradient(
+    90deg,
+    rgba(20, 153, 10, 1) 0%,
+    rgba(110, 208, 92, 1) 54%,
+    rgba(20, 153, 10, 1) 100%
+  );
+}
+#section-call .section-call__phone {
+  display: inline;
+}
+#section-call .section-call__text {
+  font-size: 28px;
+  color: #fff;
+  font-weight: 400;
+}
+#section-call .section-call__img {
+  width: 50px;
+  margin: 0 10px;
+  position: relative;
+  bottom: 4px;
+}
+
+#section-call .section-call__number {
+  font-size: 28px;
+  font-weight: 800;
+  color: #fcf351;
+  margin-right: 5px;
+}
+
+@media (max-width: 1100px) {
+  #section-call .section-call__text {
+    font-size: 25px;
+  }
+  #section-call .section-call__img {
+    width: 40px;
+  }
+  #section-call .section-call__number {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 991px) {
+  #section-call .section-call__phone {
+    display: block;
+  }
+  #section-call {
+    margin-top: 0px !important;
+  }
+}
+
+@media (max-width: 510px) {
+  .section-call__text {
+    display: block;
+  }
+}
 /* SECCION INFO FERRI ================================================================================= */
 #section-info,
 #section-carousel,
