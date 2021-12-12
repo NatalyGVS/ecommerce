@@ -206,3 +206,15 @@
     margin: 0 auto;
   }
 }
+
+@media (max-width: 300px) {
+  .timer .unit {
+    padding: 0px 2px;
+  }
+  .timer .unit strong {
+    font-size: 22px;
+  }
+  .oferta__imagen__text span {
+    font-size: 23px;
+  }
+}

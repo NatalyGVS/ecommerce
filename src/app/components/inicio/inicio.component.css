@@ -3,6 +3,17 @@
   position: relative;
 }
 
+.cs-carousel-inner div {
+  display: flex;
+  justify-content: center;
+}
+
+@media (min-width: 1300px) {
+  .cs-carousel-inner div img {
+    width: 1300px;
+  }
+}
+
 .btn-outline-primary {
   background-color: black;
   color: #fff;
@@ -155,7 +166,7 @@
 .list-product-cart {
   flex-wrap: wrap;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
 /* SECCION CATEGORIAS POPULARES ================================================================================= */
@@ -165,6 +176,9 @@
 }
 
 /* SECCION OFERTA POR TIEMPO LIMITADO ================================================================================= */
+#section-offer {
+  background-color: #fff;
+}
 #section-offer .container {
   width: 90%;
 }

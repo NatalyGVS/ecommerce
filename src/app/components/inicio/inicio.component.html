@@ -1,17 +1,20 @@
 <app-nav></app-nav>
 <main class="cs-page-wrapper">
   <!-- section carousel  ************************************************************************************************** -->
-  <section class=" my-3 pb-4 cs-carousel cs-controls-onhover" id="section-carousel">
+  <section class=" mt-3 pb-4 cs-carousel cs-controls-onhover" id="section-carousel">
     <div class="cs-carousel-inner" data-carousel-options=''>
-
       <!-- Slide 1 -->
       <div class="bg-sl bg-sl-1 ">
-        <img src="/../../assets/img/inicio/carousel-slider/01.png" alt="">
+        <img class="only-desktop" src="/../../assets/img/inicio/carousel-slider/01.png" alt="">
+        <img class="only-movil" src="/../../assets/img/inicio/carousel-slider/01-movil.jpg" alt="">
+
       </div>
 
       <!-- Slide 2 -->
       <div class="bg-sl bg-sl-2">
-        <img src="/../../assets/img/inicio/carousel-slider/02.png" alt="">
+        <img class="only-desktop" src="/../../assets/img/inicio/carousel-slider/02.png" alt="">
+        <img class="only-movil" src="/../../assets/img/inicio/carousel-slider/02-movil.png" alt="">
+
       </div>
     </div>
 
@@ -35,19 +38,19 @@
   </section>
 
   <!-- SECCION INFO FERRI  ************************************************************************************************* -->
-  <section class="pb-5 mt-0 container-fluid px-xl-grid-gutter py-lg-4" id="section-info">
-    <div class="container">
-      <div class="py-3 list-item-info row justify-content-center">
+  <section class="pb-0 mt-0 container-fluid " id="section-info">
+    <div class="container pt-4 pb-0">
+
+      <app-info></app-info>
+      <!-- <app-info></app-info>
         <app-info></app-info>
         <app-info></app-info>
-        <app-info></app-info>
-        <app-info></app-info>
-      </div>
+      </div> -->
     </div>
   </section>
 
   <!-- SECCION DESCRIPCION CATEGORIAS  *************************************************************************************-->
-  <section class="py-5 mt-0 mb-5 container-fluid" id="section-desc-categorias">
+  <section class="py-0 mt-0 mb-5 container-fluid" id="section-desc-categorias">
     <div class="container">
       <section class="my-1 card-category" *ngFor="let principal of principales.slice(0,1)">
         <div class="card-category-header cat-header-hover cat-header-hover-mb">
@@ -94,7 +97,7 @@
 
   <!-- Seccion Oferta por tiempo limitado  ************************************************************************************************** -->
 
-  <section class="py-5 mt-0 mb-5 container-fluid" id="section-offer">
+  <section class="py-5 my-0 container-fluid" id="section-offer">
     <div class="container">
       <app-oferta></app-oferta>
     </div>
@@ -102,7 +105,7 @@
 
   <!-- Seccion regalo ************************************************************************************************** -->
 
-  <section class="py-5 mt-0 mb-5 container-fluid bg-info" id="section-regalo">
+  <section class="py-5 my-0 container-fluid bg-info" id="section-regalo">
     <div class="container">
       <div class="regalos__list justify-content-center">
         <app-regalo *ngFor="let regalo of regalos" [precio]="regalo.precio" [contenido]="regalo.contenido"></app-regalo>

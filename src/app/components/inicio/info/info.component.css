@@ -1,5 +1,52 @@
+.list-item-info {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 20px 0;
+}
+
+@media (max-width: 1200px) {
+  .list-item-info {
+    grid-template-columns: 20px auto auto 20px;
+    grid-gap: 20px;
+  }
+  .item-info-1,
+  .item-info-3 {
+    grid-column-start: 2;
+    grid-column-end: 3;
+  }
+  .item-info-2,
+  .item-info-4 {
+    grid-column-start: 3;
+    grid-column-end: 4;
+  }
+}
+@media (max-width: 750px) {
+  .list-item-info {
+    grid-template-columns: 0px auto auto 0px;
+    grid-gap: 20px;
+  }
+}
+@media (max-width: 660px) {
+  .list-item-info {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  }
+  .item-info-1,
+  .item-info-3,
+  .item-info-2,
+  .item-info-4 {
+    grid-column-start: auto;
+    grid-column-end: auto;
+  }
+}
+@media (max-width: 320px) {
+  .item-icon {
+    display: none !important;
+  }
+}
+
 .item-info-ferri {
-  margin: 5px;
+  margin: 5px auto;
   display: flex;
   max-width: 274px;
   justify-content: center;

@@ -7,8 +7,9 @@
   <div class="cintillo" style="position: relative;  z-index: 99;">
     <a id="cint-principal-1" style="margin:auto;display:block;" [routerLink]="['/']" class="Cintillo Top: Única">
       <picture>
-        <source media="(max-width: 800px)">
-        <img src="assets/img/oferta.jpg" style="width: 100vw ;">
+        <source media="(min-width: 992px)" srcset="assets/img/oferta/oferta-desktop.jpg">
+        <source media="(min-width: 630px)" srcset="assets/img/oferta/oferta-tablet.png">
+        <img src="assets/img/oferta/oferta-movil.jpg" style="width: 100vw ;">
       </picture>
     </a>
   </div>
@@ -266,7 +267,7 @@
 <!-- Dark navbar (change to .container-fluid for full width navbar) -->
 <div class="py-0 navbar navbar-principal navbar-expand-lg navbar-dark navbar-fixed-top sticky-top d-none d-lg-flex"
   style="background-color: #4E4E4E;">
-  <ul class="nav nav-category">
+  <ul class="nav nav-category px-3">
     <li class="p-0 my-0 nav-item dropdown mega-dropdown category-list-menu" *ngFor="let principal of categorias"
       style="line-height: 18px;">
       <a id="{{principal.id}}" [routerLink]=" ['/categoria/', principal.id]" routerLinkActive="active"
