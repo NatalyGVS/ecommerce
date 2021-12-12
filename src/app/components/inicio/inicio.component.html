@@ -1,17 +1,17 @@
 <app-nav></app-nav>
 <main class="cs-page-wrapper">
   <!-- section carousel  ************************************************************************************************** -->
-  <section class="pb-4 cs-carousel cs-controls-onhover" id="section-carousel">
+  <section class=" my-3 pb-4 cs-carousel cs-controls-onhover" id="section-carousel">
     <div class="cs-carousel-inner" data-carousel-options=''>
 
       <!-- Slide 1 -->
       <div class="bg-sl bg-sl-1 ">
-
+        <img src="/../../assets/img/inicio/carousel-slider/01.png" alt="">
       </div>
 
       <!-- Slide 2 -->
       <div class="bg-sl bg-sl-2">
-
+        <img src="/../../assets/img/inicio/carousel-slider/02.png" alt="">
       </div>
     </div>
 
@@ -49,7 +49,7 @@
   <!-- SECCION DESCRIPCION CATEGORIAS  *************************************************************************************-->
   <section class="py-5 mt-0 mb-5 container-fluid" id="section-desc-categorias">
     <div class="container">
-      <section class="my-1 card-category" *ngFor="let principal of principales">
+      <section class="my-1 card-category" *ngFor="let principal of principales.slice(0,1)">
         <div class="card-category-header cat-header-hover cat-header-hover-mb">
           <div class="category-name">
             <a [routerLink]="['/categoria/', principal.id]">

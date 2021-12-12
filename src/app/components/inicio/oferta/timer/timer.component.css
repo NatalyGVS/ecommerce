@@ -3,8 +3,8 @@
   text-align: center;
 }
 .timer .unit {
-  padding: 1 px;
-  padding: 10px;
+  padding: 0px 10px;
+  margin: 0px;
 }
 .timer .unit strong {
   display: block;
@@ -21,4 +21,16 @@
   font-weight: 600;
   text-transform: uppercase;
   color: #fff;
+}
+
+@media (max-width: 470px) {
+  .timer .unit span {
+    color: #000;
+  }
+}
+
+@media (max-width: 370px) {
+  .timer .unit strong {
+    font-size: 25px;
+  }
 }

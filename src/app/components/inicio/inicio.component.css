@@ -1,39 +1,6 @@
 /* SECCION SLIDER CAROUSEL FERRI ================================================================================= */
 .cs-carousel-inner {
-  height: 600px !important;
-}
-/*
-@media (max-width: 1366px) {
-  .cs-carousel-inner {
-    height: 600px !important;
-  }
-}
-@media (max-width: 1066px) {
-  .cs-carousel-inner {
-    height: 500px !important;
-  }
-}
-@media (max-width: 990px) {
-  .cs-carousel-inner {
-    height: 600px !important;
-  }
-}
-*/
-.bg-sl {
-  height: 100%;
-  width: 100vw !important;
-  justify-content: center;
-  background-size: contain !important;
-  background-position: center;
-}
-.bg-sl-1 {
-  background: url(/../../assets/img/inicio/carousel-slider/01.png) center
-    no-repeat;
-}
-
-.bg-sl-2 {
-  background: url(/../../assets/img/inicio/carousel-slider/02.png) center
-    no-repeat;
+  position: relative;
 }
 
 .btn-outline-primary {
@@ -199,7 +166,7 @@
 
 /* SECCION OFERTA POR TIEMPO LIMITADO ================================================================================= */
 #section-offer .container {
-  width: 80%;
+  width: 90%;
 }
 
 /* SECCION REGALO ================================================================================================== */
