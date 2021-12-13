@@ -227,6 +227,17 @@
   justify-content: space-evenly;
 }
 
+/* SECCION DISCOUNT ================================================================================= */
+
+#section-discount {
+  background: rgb(9, 192, 172);
+  background: linear-gradient(
+    90deg,
+    rgba(9, 192, 172, 1) 0%,
+    rgba(33, 201, 133, 1) 100%
+  );
+}
+
 /* SECCION CATEGORIAS POPULARES ================================================================================= */
 
 .parent-img-category > img {

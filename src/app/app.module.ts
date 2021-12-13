@@ -39,6 +39,7 @@ import { ConsultarStockComponent } from './components/modals/consultar-stock/con
 import { UbicacionComponent } from './components/modals/ubicacion/ubicacion.component';
 import { VerDistritosComponent } from './components/modals/ver-distritos/ver-distritos.component';
 import { ItemCarritoComponent } from './components/carrito/item-carrito/item-carrito.component';
+import { DiscountComponent } from './components/inicio/discount/discount.component';
 // import { FormWizardModule } from 'angular2-wizard';
 // import { ArchwizardModule } from 'angular-archwizard';
 
@@ -74,6 +75,7 @@ import { ItemCarritoComponent } from './components/carrito/item-carrito/item-car
     UbicacionComponent,
     VerDistritosComponent,
     ItemCarritoComponent,
+    DiscountComponent,
   ],
   imports: [
     BrowserModule,
