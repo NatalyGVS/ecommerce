@@ -3,13 +3,13 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-discount',
   templateUrl: './discount.component.html',
-  styleUrls: ['./discount.component.css']
+  styleUrls: ['./discount.component.css'],
 })
 export class DiscountComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
+  public tiempoLimite: Date | string;
+  constructor() {
+    this.tiempoLimite = new Date('2021-12-28');
   }
 
+  ngOnInit(): void {}
 }

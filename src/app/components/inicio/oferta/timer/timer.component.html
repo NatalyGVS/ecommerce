@@ -1,18 +1,18 @@
-<div class="timer" *ngIf="time">
-  <p class="unit">
+<div class="timer" *ngIf="time" [ngClass]="{'bg-gray' : bgColor == 'gray'}">
+  <p class="unit d-none">
     <strong>{{time.days | dosDigitos}} </strong>
     <span>Días</span>
   </p>
   <p class="unit">
     <strong>{{time.hours | dosDigitos}} </strong>
-    <span>Horas</span>
+    <span>Hrs</span>
   </p>
   <p class="unit">
     <strong>{{time.minutes | dosDigitos}} </strong>
-    <span>Min.</span>
+    <span>Min</span>
   </p>
   <p class="unit">
     <strong>{{time.seconds | dosDigitos}} </strong>
-    <span>Seg.</span>
+    <span>Seg</span>
   </p>
 </div>

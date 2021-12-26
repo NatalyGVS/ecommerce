@@ -14,6 +14,8 @@ interface Time {
 })
 export class TimerComponent implements OnInit {
   @Input() date: string | Date;
+  @Input() bgColor: string;
+
   public time: Time = null;
   public timerId: number = null;
   constructor() {}

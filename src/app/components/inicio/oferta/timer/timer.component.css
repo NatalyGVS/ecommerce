@@ -15,6 +15,15 @@
   border-radius: 12px;
   padding: 5px;
 }
+
+.bg-gray p strong {
+  background-color: #4e4e4e !important;
+  font-size: 20px !important;
+}
+.bg-gray .unit {
+  padding: 0px 5px !important;
+}
+
 .timer .unit span {
   text-align: center;
   font-size: 15px;
@@ -26,6 +35,9 @@
 @media (max-width: 470px) {
   .timer .unit span {
     color: #000;
+  }
+  .bg-gray.timer .unit span {
+    color: #fff;
   }
 }
 
