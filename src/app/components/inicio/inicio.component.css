@@ -227,8 +227,13 @@
   justify-content: space-evenly;
 }
 
-/* SECCION DISCOUNT ================================================================================= */
-
+/* SECCION DESCUENTO  ================================================================================= */
+#section-discount {
+  margin-top: 20px;
+}
+#section-form-product {
+  margin-top: 40px;
+}
 
 /* SECCION CATEGORIAS POPULARES ================================================================================= */
 

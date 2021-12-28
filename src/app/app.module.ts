@@ -40,8 +40,8 @@ import { UbicacionComponent } from './components/modals/ubicacion/ubicacion.comp
 import { VerDistritosComponent } from './components/modals/ver-distritos/ver-distritos.component';
 import { ItemCarritoComponent } from './components/carrito/item-carrito/item-carrito.component';
 import { DiscountComponent } from './components/inicio/discount/discount.component';
-// import { FormWizardModule } from 'angular2-wizard';
-// import { ArchwizardModule } from 'angular-archwizard';
+import { FormProductComponent } from './components/inicio/form-product/form-product.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -76,6 +76,7 @@ import { DiscountComponent } from './components/inicio/discount/discount.compone
     VerDistritosComponent,
     ItemCarritoComponent,
     DiscountComponent,
+    FormProductComponent,
   ],
   imports: [
     BrowserModule,
@@ -84,7 +85,7 @@ import { DiscountComponent } from './components/inicio/discount/discount.compone
     HttpClientModule,
     routing,
     NgbPaginationModule,
-    // ArchwizardModule,
+    ReactiveFormsModule //reactive forms validate
   ],
   providers: [],
   bootstrap: [AppComponent],

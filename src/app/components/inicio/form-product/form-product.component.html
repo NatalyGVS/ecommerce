@@ -1,0 +1,117 @@
+<div class="container__bg">
+  <div class="container">
+    <div class="container__form">
+      <div class="form__text">
+        <h4 class="title text-white"> ¿No encontraste lo que buscabas?</h4>
+        <p class="text-white"> No te preocupes, compártenos tus datos y te ayudamos a encontrarlo</p>
+      </div>
+
+      <form [formGroup]="contactForm" (ngSubmit)="onSaveForm()">
+        <div class="row">
+          <div class="form-group col-12 col-sm-6">
+            <input type="text" class="form-control" placeholder="Nombre" formControlName="nombre" required>
+            <div class="alert-danger-customizer" *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">
+              <div class="container-error-message" *ngIf="nombre.errors.required">
+                Campo requerido
+              </div>
+              <div class="container-error-message" *ngIf="nombre.errors.minlength">
+                Mínimo 5 caracteres
+              </div>
+            </div>
+          </div>
+          <div class="form-group col-12 col-sm-6">
+            <input type="text" class="form-control" placeholder="Apellido" formControlName="apellidos" required>
+            <div class="alert-danger-customizer" *ngIf="apellidos.invalid && (apellidos.dirty || apellidos.touched)">
+              <div class="container-error-message" *ngIf="apellidos.errors.required">
+                Campo requerido
+              </div>
+              <div class="container-error-message" *ngIf="apellidos.errors.minlength">
+                Mínimo 5 caracteres
+              </div>
+            </div>
+          </div>
+          <div class="form-group col-12 col-sm-6">
+            <input type="text" class="form-control" placeholder="Número de teléfono o celular" formControlName="celular"
+              required>
+            <div class="alert-danger-customizer" *ngIf="celular.invalid && (celular.dirty || celular.touched)">
+              <div class="container-error-message" *ngIf="celular.errors.required">
+                Campo requerido
+              </div>
+
+            </div>
+          </div>
+          <div class="form-group col-12 col-sm-6">
+            <input type="text" class="form-control" placeholder="Correo electrónico" formControlName="email" required>
+            <div class="alert-danger-customizer" *ngIf="email.invalid && (email.dirty || email.touched)">
+              <div class="container-error-message" *ngIf="email.errors.required">
+                Campo requerido
+              </div>
+              <div class="container-error-message"
+                *ngIf="(email.dirty || email.touched) && email.invalid && email.errors.pattern">
+                Formato inválido
+              </div>
+            </div>
+          </div>
+          <div class="form-group col-12 col-sm-6">
+            <label for=""> ¿Qué categoría buscas para abastecer tu negocio?</label>
+            <input type="text" class="form-control" placeholder="Herramientas" formControlName="categoria" required>
+            <div class="alert-danger-customizer" *ngIf="categoria.invalid && (categoria.dirty || categoria.touched)">
+              <div class="container-error-message" *ngIf="categoria.errors.required">
+                Campo requerido
+              </div>
+            </div>
+          </div>
+          <div class="form-group col-12 col-sm-6">
+            <label for=""> ¿Qué productos no encontraste? <i>Puede ser un URL</i> </label>
+            <input type="text" class="form-control" placeholder="Ej. Pinturas de pared" formControlName="producto"
+              required>
+            <div class="alert-danger-customizer" *ngIf="producto.invalid && (producto.dirty || producto.touched)">
+              <div class="container-error-message" *ngIf="producto.errors.required">
+                Campo requerido
+              </div>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn mb-2 w-100">ENVIAR</button>
+      </form>
+
+      <!-- <form [formGroup]="contactForm" (ngSubmit)="onSaveForm()">
+        <input type="text" formControlName="name" placeholder="Your Name">
+        <div class="alert-danger" *ngIf="name.invalid && (name.dirty || name.touched)">
+          <div class="container-error-message" *ngIf="name.errors.required">
+            Name is required
+          </div>
+          <div class="container-error-message" *ngIf="name.errors.minlength">
+            Name must be at least 5 characters long.
+          </div>
+        </div>
+
+        <input type="text" formControlName="email" placeholder="Your email">
+
+        <div class="alert-danger" *ngIf="email.invalid && (email.dirty || email.touched)">
+          <div class="container-error-message" *ngIf="email.errors.required">
+            Email is required
+          </div>
+          <div class="container-error-message" *ngIf="email.errors.minlength">
+            Email must be at least 5 characters long.
+          </div>
+          <div class="container-error-message"
+            *ngIf="(email.dirty || email.touched) && email.invalid && email.errors.pattern">
+            Value has to be a valid email address.
+          </div>
+        </div>
+        <textarea formControlName="message" placeholder="Type your message"></textarea>
+        <div class="alert-danger" *ngIf="message.invalid && (message.dirty || message.touched)">
+          <div class="container-error-message" *ngIf="message.errors.required">
+            Message is required
+          </div>
+          <div class="container-error-message" *ngIf="message.errors.minlength">
+            Message must be at least 10 characters long.
+          </div>
+        </div>
+        <button type="submit" class="btn-send" [disabled]="!contactForm.valid">Send</button>
+      </form> -->
+
+    </div>
+  </div>
+</div>

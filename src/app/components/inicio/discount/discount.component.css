@@ -30,7 +30,7 @@
 .discount__text--number {
   margin-left: 10px;
   font-size: 50px;
-  font-weight: 800;
+  font-weight: 600;
 }
 .discount__text--dscto {
   display: flex;
@@ -41,7 +41,7 @@
 
 .discount__text--dscto .dscto1 {
   font-size: 32px;
-  font-weight: 400;
+  font-weight: 600;
 }
 .discount__text--dscto .dscto2 {
   bottom: 10px;
@@ -189,11 +189,12 @@
   color: #fff;
 }
 .product__title {
-  line-height: 14px;
+  line-height: 16px;
 }
 
 .product__title span {
   font-size: 14px;
+  font-weight: 600;
   display: block;
 }
 .product__title .product__name {
@@ -206,7 +207,7 @@
 }
 .product__price .number {
   font-size: 40px;
-  font-weight: 800;
+  font-weight: 700;
 }
 .product__price .dismiss {
   font-size: 20px;
@@ -221,6 +222,7 @@
   color: #fff;
   padding: 2px 10px;
   font-size: 12.5px;
+  font-weight: 600;
   background: rgb(34, 201, 132);
   background: linear-gradient(
     90deg,
