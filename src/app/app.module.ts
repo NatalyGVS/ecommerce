@@ -42,6 +42,7 @@ import { ItemCarritoComponent } from './components/carrito/item-carrito/item-car
 import { DiscountComponent } from './components/inicio/discount/discount.component';
 import { FormProductComponent } from './components/inicio/form-product/form-product.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -77,6 +78,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     ItemCarritoComponent,
     DiscountComponent,
     FormProductComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,

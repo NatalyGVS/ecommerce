@@ -8,10 +8,12 @@
   overflow: hidden;
   transition: all 0.5s;
 }
+
 .regalo__item:hover {
-  -webkit-box-shadow: -1px 1px 12px -3px rgba(0, 0, 0, 0.78);
-  box-shadow: -1px 1px 12px -3px rgba(0, 0, 0, 0.78);
+  -webkit-box-shadow: -1px 1px 12px -3px rgba(0, 0, 0, 0.78) !important;
+  box-shadow: -1px 1px 12px -3px rgba(0, 0, 0, 0.78) !important;
 }
+/*
 .regalo__item:hover .regalo__precio {
   background: #2c2c2c;
   color: #fff;
@@ -19,7 +21,7 @@
 .regalo__item:hover .regalo__title {
   color: #2c2c2c;
 }
-
+*/
 .regalo__item::before {
   content: "";
   display: block;

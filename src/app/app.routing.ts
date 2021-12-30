@@ -11,12 +11,14 @@ import { IndexProductoComponent } from './components/productos/index-producto/in
 import { AuthGuard } from './guards/auth.guard';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 import { Routes, RouterModule } from '@angular/router';
 import { ModuleWithProviders } from '@angular/core';
 // import { AuthGuard } from './guards/auth.guard';
 const appRoute: Routes = [
   { path: '', component: InicioComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'registro', component: RegisterComponent },
   {
     path: 'cuenta/perfil',
     component: PerfilComponent,
@@ -46,7 +48,10 @@ const appRoute: Routes = [
   // { path: 'productos', component: IndexProductoComponent },
   { path: 'categoria/:id', component: IndexCategoriasComponent }, //principal
 
-  { path: 'productos/categoria/:id-prin/:id-cat', component: IndexProductoComponent }, //principal, categoria
+  {
+    path: 'productos/categoria/:id-prin/:id-cat',
+    component: IndexProductoComponent,
+  }, //principal, categoria
   {
     path: 'productos/categoria/:id-prin/:id-cat/:id-sub', //principal, categoria, subcategoria
     component: IndexProductoComponent,
