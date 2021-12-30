@@ -38,15 +38,16 @@
       <div class="mb-3 col-md-3 pr-lg-4 mb-md-0">
 
         <!-- Show / hide filters on Desktop -->
-        <div class="d-none d-lg-block">
+        <div class="d-lg-block">
           <h3><i class="cxi-filter-1"></i> Filtros:</h3>
         </div>
 
         <!-- Show / hide filters (off-canvas) on Mobile -->
         <button type="button" class="mt-0 btn btn-primary btn-block d-lg-none" data-toggle="offcanvas"
-          data-target="filtersOffcanvas">
+          data-target="filtersOffcanvas" (click)="show_filter()">
           <i class="mr-1 cxi-filter-2"></i>
-          Mostrar filtros
+          <span id="show-title"> Mostrar filtros</span>
+          <span id="hidden-title" class="d-none"> Ocultar filtros</span>
         </button>
       </div>
 
@@ -96,7 +97,7 @@
           <div class="pb-4 cs-offcanvas-body accordion-alt">
 
             <!-- Buscar productos -->
-            <div class="card border-bottom">
+            <div class="card border-bottom p-2">
               <div class="py-3 card-header" id="filter-panel">
                 <h6 class="accordion-heading">
                   <a href="#filter" role="button" data-toggle="collapse" aria-expanded="true" aria-controls="filter">
@@ -108,7 +109,7 @@
               <div class="collapse show" id="filter" aria-labelledby="filter-panel">
                 <div class="pb-4 cs-widget mt-n3">
                   <!-- Input buscar productos -->
-                  <div class="mt-3 input-group-overlay d-lg-block d-none order-lg-3">
+                  <div class="mt-3 input-group-overlay d-lg-block order-lg-3">
                     <input class="form-control appended-form-control" type="text" placeholder="Buscar producto"
                       name="filter_product" [(ngModel)]="filter_product">
                     <div class="input-group-append-overlay"
@@ -122,7 +123,7 @@
             </div>
 
             <!-- Categorias -->
-            <div class="card border-bottom" *ngIf="categoriaActual.subCategorias">
+            <div class="card border-bottom p-2" *ngIf="categoriaActual.subCategorias">
               <div class="pt-0 pb-3 card-header" id="category-panel">
                 <h6 class="accordion-heading">
                   <a href="#category" role="button" data-toggle="collapse" aria-expanded="true"
@@ -173,7 +174,7 @@
             </div>
 
             <!-- Precios -->
-            <div class="card border-bottom">
+            <div class="card border-bottom p-2">
               <div class="py-3 card-header" id="price-panel">
                 <h6 class="accordion-heading">
                   <a href="#price" role="button" data-toggle="collapse" aria-expanded="true" aria-controls="price">

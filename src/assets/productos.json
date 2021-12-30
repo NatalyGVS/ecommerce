@@ -7,6 +7,7 @@
     "precioOriginal": 35.00,
     "descuento" : "-20%",
     "precioDescuento" :29.99,
+    "precio" : 29.99,
     "nVentas": 40,
     "principal": {
       "id": "principal-1",
@@ -48,6 +49,7 @@
     "precioOriginal": 55.900,
     "descuento" : "-25%",
     "precioDescuento" :39.99,
+    "precio" : 39.99,
     "principal": {
       "id": "principal-1",
       "name": "GASTIFERIA Y TUBERIAS"
@@ -88,6 +90,7 @@
     "name": "Taladros prod5",
     "stock": 200,
     "precioOriginal": 45.00,
+    "precio" : 45.00,
     "principal": {
       "id": "principal-1",
       "name": "GASTIFERIA Y TUBERIAS"
@@ -127,6 +130,7 @@
     "name": "Taladros prod6",
     "stock": 200,
     "precioOriginal": 55.00,
+    "precio": 55.00,
     "descuento" : "-20%",
     "precioDescuento" :29.99,
     "nVentas": 60,
@@ -171,6 +175,7 @@
     "precioOriginal": 35.00,
     "descuento" : "-20%",
     "precioDescuento" :29.99,
+    "precio" :29.99,
     "nVentas": 140,
     "principal": {
       "id": "principal-1",
@@ -211,6 +216,7 @@
     "name": "Taladros 4",
     "stock": 200,
     "precioOriginal": 85.00,
+    "precio": 85.00,
     "nVentas": 50,
     "principal": {
       "id": "principal-1",
@@ -251,6 +257,7 @@
     "name": "Taladros prod1",
     "stock": 200,
     "precioOriginal": 39.00,
+    "precio": 39.00,
     "nVentas": 40,
     "principal": {
       "id": "principal-1",
@@ -294,6 +301,7 @@
     "precioOriginal": 35.00,
     "descuento" : "-20%",
     "precioDescuento" :29.99,
+    "precio" :29.99,
     "nVentas": 40,
     "principal": {
       "id": "principal-1",
@@ -336,6 +344,7 @@
     "precioOriginal": 35.00,
     "descuento" : "-20%",
     "precioDescuento" :29.99,
+    "precio" :29.99,
     "nVentas": 80,
     "principal": {
       "id": "principal-1",
@@ -376,6 +385,7 @@
     "name": "Taladros prod6",
     "stock": 200,
     "precioOriginal": 70.00,
+    "precio": 70.00,
     "nVentas": 60,
     "principal": {
       "id": "principal-1",

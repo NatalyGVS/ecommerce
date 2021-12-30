@@ -176,9 +176,12 @@ export class IndexProductoComponent implements OnInit {
     console.log('precios', min, max);
 
     this._configuracionService.getProductos().subscribe((response) => {
+      console.log('response', response);
       this.productos = response.filter(
         (px) => px.categoria.id == this.route_category
       );
+      console.log('response2', this.productos);
+
       this.productos = this.productos.filter((px) => {
         return px.precio >= min && px.precio <= max;
       });
@@ -309,5 +312,10 @@ export class IndexProductoComponent implements OnInit {
     console.log('event', event);
     this.productModal = event;
     console.log('abrir modal', this.productModal);
+  }
+  show_filter() {
+    $('#filtersOffcanvas').toggleClass('cs-offcanvas');
+    $('#show-title').toggleClass('d-none');
+    $('#hidden-title').toggleClass('d-none');
   }
 }

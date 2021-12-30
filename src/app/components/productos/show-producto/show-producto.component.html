@@ -52,7 +52,7 @@
           </div>
         </div>
       </div>
-      <div class="col-md-6 pl-xl-5">
+      <div class="col-md-6 pl-xl-5 text-product">
         <div class="title-product w-100">
           <h4 class="mb-2 mb-md-0">{{producto.name}}</h4>
         </div>
@@ -106,17 +106,17 @@
 
           <div class="botones-agregar row">
             <div class="col">
-              <button *ngIf="!btn_cart" class="btn" (click)="agregar_producto()">
+              <button *ngIf="!btn_cart" class="btn mt-1" (click)="agregar_producto()">
                 <i class="mr-2 cxi-cart"></i>
                 Agregar
               </button>
-              <button *ngIf="btn_cart" type="button" class="btn" disabled>
+              <button *ngIf="btn_cart" type="button mt-1" class="btn" disabled>
                 <span class="spinner-grow spinner-grow-sm me-2" role="status" aria-hidden="true"></span>
                 Agregando...
               </button>
             </div>
             <div class="col">
-              <button class="btn" (click)="agregar_producto()">
+              <button class="btn mt-1" (click)="agregar_producto()">
                 Realizar Pago
               </button>
 
@@ -173,11 +173,11 @@
             </div>
           </div>
         </div>
-        <div class="my-4 stock">
+        <!-- <div class="my-4 stock">
           <button class="btn-stock" (click)="abrirConsultarStock()">
             <i class="fas fa-box-open"></i> Consultar Stock <i class="cxi-angle-right"></i>
           </button>
-        </div>
+        </div> -->
         <div class="my-4 devoluciones">
           <div class="text-devoluciones">
             <i class="mr-2 fas fa-exchange-alt"></i> <span> Cambios y devoluciones:</span> Tienes hasta 90 días desde la
