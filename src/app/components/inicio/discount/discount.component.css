@@ -333,18 +333,17 @@
 .section_2__text p,
 .section_3__text p {
   margin: 0;
-  font-weight: 400;
+  font-weight: 500;
   color: #fff;
   font-size: 15px;
   line-height: 17px;
 }
 .section_3__text p.info {
   font-style: italic;
-  font-weight: 200;
+  font-weight: 400;
   font-size: 12px;
 }
-.container-line {
-}
+
 .vertical-line {
   width: 1.6px;
   background-color: #fff;
@@ -352,6 +351,22 @@
   float: left;
 }
 
+@media (max-width: 1150px) {
+  .container-offer {
+    max-width: 595px !important;
+  }
+  .section_2__text span,
+  .section_3__text span {
+    font-size: 16px;
+  }
+  .section_2__text p,
+  .section_3__text p {
+    font-size: 13px;
+  }
+  .section_3__text p.info {
+    font-size: 10px;
+  }
+}
 @media (max-width: 991px) {
   .section_1__text span {
     font-size: 25x;

@@ -140,7 +140,7 @@
 
   <!-- Seccion regalo ************************************************************************************************** -->
 
-  <section class="py-5 my-0 container-fluid bg-info" id="section-regalo">
+  <section class="py-5 my-0 container-fluid" id="section-regalo">
     <div class="container">
       <div class="regalos__list justify-content-center">
         <app-regalo *ngFor="let regalo of regalos" [precio]="regalo.precio" [contenido]="regalo.contenido"></app-regalo>
@@ -293,6 +293,24 @@
       </div>
     </div>
   </section>
+  <!-- Seccion sentence ************************************************************************************************** -->
+
+  <section class="w-100 mt-2" id="sentence">
+    <div class="container">
+      <div class="row text-center">
+        <div class="text-center col-lg-12">
+          <button type="submit" class="btn btn-2"> Accede a nuestra tienda virtual
+          </button>
+        </div>
+      </div>
+      <div class="sentence-text">
+        <div class="mx-auto text-center col-12 col-md-9 col-lg-8">
+          <h4> Peruanos ayudando a más peruanos a surtir tu ferretería... </h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
 
 </main>
 <app-footer></app-footer>

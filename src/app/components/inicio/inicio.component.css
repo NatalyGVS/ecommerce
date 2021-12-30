@@ -257,3 +257,44 @@
   place-items: center;
   flex-wrap: wrap;
 }
+
+/* SECCION SENTENCE  ================================================================================================== */
+.btn-2 {
+  background: linear-gradient(to top, #d65f40, #fe784f);
+  padding: 8px 20px;
+  border: none;
+  border-radius: 15px;
+  color: #f0f0f0;
+  font-size: 20px;
+  transition: all 0.08s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  font-weight: 600;
+  color: #fff;
+}
+
+.btn-1:focus,
+.btn-2:focus {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  color: #fff;
+}
+.btn-1:hover,
+.btn-2:hover {
+  -webkit-transform: scale(1.07);
+  transform: scale(1.07);
+
+  color: #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.sentence-text h4 {
+  font-size: 40px;
+  font-weight: 700;
+  color: #13a88c;
+  position: relative;
+  margin: 35px 0;
+}
+@media (max-width: 875px) {
+  .sentence-text h4 {
+    font-size: 33px;
+  }
+}

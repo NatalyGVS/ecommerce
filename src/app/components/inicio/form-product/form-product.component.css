@@ -76,12 +76,11 @@ form .form-group {
 /* VALIDACIONES ================================================================================================= */
 .alert-danger-customizer {
   color: #292929;
-  /* background: #f8d7da;
-  border-color: #f5c6cb; */
   margin-bottom: 5px;
 }
 
 .container-error-message {
   font-size: 13px;
   padding: 3px;
+  font-weight: 600;
 }
