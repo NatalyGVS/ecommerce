@@ -1,9 +1,12 @@
 .container__bg {
   width: 100%;
   background-size: cover !important;
-  background-position: center;
-  background: url(../../../../assets/img/inicio/form-product/bg-form.png)
+  background-position: 40% 0% !important;
+  background: url(../../../../assets/img/inicio/form-product/fondo-ferreteria.png)
     no-repeat;
+  max-width: 1400px;
+  height: 570px;
+  margin: 0 auto;
 }
 
 .container__bg .container__form {
@@ -14,6 +17,7 @@
   margin-left: 0px;
   padding: 40px 30px;
   text-align: center;
+  height: 570px;
 }
 
 .container__form .form__text h4 {
@@ -56,7 +60,22 @@ form .form-group {
   margin-bottom: 18px !important;
 }
 
+@media (max-width: 1360px) {
+  .container__bg {
+    background-position: 60% 0% !important;
+  }
+}
+
+@media (max-width: 1238px) {
+  .container__bg {
+    background-position: 64% 0% !important;
+  }
+}
+
 @media (max-width: 1015px) {
+  .container__bg {
+    background-position: left !important;
+  }
   .container__bg .container {
     display: flex !important;
     justify-content: center !important;
@@ -67,9 +86,36 @@ form .form-group {
     left: 0px;
   }
 }
+
 @media (max-width: 715px) {
   .container__bg .container__form {
     width: 90%;
+  }
+}
+
+@media (max-width: 500px) {
+  .container__form .form__text p {
+    padding: 0 20px;
+  }
+}
+@media (max-width: 350px) {
+  .container__form .form__text h4 {
+    font-size: 30px;
+  }
+}
+@media (max-width: 280px) {
+  .container__form .form__text h4 {
+    font-size: 25px;
+    line-height: 29px;
+  }
+}
+
+@media (max-width: 575px) {
+  .container__bg {
+    height: auto;
+  }
+  .container__bg .container__form {
+    height: auto;
   }
 }
 

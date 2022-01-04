@@ -39,3 +39,14 @@
   display: flex;
   justify-content: center;
 }
+
+@media (max-width: 991px) {
+  .content-img,
+  .content-text {
+    text-align: center;
+  }
+  .content-img img {
+    width: 80%;
+    max-width: 500px;
+  }
+}

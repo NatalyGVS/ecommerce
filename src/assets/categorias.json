@@ -2,9 +2,8 @@
   {
     "id": "principal-1",
     "name": "JARDINERÍA Y LIMPIEZA",
-    "imagen" : "icono-1",
+    "icono" : "Jardinería y limpieza.png",
     "cantidad": 200,
-    "icono": "ci-iphone",
     "ruta": "../assets/img/principal/principal-1.jpg",
     "categorias": [
       {
@@ -33,9 +32,8 @@
   {
     "id": "principal-2",
     "name": "GASFITERÍA Y TUBERÍA",
-    "imagen" : "icono-2",
+    "icono" : "Gasfitería y tubería.png",
     "cantidad": 200,
-    "icono": "ci-iphone",
     "ruta": "../assets/img/principal/principal-1.jpg",
     "categorias": [
       {
@@ -58,9 +56,8 @@
   {
     "id": "principal-3",
     "name": "MAQUINARIAS Y HERRAMIENTAS",
-    "imagen" : "icono-3",
+    "icono" : "Maquinarias y herramientas.png",
     "cantidad": 200,
-    "icono": "ci-iphone",
     "ruta": "../assets/img/principal/principal-1.jpg",
     "categorias": [
       {
@@ -114,9 +111,8 @@
   {
     "id": "principal-4",
     "name": "CONSTRUCCIÓN Y TECHOS",
-    "imagen" : "icono-4",
+    "icono" : "Construcción y techos.png",
     "cantidad": 200,
-    "icono": "ci-iphone",
     "ruta": "../assets/img/principal/principal-2.jpg",
     "categorias": [
       {
@@ -237,9 +233,8 @@
   {
     "id": "principal-5",
     "name": "ELECTRICIDAD",
-    "imagen" : "icono-5",
     "cantidad": 200,
-    "icono": "ci-iphone",
+    "icono": "Electricidad.png",
     "ruta": "../assets/img/principal/principal-2.jpg",
     "categorias": [
       {
@@ -337,9 +332,8 @@
   {
     "id": "principal-6",
     "name": "SEGURIDAD Y TECNOLOGÍA",
-    "imagen" : "icono-6",
+    "icono" : "Seguridad y tecnología.png",
     "cantidad": 200,
-    "icono": "ci-iphone",
     "ruta": "../assets/img/principal/principal-2.jpg",
 
     "categorias": [
@@ -401,9 +395,8 @@
   {
     "id": "principal-7",
     "name": "FERRETERÍA",
-    "imagen" : "icono-7",
     "cantidad": 200,
-    "icono": "ci-iphone",
+    "icono": "Ferretería.png",
     "ruta": "../assets/img/principal/principal-3.jpg",
     "categorias": [
       {
@@ -444,9 +437,8 @@
   {
     "id": "principal-8",
     "name": "PINTURAS Y ACABADOS",
-    "imagen" : "icono-8",
     "cantidad": 200,
-    "icono": "ci-iphone",
+    "icono": "Pinturas-y-acabados.png",
     "ruta": "../assets/img/principal/principal-3.jpg",
     "categorias": [
       {
@@ -475,9 +467,8 @@
   {
     "id": "principal-9",
     "name": "AUTOMÓVIL",
-    "imagen" : "icono-9",
     "cantidad": 200,
-    "icono": "ci-iphone",
+    "icono": "Automóvil.png",
     "ruta": "../assets/img/principal/principal-1.jpg",
 
     "categorias": [
