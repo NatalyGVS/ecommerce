@@ -309,9 +309,7 @@ export class IndexProductoComponent implements OnInit {
 
   abrirModalAddProduct(event) {
     $('#modalCarritoCompras').modal('show');
-    console.log('event', event);
     this.productModal = event;
-    console.log('abrir modal', this.productModal);
   }
   show_filter() {
     $('#filtersOffcanvas').toggleClass('cs-offcanvas');

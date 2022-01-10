@@ -15,11 +15,13 @@ import {
 })
 export class RegisterComponent implements OnInit {
   public userForm: FormGroup;
+  public fieldTextType;
   private emailPattern: any =
     /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
   public user_data: any = {};
   constructor(private formBuilder: FormBuilder) {
+    this.fieldTextType = false;
     this.buildForm();
   }
   private buildForm() {
@@ -56,4 +58,9 @@ export class RegisterComponent implements OnInit {
     return this.userForm.get('password');
   }
   ngOnInit(): void {}
+
+  toggleTypePass() {
+    let actual = this.fieldTextType;
+    this.fieldTextType = !actual;
+  }
 }

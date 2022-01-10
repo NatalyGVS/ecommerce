@@ -16,7 +16,7 @@ export class DireccionesComponent implements OnInit {
     distrito: '',
     principal: false,
   };
-
+  public showNewAddress = false;
   public direccionesCliente: Array<any> = [];
   public regiones: Array<any> = [];
   public provincias: Array<any> = [];
@@ -135,14 +135,20 @@ export class DireccionesComponent implements OnInit {
 
       //refrecar tabla de direcciones
       this.direccionesCliente = this._userService.getDirecciones(null);
+
+      this.showNewAddress = false;
     } else {
       // NOTIFICACION IZITOAST
       console.log('form invalido');
     }
   }
   establecer_principal(id) {
-
-    this.direccionesCliente = this._userService.establecerDireccionPrincipal(null, id);
-
+    this.direccionesCliente = this._userService.establecerDireccionPrincipal(
+      null,
+      id
+    );
+  }
+  mostrarFormDireccion() {
+    this.showNewAddress = true;
   }
 }

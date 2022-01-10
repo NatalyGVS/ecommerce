@@ -16,6 +16,7 @@ import {
 export class LoginComponent implements OnInit {
   public userForm: FormGroup;
   public user: any = {};
+  public fieldTextType;
   private emailPattern: any =
     /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
@@ -25,6 +26,7 @@ export class LoginComponent implements OnInit {
     private _router: Router,
     private formBuilder: FormBuilder
   ) {
+    this.fieldTextType = false;
     this.buildForm();
     if (localStorage.getItem('user_data')) this._router.navigate(['/']);
   }
@@ -34,6 +36,12 @@ export class LoginComponent implements OnInit {
       password: ['', [Validators.required, Validators.minLength(8)]],
     });
   }
+
+  toggleTypePass() {
+    let actual = this.fieldTextType;
+    this.fieldTextType = !actual;
+  }
+
   onResetForm(): void {
     this.userForm.reset();
   }
@@ -67,6 +75,7 @@ export class LoginComponent implements OnInit {
       nick: 'Nataly',
       email: 'nataly.vasquez9718@gmail.com',
       dni: '75715222',
+      genero: 'femenino',
       celular: '97999999',
       direcciones: [
         {

@@ -5,10 +5,10 @@
   <!-- Remove "navbar-sticky" class to make navigation bar scrollable with the page -->
 
   <div class="cintillo" style="position: relative;  z-index: 99;">
-    <a id="cint-principal-1" style="margin:auto;display:block;" [routerLink]="['/']" class="Cintillo Top: Única">
-      Surte tu ferretería al mejor precio en
+    <a id="cint-principal-1" style="margin:auto;display:block; color:#fff; " [routerLink]="['/']">
 
-      <span>menos de 24hrs</span>
+      <span class="text-white"> Surte tu ferretería al mejor precio en </span>
+      <span class="text-white bold-text">menos de 24hrs</span>
       <!-- <picture>
         <source media="(min-width: 700px)" srcset="assets/img/oferta/oferta-img.png">
         <source media="(min-width: 530px)" srcset="assets/img/oferta/oferta-tablet.png">
@@ -35,9 +35,10 @@
       <div class="d-flex align-items-center order-lg-3">
         <ul class="nav nav-tools flex-nowrap">
           <li class="mb-0 nav-item d-lg-block d-none">
-            <a [routerLink]="['/login']" class="text-white nav-tool dropdown-toggle row" style="align-items: center;">
+            <a class="text-white nav-tool dropdown-toggle row" style="align-items: center; cursor: pointer;"
+              (click)="openModalLocal()">
               <i class="mr-2 text-white fas fa-map-marker-alt" style="font-size: 20px;"></i>
-              <span class="">
+              <span class="text-white">
                 <span>Selecciona</span>
                 <span style="font-weight: 700; font-size: 105%; font-style: normal; display: block; top: -3px;
                 position: relative;">tu
@@ -69,8 +70,8 @@
                 </a>
                 <a href="#" class="dropdown-item">
                   <i class="ci-comment me-2"></i>
-                  Messages
-                  <span class="badge rounded-pill bg-success ms-2">5</span>
+                  Subir cotización
+                  <!-- <span class="badge rounded-pill bg-success ms-2">5</span> -->
                 </a>
                 <a (click)="logout()" class="dropdown-item" style="cursor: pointer;">
                   <i class="ci-logout me-2"></i>
@@ -308,6 +309,7 @@
   </ul>
 </div>
 
+<app-local></app-local>
 
 <!-- card carrito de compras -->
 <div id="cart" class="cs-offcanvas cs-offcanvas-right">
@@ -318,6 +320,9 @@
       <span class="mb-0 h3 font-weight-normal" aria-hidden="true">×</span>
     </button>
   </div>
+
+
+
 
   <!-- Body -->
   <div class="cs-offcanvas-body">
@@ -385,4 +390,5 @@
         Ir a mi carrito
       </a>
     </div>
+
   </div>

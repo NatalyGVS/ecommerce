@@ -97,4 +97,8 @@ export class NavComponent implements OnInit {
       // }, 2000);
     });
   }
+  openModalLocal() {
+    console.log('abrir modal');
+    $('#modalLocales').modal('show');
+  }
 }

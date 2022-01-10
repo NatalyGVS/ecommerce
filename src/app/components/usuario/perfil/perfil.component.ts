@@ -7,7 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PerfilComponent implements OnInit {
   public cliente: any = {};
-
   constructor() {
     if (localStorage.getItem('user_data')) {
       this.cliente = JSON.parse(localStorage.getItem('user_data'));

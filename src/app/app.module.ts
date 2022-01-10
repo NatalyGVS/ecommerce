@@ -36,13 +36,13 @@ import { NumParteDecimalPipe } from './pipes/num-parte-decimal.pipe';
 import { CalcularDespachoComponent } from './components/modals/calcular-despacho/calcular-despacho.component';
 import { VerTiendasComponent } from './components/modals/ver-tiendas/ver-tiendas.component';
 import { ConsultarStockComponent } from './components/modals/consultar-stock/consultar-stock.component';
-import { UbicacionComponent } from './components/modals/ubicacion/ubicacion.component';
 import { VerDistritosComponent } from './components/modals/ver-distritos/ver-distritos.component';
 import { ItemCarritoComponent } from './components/carrito/item-carrito/item-carrito.component';
 import { DiscountComponent } from './components/inicio/discount/discount.component';
 import { FormProductComponent } from './components/inicio/form-product/form-product.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './components/register/register.component';
+import { LocalComponent } from './components/nav/local/local.component';
 
 @NgModule({
   declarations: [
@@ -73,12 +73,12 @@ import { RegisterComponent } from './components/register/register.component';
     CalcularDespachoComponent,
     VerTiendasComponent,
     ConsultarStockComponent,
-    UbicacionComponent,
     VerDistritosComponent,
     ItemCarritoComponent,
     DiscountComponent,
     FormProductComponent,
     RegisterComponent,
+    LocalComponent,
   ],
   imports: [
     BrowserModule,

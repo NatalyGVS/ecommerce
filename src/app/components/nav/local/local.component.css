@@ -1,0 +1,77 @@
+.layer-add-to-cart {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  opacity: 1;
+  z-index: 99;
+  transition: all 1s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-content {
+  background: #e5e5e5;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 663px;
+}
+.add-content .header {
+  background: #fff;
+  text-align: center;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 0px !important;
+}
+
+.add-content .header .title {
+  display: block;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  font-size: 19px;
+  color: #fff;
+  text-align: center;
+  padding: 15px 15px 14px 55px !important;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  background: rgb(4, 209, 168) !important;
+  background: linear-gradient(
+    90deg,
+    rgba(4, 209, 168, 1) 0%,
+    rgba(18, 170, 141, 1) 100%
+  ) !important;
+}
+
+.add-content .header .close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  color: #fff;
+  margin-top: 3px;
+  margin-right: 3px;
+}
+/* BODY *************************************************** */
+.add-content .body {
+  max-height: 230px;
+  overflow: auto;
+  margin: 30px;
+}
+
+@media (max-width: 360px) {
+  .body .almacen__list {
+    flex-direction: column;
+  }
+}
+.body .almacen__list .almacen {
+  border: red 5px;
+  /* box-shadow: 0px 0px 6px -1px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 0px 6px -1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 6px -1px rgba(0, 0, 0, 0.75); */
+}

@@ -12,7 +12,7 @@
   letter-spacing: 1px;
   word-spacing: 5px;
 }
-.cintillo a span {
+.cintillo a span.bold-text {
   font-weight: 800;
 }
 
@@ -81,7 +81,7 @@
     font-size: 11px;
   }
   .nav.nav-category .nav_icon {
-    width: 28px;
+    width: 30px;
   }
 }
 @media (max-width: 1120px) {
@@ -123,9 +123,6 @@
 }
 
 .cs-header > .navbar {
-  /* position: relative;
-  z-index: 1030; */
-
   background: rgb(4, 209, 168) !important;
   background: linear-gradient(
     90deg,

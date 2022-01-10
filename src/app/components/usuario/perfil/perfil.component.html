@@ -53,7 +53,7 @@
             </div>
             <div class="col-sm-6 form-group">
               <label for="ac-genero">Género</label>
-              <select id="ac-genero" class="custom-select custom-select-lg">
+              <select id="ac-genero" class="custom-select custom-select-lg" name="genero" [(ngModel)]="cliente.genero">
                 <option value="" disabled selected>Seleccionar</option>
                 <option value="masculino">Masculino</option>
                 <option value="femenino">Femenino</option>
@@ -69,69 +69,12 @@
               <input type="number" id="ac-phone" class="form-control form-control-lg" name="celular"
                 [(ngModel)]="cliente.celular" placeholder="Ingresa tu celular" required>
             </div>
-            <div class="col-sm-6 form-group">
-              <label for="ac-password">Nueva Contraseña</label>
-              <div class="cs-password-toggle input-group-overlay">
-                <input type="password" id="ac-password" class="form-control form-control-lg" name="password"
-                  [(ngModel)]="cliente.password" placeholder="Ingresa tu contraseña" required
-                  autocomplete="new-password">
-                <div class="input-group-append-overlay">
-                  <label class="btn cs-password-toggle-btn input-group-text">
-                    <input type="checkbox" class="custom-control-input">
-                    <i class="cxi-eye cs-password-toggle-indicator"></i>
-                    <span class="sr-only">Show password</span>
-                  </label>
-                </div>
-              </div>
-            </div>
-            <!-- <div class="col-sm-6 form-group">
-              <label for="ac-password-confirm">Confirm Password</label>
-              <div class="cs-password-toggle input-group-overlay">
-                <input type="password" id="ac-password-confirm" class="form-control form-control-lg">
-                <div class="input-group-append-overlay">
-                  <label class="btn cs-password-toggle-btn input-group-text">
-                    <input type="checkbox" class="custom-control-input">
-                    <i class="cxi-eye cs-password-toggle-indicator"></i>
-                    <span class="sr-only">Show password</span>
-                  </label>
-                </div>
-              </div>
-            </div> -->
-            <div class="col-sm-6 form-group">
-              <label for="ac-country">País</label>
-              <select id="ac-country" class="custom-select custom-select-lg" required>
-                <option value="" selected>Seleccionar</option>
-                <option value="argentina">Argentina</option>
-                <option value="brazil">Brasil</option>
-                <option value="belgium">Bolivia</option>
-                <option value="france">Perú</option>
-                <option value="germany">Colombia</option>
-              </select>
-            </div>
-            <div class="col-sm-6 form-group">
-              <label for="ac-city">City</label>
-              <select id="ac-city" class="custom-select custom-select-lg" required>
-                <option value="" disabled>Seleccionar</option>
-                <option value="belgium">Brussels</option>
-                <option value="germany">Berlin</option>
-                <option value="uk">London</option>
-                <option value="argentina">Melbourne</option>
-                <option value="usa" selected>New Jersey</option>
-                <option value="france">Paris</option>
-                <option value="brazil">Rio de Janeiro</option>
-              </select>
-            </div>
-            <div class="col-sm-6 form-group">
-              <label for="ac-address">Dirección</label>
-              <input type="text" id="ac-address" class="form-control form-control-lg" name="direccion"
-                [(ngModel)]="cliente.direccion" placeholder="Ingresa tu dirección" required>
-            </div>
-            <!-- <div class="col-sm-6 form-group">
-              <label for="ac-zip">ZIP Code</label>
-              <input type="text" id="ac-zip" class="form-control form-control-lg" value="45463">
-            </div> -->
           </div>
-          <button type="submit" class="btn btn-primary btn-lg">&nbsp;Actualizar perfil&nbsp;</button>
+          <div class="col-12 text-center">
+            <button type="submit" class="btn btn-primary btn-lg">&nbsp;Actualizar perfil&nbsp;</button>
+
+          </div>
+
         </form>
       </div>
     </div>
