@@ -1,3 +1,4 @@
+import { UserService } from './../../../../services/user.service';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
@@ -11,16 +12,15 @@ export class DetallePedidoComponent implements OnInit {
   public pedido: any = {};
   public detallesPedido: any[] = [];
   public id;
-  constructor(private _route: ActivatedRoute) {
+  constructor(
+    private _route: ActivatedRoute,
+    private _userService: UserService
+  ) {
     this._route.params.subscribe((params) => {
       this.id = params['id'];
     });
-
-    this.pedido = JSON.parse(localStorage.getItem('user_data')).ventas.find(
-      (pedido) => {
-        return pedido.nVenta == this.id;
-      }
-    );
+    this.pedido = this._userService.getDetallePedido(this.id);
+    console.log('this.pedido', this.pedido);
     if (this.pedido != undefined) {
       console.log('this.pedido', this.pedido);
       this.detallesPedido = this.pedido.detalles;

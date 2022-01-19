@@ -1,3 +1,4 @@
+import { UserService } from 'src/app/services/user.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,18 +9,17 @@ import { Component, OnInit } from '@angular/core';
 export class IndexPedidosComponent implements OnInit {
   public load_data = true;
   public pedidos: any[] = [];
-
+  public detallePedido : any[] = [];
   //paginacion
   public page = 1;
-  public pageSize = 2; // productos por pagina
-  constructor() {}
+  public pageSize = 5; // productos por pagina
+  constructor(private _userService: UserService) {}
 
   ngOnInit(): void {
-    //servicio obtener pedidos del cliente
-    this.pedidos = JSON.parse(localStorage.getItem('user_data')).compras;
-    console.log('this.pedidos', this.pedidos);
-
     setTimeout(() => {
+      //servicio obtener pedidos del cliente
+      this.pedidos = this._userService.getPedidos();
+      console.log('this.pedidos', this.pedidos);
       this.load_data = false;
     }, 2000);
   }

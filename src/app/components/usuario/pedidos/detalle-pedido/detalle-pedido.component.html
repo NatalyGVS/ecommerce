@@ -7,10 +7,12 @@
         <li class="breadcrumb-item">
           <a [routerLink]="['/']"><i class="cxi-home"></i></a>
         </li>
-        <!-- <li class="breadcrumb-item">
-          <a href="#">Account</a>
-        </li> -->
-        <li class="breadcrumb-item active" aria-current="page">Mi pedido </li>
+        <li class="breadcrumb-item" aria-current="page">
+          <a [routerLink]="['/cuenta/pedidos']"> Mis compras </a>
+        </li>
+        <li class="breadcrumb-item active">
+          {{pedido.numPedido}}
+        </li>
       </ol>
     </div>
   </nav>
@@ -25,10 +27,11 @@
         <app-sidebar></app-sidebar>
       </aside>
 
+      <!-- Retroceder -->
       <!-- Content -->
-      <div class="ml-auto col-lg-8" *ngIf="pedido !=undefined">
+      <div class="mx-auto col-lg-8" *ngIf="pedido !=undefined">
         <div class="mb-4 d-flex align-items-center justify-content-between pb-sm-2">
-          <h1 class="mb-0 h2">Mi pedido #{{id}}</h1>
+          <h1 class="mb-0 h2">Mi pedido {{pedido.numPedido}}</h1>
         </div>
 
         <div class="row">
@@ -39,36 +42,37 @@
                   <table class="table mb-0">
                     <tbody>
                       <tr>
-                        <th class="py-2 pl-0 border-0">Order No:</th>
-                        <td class="px-0 py-2 border-0 text-muted">{{pedido.nVenta}}</td>
+                        <th class="py-2 pl-0 border-0">Nº Pedido:</th>
+                        <td class="px-0 py-2 border-0 text-muted">{{pedido.numPedido}}</td>
                       </tr>
                       <tr>
                         <th class="py-2 pl-0 border-0">Método de envío:</th>
-                        <td class="px-0 py-2 border-0 text-muted">{{pedido.envio_titulo}}</td>
+                        <td class="px-0 py-2 border-0 text-muted">{{pedido.metodoEnvio}}</td>
                       </tr>
                       <tr>
-                        <th class="py-2 pl-0 border-0">Fecha de la compra:</th>
-                        <td class="px-0 py-2 border-0 text-muted">August 29, 2020, 6:00pm</td>
+                        <th class="py-2 pl-0 border-0">Monto envío:</th>
+                        <td class="px-0 py-2 border-0 text-muted">S/.{{pedido.precioEnvio}}</td>
                       </tr>
-
                     </tbody>
                   </table>
                 </div>
                 <div class="col-lg-6">
                   <table class="table mb-0">
                     <tbody>
-
-                      <tr>
-                        <th class="py-2 pl-0 border-0">Destination:</th>
-                        <td class="px-0 py-2 border-0 text-muted">London, United Kingdom</td>
-                      </tr>
-                      <tr>
-                        <th class="py-2 pl-0 border-0">Transacción:</th>
-                        <td class="px-0 py-2 border-0 text-muted">{{pedido.transaccion}}</td>
-                      </tr>
                       <tr>
                         <th class="py-2 pl-0 border-0">Estado:</th>
-                        <td class="px-0 py-2 border-0 text-muted">{{pedido.estado}}</td>
+                        <td class="px-0 py-2 border-0 text-muted">
+                          <span class="badge badge-info">{{pedido.estado}}</span>
+
+                        </td>
+                      </tr>
+                      <tr>
+                        <th class="py-2 pl-0 border-0">Fecha de transacción:</th>
+                        <td class="px-0 py-2 border-0 text-muted"> {{pedido.fechaCompra| date}} </td>
+                      </tr>
+                      <tr>
+                        <th class="py-2 pl-0 border-0">Fecha del envío:</th>
+                        <td class="px-0 py-2 border-0 text-muted"> {{pedido.fechaEnvio| date}} </td>
                       </tr>
                     </tbody>
                   </table>
@@ -81,19 +85,10 @@
             <div class="card">
               <div class="card-body">
                 <div class="row">
-
-                  <div class="mb-3 col-sm-4 mb-sm-0">
+                  <div class="mb-3 col mb-sm-0">
                     <h3 class="mb-2 font-size-lg">{{pedido.direccion.destinatario}} </h3>
-                    <span class="mb-3 d-block fs-sm text-muted">{{pedido.direccion.zip}}</span>
-                    <span class="text-white badge bg-primary" *ngIf="pedido.direccion.principal">Dirección de
-                      envío</span>
-                    <div class="mt-n1 star-rating">
-                      <i class="sr-star ci-star-filled active"></i>
-                      <i class="sr-star ci-star-filled active"></i>
-                      <i class="sr-star ci-star-filled active"></i>
-                      <i class="sr-star ci-star-filled active"></i>
-                      <i class="sr-star ci-star-filled active"></i>
-                    </div>
+                    <!-- <span class="mb-3 d-block fs-sm text-muted">{{pedido.direccion.zip}}</span> -->
+                    <span class="text-white badge bg-primary" *ngIf="pedido.direccion">Dirección de envío</span>
                   </div>
 
                   <div class="col">
@@ -101,7 +96,7 @@
                     <p class="mb-3">{{pedido.direccion.pais}} -
                       <span> {{pedido.direccion.region}} - </span>
                       <span> {{pedido.direccion.provincia}} - </span>
-                      <span> {{pedido.direccion.departamento}} </span>
+                      <span> {{pedido.direccion.distrito}} </span>
                     </p>
                   </div>
 
@@ -121,26 +116,27 @@
                 Dec 9, 2020
               </span>
               <span class="badge badge-info">In progress</span>
-              <span class="pl-1 text-dark">$230.00</span>
+              <span class="pl-1 text-dark">S/{{pedido.total}}</span>
             </a>
           </div> -->
           <div id="order-1" class="collapse show" data-parent="#orders">
-            <div class="mb-4 rounded bg-secondary">
+            <div class="rounded bg-secondary">
               <div class="table-responsive">
                 <table class="table mb-0">
                   <tbody>
-                    <tr *ngFor="let producto of detallesPedido">
+                    <tr *ngFor="let producto of detallesPedido" class="bg-white">
                       <td class="border-top-0">
                         <div class="py-2 pl-2 media">
-                          <a href="shop-single.html" style="min-width: 80px;">
+                          <a style="min-width: 80px;" [routerLink]="['/productos/', producto.id]">
                             <img src={{producto.ruta}} width="80" alt="Product thumb">
                           </a>
                           <div class="pl-3 media-body">
                             <h3 class="mb-3 font-size-sm">
-                              <a href="shop-single.html" class="nav-link font-weight-bold">{{producto.producto}}</a>
+                              <a [routerLink]="['/productos/', producto.id]"
+                                class="nav-link font-weight-bold">{{producto.producto}}</a>
                             </h3>
-                            <ul class="mb-2 list-unstyled font-size-xs mt-n2">
-                              <li class="mb-0"><span class="text-muted">Título variedad:</span> {{producto.variedad}}
+                            <ul class="mb-2 list-unstyled font-size-xs mt-n2" *ngIf="producto.marca">
+                              <li class="mb-0"><span class="text-muted">Marca:</span> {{producto.marca}}
                               </li>
                               <!-- <li class="mb-0"><span class="text-muted">Size:</span> S</li> -->
                             </ul>
@@ -150,7 +146,7 @@
                       <td class="border-top-0">
                         <div class="py-2">
                           <div class="mb-1 font-size-xs text-muted">Precio Producto:</div>
-                          <div class="font-size-sm text-dark">S/.{{producto.subtotal}}</div>
+                          <div class="font-size-sm text-dark">S/.{{producto.precioUnitario}}</div>
                         </div>
                       </td>
                       <td class="border-top-0">
@@ -162,47 +158,49 @@
                       <td class="border-top-0">
                         <div class="py-2 pr-3 text-right">
                           <div class="mb-1 font-size-xs text-muted"> Subtotal:</div>
-                          <div class="font-size-sm font-weight-bold text-dark">S/.{{producto.subtotal}}</div>
+                          <div class="font-size-sm font-weight-bold text-dark">
+                            S/.{{producto.precioUnitario*producto.cantidad}}</div>
                         </div>
                       </td>
                     </tr>
-                    <tr>
-                      <!--  <td>
-                         <div class="py-2 pl-2">
-                          <span class="font-size-xs text-muted">Subtotal: </span>
-                          <span class="font-size-sm text-dark">$198.65</span>
-                        </div>
-                      </td>-->
+                    <tr class="bg-white">
                       <td>
-                        <div class="py-2">
-                          <span class="font-size-xs text-muted">Envío: </span>
-                          <span class="font-size-sm text-dark"> S/.{{pedido.envio_precio}}</span>
+                        <div class="py-2 pl-2">
+                          <!-- <span class="font-size-xs text-muted">Subtotal: </span>
+                          <span class="font-size-sm text-dark">$198.65</span> -->
                         </div>
                       </td>
-                      <!-- <td>
+                      <td>
                         <div class="py-2">
-                          <span class="font-size-xs text-muted">Tax: </span>
-                          <span class="font-size-sm text-dark">$6.35</span>
+                          <!-- <span class="font-size-xs text-muted">Metodo Envío: </span>
+                          <span class="font-size-sm text-dark"> {{pedido.envio}}</span> -->
                         </div>
-                      </td> -->
+                      </td>
+                      <td>
+                        <div class="py-2">
+                          <span class="font-size-xs text-muted">Sub total: </span>
+                          <span class="font-size-sm text-dark">S/.{{pedido.subtotal}}</span>
+                        </div>
+                      </td>
                       <td>
                         <div class="py-2 pr-3 text-right">
                           <span class="font-size-xs text-muted">Total: </span>
-                          <span class="font-size-sm font-weight-bold text-dark">S/.{{pedido.subtotal}}</span>
+                          <span class="font-size-sm font-weight-bold text-dark">S/.{{pedido.total}}</span>
                         </div>
                       </td>
                     </tr>
+
                   </tbody>
                 </table>
               </div>
             </div>
-          
+
           </div>
         </div>
 
       </div>
 
-      <div class="ml-auto col-lg-8" *ngIf="pedido ==undefined">
+      <div class="mx-auto col-lg-8" *ngIf="pedido ==undefined">
         <div class="row">
           <div class="col-12">
             <div class="col-lg-12 col-md-5">

@@ -26,10 +26,10 @@
       </aside>
 
       <!-- Content -->
-      <div class="ml-auto col-lg-8">
+      <div class="mx-auto col-lg-8">
         <div class="mb-4 d-flex align-items-center justify-content-between pb-sm-2">
-          <h1 class="mb-0 h2">Mis pedidos</h1>
-          <div class="form-inline">
+          <h1 class="mb-0 h2">Mis compras</h1>
+          <!-- <div class="form-inline">
             <label for="sort-orders" class="pr-1 mr-2 d-none d-sm-block font-weight-bold">Ordenado por</label>
             <select id="sort-orders" class="custom-select">
               <option>All</option>
@@ -38,7 +38,7 @@
               <option>Delayed</option>
               <option>Canceled</option>
             </select>
-          </div>
+          </div> -->
         </div>
 
         <!-- Orders accordion -->
@@ -46,24 +46,24 @@
           <!-- Order -->
 
           <ng-container *ngIf="pedidos.length >=1">
-            <div class="card border-bottom"
+            <div class="card border-bottom px-3 py-2"
               *ngFor="let item of pedidos| slice:(page-1)*pageSize : (page-1) * pageSize + pageSize ">
               <div class="py-1 card-header accordion-heading">
-                <a [routerLink]="['/cuenta/pedidos', item.nVenta]" class="flex-wrap py-3 d-flex justify-content-between"
+                <a [routerLink]="['/cuenta/pedidos', item.id]" class="flex-wrap py-3 d-flex justify-content-between"
                   data-toggle="collapse" aria-expanded="false">
-                  <span class="pr-2">#{{item.nVenta}}</span>
+                  <span class="pr-2">#{{item.numPedido}}</span>
                   <span class="px-2 font-size-sm text-muted text-nowrap">
                     <i class="mr-1 align-middle cxi-clock font-size-base mt-n1"></i>
-                    Nov 27, 2020
+                    {{item.fechaEnvio | date}}
                   </span>
                   <span class="badge badge-info">{{item.estado}}</span>
-                  <span class="pl-1 text-dark">S/.{{item.subtotal}}</span>
+                  <span class="pl-1 text-dark">S/.{{item.total}}</span>
                 </a>
               </div>
 
             </div>
           </ng-container>
-          <ng-container *ngIf="pedidos.length ==0">
+          <ng-container *ngIf="pedidos.length==0">
             <div class="card border-bottom">
               <div class="py-1 card-header accordion-heading">
                 <a class="flex-wrap py-3 d-flex justify-content-between">
@@ -84,7 +84,7 @@
           </div>
         </div>
 
-        <div class="mt-3 row">
+        <div class="mt-3 row" *ngIf="pedidos.length>0">
           <div class="col-12">
             <ngb-pagination [(page)]="page" [pageSize]="pageSize" [collectionSize]="pedidos.length">
             </ngb-pagination>
